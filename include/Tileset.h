@@ -23,7 +23,7 @@ public:
      */
     raylib::Texture& Draw(int x = 0, int y = 0)
     {
-        return this->texture.Draw((Vector2){0,0}, (Vector2){0,0}, (Rectangle){0,0,100,100});
+        return this->texture.Draw(x,y);
     }
 
 private:
