@@ -1,4 +1,5 @@
-CC      =  g++
+CC      =  clang++
+#CC      =  g++
 CFLAGS  = -Iinclude -Iinclude/raylib-cpp
 LDFLAGS = -lraylib -lm -lpthread
 BIN     = -o bin/app
