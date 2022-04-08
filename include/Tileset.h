@@ -19,9 +19,12 @@ public:
     /**
      * Draw the whole texutre.
      *
+     * @param float x    The x position of the texture.
+     * @param float y    The y position of the texture.
+     *
      * @return raylib::Texture&
      */
-    raylib::Texture& Draw(int x = 0, int y = 0)
+    raylib::Texture& Draw(float x = 0, float y = 0)
     {
         return this->texture.Draw(x,y);
     }
