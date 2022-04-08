@@ -8,7 +8,11 @@
 class Tileset
 {
 public:
-    Tileset(const std::string& imageFile) : texture(imageFile){}
+    Tileset(const std::string& imageFile, float tileSize, float scale = 1.0f, int width = 5, int height = 5) :
+        texture(imageFile),
+        tileSize(tileSize),
+        scale(scale)
+    {}
 
     ~Tileset()
     {
@@ -26,7 +30,7 @@ public:
      */
     raylib::Texture& Draw(float x = 0, float y = 0)
     {
-        return this->texture.Draw(x,y);
+        return this->texture.Draw(x,y, {0,0});
     }
 
     /**
@@ -39,15 +43,19 @@ public:
      */
     raylib::Texture& DrawTile(float x = 0, float y = 0, float xp = 0, float yp = 0)
     {
-        float space = 1;
-        float scale = 5.0f;
-        raylib::Rectangle src = {space + 16 * xp, space + 16 * yp, 32, 32};
-        raylib::Rectangle dest = {x,y, 16 * scale, 16 * scale};
+        float offset = 0;
+        raylib::Rectangle src = {offset + tileSize * xp, offset + tileSize * yp, tileSize, tileSize};
+        raylib::Rectangle dest = {x, y, tileSize * scale, tileSize * scale};
         return this->texture.DrawTiled(src, dest, {0,0}, 0, scale);
     }
 
+    float scale = 1.0f;
+
 private:
     raylib::Texture texture;
+    float tileSize;
+    int width;
+    int height;
 };
 
 #endif
