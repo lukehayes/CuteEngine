@@ -51,7 +51,8 @@ public:
     {
         float offset = 0;
         raylib::Rectangle src = {offset + tileSize * tileX, offset + tileSize * tileY, tileSize, tileSize};
-        raylib::Rectangle dest = {x * (scale * tileSize), y * (scale * tileSize), tileSize * scale, tileSize * scale};
+        raylib::Rectangle dest = {x * (tileSize * scale), y * (tileSize * scale), tileSize * scale, tileSize * scale};
+        //raylib::Rectangle dest = {x * (scale * tileSize), y * (scale * tileSize), tileSize * scale, tileSize * scale};
 
         DrawTextureTiled(
                 this->texture,
