@@ -8,19 +8,8 @@
 class Tileset
 {
     public:
-        Tileset(const std::string& imageFile, int width = 8, int height = 12, float tileSize = 16, float scale = 3.0f) :
-            texture(imageFile),
-            width(width),
-            height(height),
-            tileSize(tileSize),
-            scale(scale)
-    {}
-
-        ~Tileset()
-        {
-            // TODO: Not sure if I need this?
-            //this->texture.Unload();
-        }
+        Tileset(const std::string& imageFile, int width = 8, int height = 12, float tileSize = 16, float scale = 3.0f);
+        ~Tileset();
 
         /**
          * Draw the whole texutre.
@@ -30,16 +19,7 @@ class Tileset
          *
          * @return raylib::Texture&
          */
-        void Draw(float x = 0, float y = 0)
-        {
-            DrawTextureEx(
-                    this->texture,
-                    {x,y},
-                    0.0f,
-                    this->scale,
-                    this->tint
-                    );
-        }
+        void Draw(float x = 0, float y = 0);
 
         /**
          * Draw a section of the texture.
@@ -49,25 +29,7 @@ class Tileset
          *
          * @return raylib::Texture&
          */
-        void DrawTile(float x = 0, float y = 0, float tileX = 0, float tileY = 0)
-        {
-            static float offset = 0.0;
-            raylib::Rectangle src = {x * (tileSize), y * (tileSize),tileSize, tileSize};
-            raylib::Rectangle dest = {x * (tileSize * scale), y * (tileSize * scale), tileSize * scale, tileSize * scale};
-
-            offset += 1;
-            //raylib::Rectangle dest = {x * (scale * tileSize), y * (scale * tileSize), tileSize * scale, tileSize * scale};
-
-            DrawTextureTiled(
-                    this->texture,
-                    src,
-                    dest,
-                    {0,0},
-                    0.0f,
-                    this->scale,
-                    this->tint
-                    );
-        }
+        void DrawTile(float x = 0, float y = 0, float tileX = 0, float tileY = 0);
 
         /**
          * Draw a section of the texture.
@@ -77,27 +39,7 @@ class Tileset
          *
          * @return raylib::Texture&
          */
-        void DrawAllTiles(float xp = 0, float yp = 0)
-        {
-            for(float x = 0; x <= this->width - 1; x += 0.1)
-            {
-                for(float y = 0; y <= this->height - 1; y++)
-                {
-                    raylib::Rectangle src = {x * (tileSize), y * (tileSize),tileSize, tileSize};
-                    raylib::Rectangle dest = {x * (tileSize * scale) + xp, y * (tileSize * scale) + yp, tileSize * scale, tileSize * scale};
-                    DrawTextureTiled(
-                            this->texture,
-                            src,
-                            dest,
-                            {0,0}, // Origin - Sets the origin of the image. Good for changing rotation origin.
-                            //{tileSize / 2 * scale, tileSize / 2 * scale}, Rotate from center example.
-                            0,
-                            this->scale,
-                            this->tint
-                            );
-                }
-            }
-        }
+        void DrawAllTiles(float xp = 0, float yp = 0);
 
 
         float scale;
