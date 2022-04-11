@@ -8,7 +8,7 @@
 class Tileset
 {
 public:
-    Tileset(const std::string& imageFile, float tileSize, float scale = 1.0f, int width = 5, int height = 5) :
+    Tileset(const std::string& imageFile, float tileSize, float scale = 3.0f, int width = 5, int height = 5) :
         texture(imageFile),
         tileSize(tileSize),
         scale(scale)
