@@ -28,9 +28,15 @@ public:
      *
      * @return raylib::Texture&
      */
-    raylib::Texture& Draw(float x = 0, float y = 0)
+    void Draw(float x = 0, float y = 0)
     {
-        return this->texture.Draw(x,y, {0,0});
+        DrawTextureEx(
+                this->texture,
+                {x,y},
+                0.0f,
+                this->scale,
+                this->tint
+                );
     }
 
     /**
@@ -49,13 +55,14 @@ public:
         return this->texture.DrawTiled(src, dest, {0,0}, 0, scale);
     }
 
-    float scale = 1.0f;
+    float scale;
 
 private:
     raylib::Texture texture;
     float tileSize;
     int width;
     int height;
+    Color tint = WHITE;
 };
 
 #endif
