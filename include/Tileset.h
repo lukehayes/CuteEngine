@@ -52,7 +52,7 @@ class Tileset
         void DrawTile(float x = 0, float y = 0, float tileX = 0, float tileY = 0)
         {
             static float offset = 0.0;
-            raylib::Rectangle src = {offset + tileSize * tileX, offset + tileSize * tileY, tileSize, tileSize};
+            raylib::Rectangle src = {x * (tileSize), y * (tileSize),tileSize, tileSize};
             raylib::Rectangle dest = {x * (tileSize * scale), y * (tileSize * scale), tileSize * scale, tileSize * scale};
 
             offset += 1;
@@ -77,29 +77,26 @@ class Tileset
          *
          * @return raylib::Texture&
          */
-        void DrawTiles(float x = 0, float y = 0, float tileX = 0, float tileY = 0)
+        void DrawAllTiles(float xp = 0, float yp = 0)
         {
-            static float offset = 0.0;
-            raylib::Rectangle src = {offset + tileSize * tileX, offset + tileSize * tileY, tileSize, tileSize};
-            raylib::Rectangle dest = {x * (tileSize * scale), y * (tileSize * scale), tileSize * scale, tileSize * scale};
-            //
-            //raylib::Rectangle dest = {x * (scale * tileSize), y * (scale * tileSize), tileSize * scale, tileSize * scale};
-            for(int x = 0; x <= this->width - 1; x++)
+            for(float x = 0; x <= this->width - 1; x += 0.1)
             {
-                for(int y = 0; y <= this->height - 1; y++)
+                for(float y = 0; y <= this->height - 1; y++)
                 {
+                    raylib::Rectangle src = {x * (tileSize), y * (tileSize),tileSize, tileSize};
+                    raylib::Rectangle dest = {x * (tileSize * scale) + xp, y * (tileSize * scale) + yp, tileSize * scale, tileSize * scale};
                     DrawTextureTiled(
                             this->texture,
                             src,
                             dest,
-                            {0,0},
-                            0.0f,
+                            {0,0}, // Origin - Sets the origin of the image. Good for changing rotation origin.
+                            //{tileSize / 2 * scale, tileSize / 2 * scale}, Rotate from center example.
+                            0,
                             this->scale,
                             this->tint
                             );
                 }
             }
-
         }
 
 
