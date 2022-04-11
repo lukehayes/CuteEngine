@@ -47,12 +47,21 @@ public:
      *
      * @return raylib::Texture&
      */
-    raylib::Texture& DrawTile(float x = 0, float y = 0, float xp = 0, float yp = 0)
+    void DrawTile(float x = 0, float y = 0, float tileX = 0, float tileY = 0)
     {
         float offset = 0;
-        raylib::Rectangle src = {offset + tileSize * xp, offset + tileSize * yp, tileSize, tileSize};
-        raylib::Rectangle dest = {x, y, tileSize * scale, tileSize * scale};
-        return this->texture.DrawTiled(src, dest, {0,0}, 0, scale);
+        raylib::Rectangle src = {offset + tileSize * tileX, offset + tileSize * tileY, tileSize, tileSize};
+        raylib::Rectangle dest = {x * (scale * tileSize), y * (scale * tileSize), tileSize * scale, tileSize * scale};
+
+        DrawTextureTiled(
+                this->texture,
+                src,
+                dest,
+                {0,0},
+                0.0f,
+                this->scale,
+                this->tint
+                );
     }
 
     float scale;
