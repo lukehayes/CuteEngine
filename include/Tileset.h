@@ -42,13 +42,11 @@ class Tileset
         void DrawAllTiles(float xp = 0, float yp = 0);
 
 
-        float scale;
-
-    private:
         raylib::Texture texture;
         int width;
         int height;
         float tileSize;
+        float scale;
         Color tint = WHITE;
 };
 
