@@ -9,7 +9,6 @@ int main() {
     int screenHeight = 600;
 
     raylib::Window window(screenWidth, screenHeight, "raylib-cpp - basic window");
-    raylib::Texture logo("assets/bernie.png");
 
     SetTargetFPS(60);
 
