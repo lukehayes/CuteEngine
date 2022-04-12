@@ -27,11 +27,9 @@ void Tileset::Draw(float x, float y)
 void Tileset::DrawTile(float x, float y, float tileX, float tileY)
 {
     static float offset = 0.0;
-    raylib::Rectangle src = {x * (tileSize), y * (tileSize),tileSize, tileSize};
-    raylib::Rectangle dest = {x * (tileSize * scale), y * (tileSize * scale), tileSize * scale, tileSize * scale};
 
-    offset += 1;
-    //raylib::Rectangle dest = {x * (scale * tileSize), y * (scale * tileSize), tileSize * scale, tileSize * scale};
+    raylib::Rectangle src = {tileX * tileSize, tileY * tileSize, tileSize, tileSize};
+    raylib::Rectangle dest = {x,y,tileSize * scale, tileSize * scale};
 
     DrawTextureTiled(
             this->texture,
