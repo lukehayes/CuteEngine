@@ -1,13 +1,15 @@
 #ifndef SPRITE_H
 #define SPRITE_H
 
+#include "raylib.h"
+#include "raylib-cpp.hpp"
 #include <string>
 
 class Sprite
 {
 public:
-        Sprite(const std::string& filename) : texture(filename){}
-        ~Sprite() {}
+        Sprite(const std::string& filename, float scale, float rotation = 0.0);
+        ~Sprite();
 
         /**
          * Draw the sprite at a specific location.
@@ -17,15 +19,12 @@ public:
          *
          * @return raylib::Texture&
          */
-        raylib::Texture& Draw(float x, float y)
-        {
-            return this->texture.Draw(x,y);
-        }
+        void Draw(float x, float y);
 
 private:
     raylib::Texture texture;
+    float scale;
+    float rotation;
 };
-
-
 #endif 
 
