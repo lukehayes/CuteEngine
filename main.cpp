@@ -4,6 +4,8 @@
 #include "Sprite.h"
 #include <iostream>
 
+float delta = 0.0;
+
 int main() {
     int screenWidth = 800;
     int screenHeight = 600;
@@ -18,6 +20,7 @@ int main() {
 
     while (!window.ShouldClose())
     {
+        delta = GetFrameTime();
         c += 0.05;
         BeginDrawing();
             window.ClearBackground(BLACK);
