@@ -8,7 +8,7 @@ int main() {
     int screenWidth = 800;
     int screenHeight = 600;
 
-    raylib::Window window(screenWidth, screenHeight, "raylib-cpp - basic window");
+    raylib::Window window(screenWidth, screenHeight, "RayEngine!");
 
     SetTargetFPS(60);
 
