@@ -1,7 +1,9 @@
 #include "Sprite.h"
 
-Sprite::Sprite(const std::string& filename, float scale, float rotation) 
-            : texture(filename),
+Sprite::Sprite(const std::string& filename, float x, float y, float scale, float rotation) 
+            : x(x),
+              y(y),
+              texture(filename),
               scale(scale),
               rotation(rotation)
         {}
@@ -12,7 +14,7 @@ void Sprite::Draw(float x, float y)
 {
     DrawTextureEx(
             this->texture,
-            {x,y},
+            {this->x,this->y},
             this->rotation,
             this->scale,
             WHITE
