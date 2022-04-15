@@ -24,6 +24,7 @@ class CollisionRect
         }
 
         raylib::Rectangle rect;
+        Color color = RED;
 };
 
 #endif
