@@ -12,7 +12,10 @@ float delta = 0.0;
 float speed = 10.0;
 float size = 30.0;
 float MAX = 10.0;
-float MAX_SPEED = 10.0f;
+float MAX_SPEED = 100.0f;
+float VEL_HEAT_UP = 0.9;
+float VEL_COOL_DOWN = 0.6;
+
 
 int main() {
     int screenWidth = 800;
@@ -39,6 +42,9 @@ int main() {
 
         e.Update();
 
+        std::cout << Math::lerp<float>(0,1,0.9) << std::endl;
+
+
         //if(IsKeyDown(KEY_W))
         //{
             //vel.y -= 1;
@@ -59,46 +65,39 @@ int main() {
 
         //if(IsKeyDown(KEY_A))
         //{
-            //vel.x -= 1;
+            //vel.x -= 2;
             //e.isMoving = true;
         //}else 
         //{
             //e.isMoving = false;
+            //vel.x += 1.5;
         //}
 
         if(IsKeyDown(KEY_D))
         {
-            vel.x += 1;
-            e.isMoving = true;
-        }else
-        {
-            e.isMoving = false;
-            vel.x -= 10.01;
+            vel.x += Math::lerp<float>(0, MAX_SPEED, VEL_HEAT_UP);
         }
 
-        if(!e.isMoving)
+        if(IsKeyUp(KEY_D))
         {
-            static int c = 0;
-            std::cout << "Not Moving " << c << std::endl;
-            c++;
-            //vel.x -= 0.01;
-            //vel.y -= 0.01;
+            vel.x -= Math::lerp<float>(0, MAX_SPEED, VEL_COOL_DOWN);
+            //e.isMoving = true;
+        }
 
-            if(vel.x < 0)
-            {
-                vel.x = 0;
-            }
+        if(vel.x > MAX_SPEED)
+        {
+            vel.x = MAX_SPEED;
+        }
 
-            if(vel.y < 0)
-            {
-                vel.y = 0;
-            }
+        if(vel.x < 0)
+        {
+            vel.x = 0;
         }
 
         std::cout << "X " << vel.x << " Y " << vel.y << std::endl;
 
         e.x += vel.x * speed * delta;
-        e.y += vel.y * speed * delta;
+        //e.y += vel.y * speed * delta;
 
         BeginDrawing();
             window.ClearBackground({41, 30, 49});
