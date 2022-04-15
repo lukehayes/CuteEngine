@@ -37,6 +37,7 @@ public:
     float y;
     Sprite sprite;
     CollisionRect colRect;
+    bool isMoving = false;
 };
 
 #endif
