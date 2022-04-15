@@ -1,6 +1,6 @@
 #CXX      =  clang++
 CXX      =  g++
-CXXFLAGS  = -Iinclude -Iinclude/raylib-cpp
+CXXFLAGS  = -Iinclude -Iinclude/raylib-cpp -std=c++20
 LDFLAGS = -lraylib -lm -lpthread
 BIN     = -o bin/app
 OBJ     = obj
