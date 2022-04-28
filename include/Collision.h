@@ -2,7 +2,7 @@
 #define COLLISION_H
 
 #include "raylib.h"
-            #include <iostream>
+#include <iostream>
 
 /**
  * Static helper functions to check for collisions.
