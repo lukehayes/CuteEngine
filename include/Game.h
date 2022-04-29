@@ -2,7 +2,8 @@
 #define GAME_H
 
 #include <string>
-#include <stack>
+#include <vector>
+#include <memory>
 #include "State.h"
 
 /**
@@ -27,14 +28,14 @@ public:
          *
          * @param State* state
          */
-        void addState(const State& state);
+        void addState(const std::shared_ptr<State>& state);
 
 
          int width = 800;
          int height = 600;;
 
 private:
-         std::stack<State> stateContainer;
+         std::vector<std::shared_ptr<State>> stateContainer;
 };
 
 
