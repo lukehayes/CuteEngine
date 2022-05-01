@@ -12,8 +12,14 @@ public:
 
         void Update(float dt) override
         {
-            std::cout << "State Updating..." <<  std::endl;
+            std::cout << "Update" <<  std::endl;
         }
+
+        virtual void Draw() 
+        {
+            DrawRectangleLines(10,10,10,10, GREEN);
+        }
+
 
 private:
 

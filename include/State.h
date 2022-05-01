@@ -14,6 +14,11 @@ public:
          */
         virtual void Update(float dt) = 0;
 
+        /**
+         * Draw the next frame for this state.
+         */
+        virtual void Draw() = 0;
+
 private:
 
 };

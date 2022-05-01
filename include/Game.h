@@ -24,6 +24,12 @@ public:
         void Update(float dt);
 
         /**
+         * Call each draw method on every object in the container.
+         *
+         */
+        void Draw();
+
+        /**
          * Add a State object to the container
          *
          * @param State* state
