@@ -1,7 +1,9 @@
 #ifndef STATE_H
 #define STATE_H
 
-class State
+#include "BasicObject.h"
+
+class State : public BasicObject
 {
 public:
         State() {}
