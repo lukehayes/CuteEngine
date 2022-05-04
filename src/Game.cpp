@@ -15,6 +15,14 @@ void Game::addState(const std::shared_ptr<State>& state)
     this->stateContainer.push_back(state);
 }
 
+void Game::Create()
+{
+    for(auto state : stateContainer)
+    {
+        state->Create();
+    }
+}
+
 void Game::Update(float dt)
 {
     for(auto state : stateContainer)
@@ -33,3 +41,4 @@ void Game::Draw()
         }
     EndDrawing();
 }
+

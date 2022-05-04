@@ -21,6 +21,13 @@ public:
          *
          * @param float dt    Delta time.
          */
+        void Create();
+
+        /**
+         * Update to the next frame.
+         *
+         * @param float dt    Delta time.
+         */
         void Update(float dt);
 
         /**
@@ -44,5 +51,6 @@ private:
          std::vector<std::shared_ptr<State>> stateContainer;
 };
 
+static Game game;
 
 #endif
