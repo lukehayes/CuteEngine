@@ -5,6 +5,7 @@
 #include <vector>
 #include <memory>
 #include "State.h"
+#include <iostream>
 
 /**
  * Singleton class that holds helpers that are beneficial to be accessed globally.
@@ -43,12 +44,18 @@ public:
          */
         void addState(const std::shared_ptr<State>& state);
 
+        void add(State* state)
+        {
+            std::cout << "Adding State Pointer" << std::endl;
+            this->statePtrContainer.push_back(state);
+        }
 
          int width = 800;
          int height = 600;;
 
 private:
          std::vector<std::shared_ptr<State>> stateContainer;
+         std::vector<State*> statePtrContainer;
 };
 
 static Game game;

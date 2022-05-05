@@ -2,22 +2,24 @@
 #define PLAYSTATE_H
 
 #include "State.h"
+#include <memory>
 
 class PlayState : public State
 {
 public:
-        PlayState() { }
+        PlayState() : speed(GetRandomValue(1,50)){ Create(); }
         ~PlayState() {}
 
         void Create() override
         {
+            game.add(this);
         }
 
         void Update(float dt) override
         {
             std::cout << "Update" <<  std::endl;
-            this->position.x += 100 * dt;
-            this->position.y += 100 * dt;
+            this->position.x += 1 * this->speed * dt;
+            this->position.y += 1 * this->speed * dt;
         }
 
         virtual void Draw() 
@@ -27,6 +29,7 @@ public:
 
 
 private:
+        int speed = 1;
 
 };
 

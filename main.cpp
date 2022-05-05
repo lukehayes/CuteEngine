@@ -18,8 +18,11 @@ int main() {
 
     raylib::Window window(screenWidth, screenHeight, "RayEngine!");
 
-    std::shared_ptr<State> ps = std::make_shared<PlayState>();
-    game.addState(ps);
+    PlayState ps;
+    std::cout << ps.health << std::endl;
+    //ps.Create();
+    //std::shared_ptr<State> ps = std::make_shared<PlayState>();
+    //game.addState(ps);
 
     SetTargetFPS(60);
 
