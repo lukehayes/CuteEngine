@@ -11,7 +11,6 @@ class Object : public BasicObject
         ~Object();
 
         Vector2 position;
-        float health;
 };
 
 #endif
