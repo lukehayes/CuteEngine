@@ -11,13 +11,11 @@ Game::~Game() {}
 
 void Game::addState(const std::shared_ptr<State>& state)
 {
-    std::cout << "State Added" << std::endl;
     this->stateContainer.push_back(state);
 }
 
 void Game::Create()
 {
-    std::cout << "Game Create" << std::endl;
     for(auto state : statePtrContainer)
     {
         state->Create();
@@ -26,8 +24,6 @@ void Game::Create()
 
 void Game::Update(float dt)
 {
-    std::cout << statePtrContainer.size() << std::endl;
-    std::cout << "Game Update" << std::endl;
     for(auto state : statePtrContainer)
     {
         state->Update(dt);
@@ -36,7 +32,6 @@ void Game::Update(float dt)
 
 void Game::Draw()
 {
-    std::cout << "Game Draw" << std::endl;
     BeginDrawing();
         ClearBackground(BLACK);
         for(auto state : statePtrContainer)

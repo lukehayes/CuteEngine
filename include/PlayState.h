@@ -17,7 +17,6 @@ public:
 
         void Update(float dt) override
         {
-            std::cout << "Update" <<  std::endl;
             this->position.x += 1 * this->speed * dt;
             this->position.y += 1 * this->speed * dt;
         }
