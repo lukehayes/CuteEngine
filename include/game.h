@@ -20,6 +20,7 @@ struct Game
 		);
 
     	SetTargetFPS(60);
+		SetExitKey(KEY_Q);
 	}
 };
 
