@@ -4,23 +4,19 @@
 float delta = 0.0;
 
 int main() {
-    int screenWidth = 800;
-    int screenHeight = 600;
-	
-	InitWindow(
-		game.width,
-		game.height,
-		game.title.c_str()
-	);
 
+	game.init();
 
-    SetTargetFPS(60);
-
-    while (WindowShouldClose())
+    while (!WindowShouldClose())
     {
         delta = GetFrameTime();
+
+		BeginDrawing();
+			ClearBackground(GRAY);
+        EndDrawing();
     }
 
+	CloseWindow();
 
     return 0;
 }
