@@ -1,13 +1,12 @@
 #pragma once
 
 #include "raylib.h"
-#include <string>
 
 struct Game
 {
 	int width         = 640;
 	int height        = 480;
-	std::string title = "Game";
+	const char* title = "Game";
 
 	/**
 	 * Initialize Raylib etc.
@@ -17,7 +16,7 @@ struct Game
 		InitWindow(
 			this->width,
 			this->height,
-			this->title.c_str()
+			this->title
 		);
 
     	SetTargetFPS(60);
