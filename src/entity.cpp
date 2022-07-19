@@ -1,12 +1,20 @@
 #include "entity/entity.h"
 #include <cmath>
 
-Entity::Entity()
-{
-	position.x = GetRandomValue(0,640);
-	position.y = GetRandomValue(0,480);
-	speed = GetRandomValue(0,250);
-}
+Entity::Entity(): 
+	position(100,100),
+	speed(GetRandomValue(0,100))
+{}
+
+Entity::Entity(const Vector2& position)
+	:position(position),
+	speed(100)
+{}
+
+Entity::Entity(const Vector2& position, const float speed)
+	:position(position),
+	speed(speed)
+{}
 
 Entity::~Entity()
 {
