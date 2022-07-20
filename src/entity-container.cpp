@@ -24,5 +24,9 @@ void EntityContainer::add(const std::shared_ptr<Entity>& entity)
 	this->entities.push_back(entity);
 }
 
+size_t EntityContainer::size() const
+{
+	return this->entities.size();
+}
 
 EntityContainer entityContainer = {};

@@ -19,6 +19,8 @@ public:
 
 	void add(const std::shared_ptr<Entity>& entity);
 
+	size_t size() const;
+
 	std::vector<std::shared_ptr<Entity>> entities;
 };
 
