@@ -7,7 +7,7 @@ void EntityContainer::render()
 {
 	for(auto &e : this->entities)
 	{
-		e.render();
+		e->render();
 	}
 }
 
@@ -15,11 +15,11 @@ void EntityContainer::update(double delta)
 {
 	for(auto &e : this->entities)
 	{
-		e.update(delta);
+		e->update(delta);
 	}
 }
 
-void EntityContainer::add(const Entity& entity)
+void EntityContainer::add(const std::shared_ptr<Entity>& entity)
 {
 	this->entities.push_back(entity);
 }
