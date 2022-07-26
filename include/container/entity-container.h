@@ -17,11 +17,11 @@ public:
 
 	void update(double delta);
 
-	void add(const std::shared_ptr<Entity>& entity);
+	void add(std::unique_ptr<Entity>& entity);
 
 	size_t size() const;
 
-	std::vector<std::shared_ptr<Entity>> entities;
+	std::vector<std::unique_ptr<Entity>> entities;
 };
 
 extern EntityContainer entityContainer;
