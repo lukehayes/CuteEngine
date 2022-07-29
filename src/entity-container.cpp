@@ -29,5 +29,14 @@ size_t EntityContainer::size() const
 {
 	return this->entities.size();
 }
+void EntityContainer::fill(int size) 
+{
+	for(int i = 0; i <= size; i++)
+	{
+		Vector2 v{(float)i * 10, (float)i * 10};
+		std::shared_ptr<Entity> e = std::make_shared<Entity>(v);
+		entityContainer.add(e);
+	}
+}
 
 EntityContainer entityContainer = {};

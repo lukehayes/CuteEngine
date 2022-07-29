@@ -22,6 +22,16 @@ public:
 	size_t size() const;
 
 	std::vector<std::shared_ptr<Entity>> entities;
+
+	/**
+	 * Fill the container with SIZE amount of entities.
+	 *
+	 *  @param int size    The amount of entities to add.
+	 *
+	 *  @return void.
+	 *
+	 **/
+	void fill(int size);
 };
 
 extern EntityContainer entityContainer;
