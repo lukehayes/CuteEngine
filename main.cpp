@@ -10,13 +10,14 @@ int main() {
 
 	game.init();
 
-	std::unique_ptr<Entity> e = std::make_unique<Entity>();
+	std::shared_ptr<Entity> e = std::make_shared<Entity>();
 	entityContainer.add(e);
 
-	std::unique_ptr<Entity> p = std::make_unique<Player>();
+	std::shared_ptr<Entity> p = std::make_shared<Player>();
 	entityContainer.add(p);
 
-
+	entityContainer.fill(10);
+	
     while (!WindowShouldClose())
     {
         delta = GetFrameTime();
