@@ -10,8 +10,8 @@ void Player::render()
 	DrawRectangle(
 			position.x,
 			position.y,
-			40,
-			40,
+			size.x,
+			size.y,
 			RED
 			);
 }

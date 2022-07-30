@@ -3,17 +3,26 @@
 
 Entity::Entity(): 
 	position(100,100),
+	size(100,100),
 	speed(GetRandomValue(0,100))
 {}
 
 Entity::Entity(const Vector2& position)
 	:position(position),
-	speed(100)
+	 size(10),
+	 speed(GetRandomValue(0,100))
 {}
 
-Entity::Entity(const Vector2& position, const float speed)
+Entity::Entity(const Vector2& position, const Vector2& size)
 	:position(position),
-	speed(speed)
+	 size(size),
+	 speed(100)
+{}
+
+Entity::Entity(const Vector2& position, const Vector2& size, const float speed)
+	:position(position),
+	 size(size),
+	 speed(speed)
 {}
 
 Entity::~Entity()
@@ -25,8 +34,8 @@ void Entity::render()
 	DrawRectangle(
 			position.x,
 			position.y,
-			10,
-			10,
+			size.x,
+			size.y,
 			DARKGRAY
 			);
 }
