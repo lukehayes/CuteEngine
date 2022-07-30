@@ -11,5 +11,6 @@ class QuadTree
 	public:
 		QuadTree() {}
 		~QuadTree() {}
+		void subdivide() {}
 
 };
