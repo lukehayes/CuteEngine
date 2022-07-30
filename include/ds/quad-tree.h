@@ -11,6 +11,8 @@ class QuadTree
 	public:
 		QuadTree() {}
 		~QuadTree() {}
+		QuadTree() default {}
+		virtual ~QuadTree() {}
 		void subdivide() {}
 
 };
