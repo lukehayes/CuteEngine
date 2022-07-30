@@ -20,5 +20,6 @@ class Entity : public GameObject
 		virtual void update(double dt);
 
 		Vector2 position;
+		Vector2 size;
 		float speed;
 };
