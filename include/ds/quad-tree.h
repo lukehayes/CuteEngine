@@ -10,9 +10,9 @@ class QuadTree
 {
 	public:
 		QuadTree() {}
-		~QuadTree() {}
-		QuadTree() default {}
 		virtual ~QuadTree() {}
 		void subdivide() {}
 
+		constexpr MAX_QUADS = 4;
+		constexpr MAX_ITERATIONS = 6;
 };
