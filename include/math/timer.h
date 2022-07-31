@@ -6,8 +6,8 @@
 class Timer
 {
 	public:
-		Timer(double time, bool oneshot)
-			: time(time), oneshot(oneshot) {}
+		Timer(double time, bool repeatable)
+			: time(time), repeatable(repeatable) {}
 
 		/**
 		 * Get the currently elapsed time of the timer.
@@ -19,12 +19,17 @@ class Timer
 			return this->elapsed;
 		}
 
+		/**
+		 * Get the currently elapsed time of the timer.
+		 *
+		 * @return double.
+		 */
 		template <typename fn>
 		int update(double dt, fn&& lambda)
 		{
 			this->elapsed += dt;
 
-			if(this->oneshot && !this->finished)
+			if(this->repeatable && !this->finished)
 			{
 				this->finished = true;
 				lambda();
@@ -52,7 +57,7 @@ class Timer
 
 	private:
 		double time    = 1.0;
-		bool oneshot   = false;
+		bool repeatable   = false;
 		double elapsed = 0.0;
 		bool finished  = false;
 };
