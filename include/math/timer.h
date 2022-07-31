@@ -9,6 +9,11 @@ class Timer
 		Timer(double time, bool oneshot)
 			: time(time), oneshot(oneshot) {}
 
+		/**
+		 * Get the currently elapsed time of the timer.
+		 *
+		 * @return double.
+		 */
 		double getElapsedTime()
 		{
 			return this->elapsed;
@@ -19,20 +24,36 @@ class Timer
 		{
 			this->elapsed += dt;
 
-			if(this->elapsed > time)
+			if(this->oneshot && !this->finished)
 			{
+				this->finished = true;
 				lambda();
-
-				if(this->oneshot)
+				return 0;
+			}else
+			{
+				if(this->elapsed > time)
 				{
-					return 0;
+					lambda();
+					this->elapsed = 0;
+					this->finished = false;
 				}
 			}
+		}
+		
+		/**
+		 * Has the timer finished?
+		 *
+		 * @return bool.
+		 */
+		bool hasFinished() const
+		{
+			return this->finished;
 		}
 
 	private:
 		double time    = 1.0;
 		bool oneshot   = false;
 		double elapsed = 0.0;
+		bool finished  = false;
 };
 
