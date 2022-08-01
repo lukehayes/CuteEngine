@@ -24,5 +24,5 @@ class Entity : public GameObject
 
 		Vector2 position;
 		Vector2 size;
-		float speed;
+		double  speed;
 };
