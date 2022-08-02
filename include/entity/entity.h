@@ -2,6 +2,7 @@
 
 #include "game-object.h"
 #include "raylib.h"
+#include "math/timer.h"
 #include "collision/collision_rect.h"
 
 
@@ -25,6 +26,6 @@ class Entity : public GameObject
 
 		Vector2 position;
 		Vector2 size;
-		CollisionRect collisionRect = {position, size};
 		double  speed;
+		CollisionRect rect{{position.x + 40, position.y, size.x,size.y}};
 };
