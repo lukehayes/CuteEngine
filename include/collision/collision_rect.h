@@ -6,13 +6,22 @@
 class CollisionRect
 {
 public:
-	CollisionRect(const Vector2& position, const Vector2& size) 
-		: position(position),
-		  size(size)
+	CollisionRect(const Rectangle& rect) 
+		: rect(rect)
 	{}
 
 	~CollisionRect(){}
 
-	Vector2 position;
-	Vector2 size;
+	/**
+	 * Get the internal rect used for collision detection
+	 *
+	 * @return Rectangle.
+	 */
+	Rectangle getRect() const 
+	{
+		return this->rect;
+	}
+
+private:	
+	Rectangle rect;
 };
