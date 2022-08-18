@@ -11,17 +11,7 @@ struct Game
 	/**
 	 * Initialize Raylib etc.
 	 */
-	void init()
-	{
-		InitWindow(
-			this->width,
-			this->height,
-			this->title
-		);
-
-    	SetTargetFPS(60);
-		SetExitKey(KEY_Q);
-	}
+	void init();
 };
 
 extern Game game;
