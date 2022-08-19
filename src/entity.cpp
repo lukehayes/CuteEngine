@@ -48,13 +48,7 @@ void Entity::render()
 			DARKGRAY
 			);
 
-	DrawRectangleLinesEx(
-			rect.getRect(),
-			rect.thickness,
-			RED
-	);
-
-	// this->drawCollisionRect();
+	this->drawCollisionRect();
 }
 
 void Entity::update(double dt)
