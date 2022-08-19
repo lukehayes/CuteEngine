@@ -29,12 +29,19 @@ size_t EntityContainer::size() const
 {
 	return this->entities.size();
 }
+
 void EntityContainer::fill(int size) 
 {
 	for(int i = 0; i <= size; i++)
 	{
-		Vector2 v{(float)i * 10, (float)i * 10};
-		std::shared_ptr<Entity> e = std::make_shared<Entity>(v);
+		float rx = GetRandomValue(10,400);
+		float ry = GetRandomValue(10,400);
+		float rw = GetRandomValue(10,30);
+		float rh = GetRandomValue(10,30);
+		float speed = GetRandomValue(1,130);
+		Vector2 p{rx,ry};
+		Vector2 s{rw,rh};
+		std::shared_ptr<Entity> e = std::make_shared<Entity>(p,s, speed);
 		entityContainer.add(e);
 	}
 }
