@@ -7,7 +7,8 @@ class CollisionRect
 {
 public:
 	CollisionRect(const Rectangle& rect) 
-		: rect(rect)
+		: rect(rect),
+			thickness(1)
 	{}
 
 	~CollisionRect(){}
@@ -22,6 +23,8 @@ public:
 		return this->rect;
 	}
 
-private:	
+// private:	
 	Rectangle rect;
+	float thickness;
+
 };
