@@ -125,5 +125,6 @@ $RECYCLE.BIN/
 
 bin/
 obj/
+.cache
 
 # End of https://www.toptal.com/developers/gitignore/api/c++,cmake,osx,linux,windows
