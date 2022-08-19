@@ -24,6 +24,8 @@ class Entity : public GameObject
 		virtual void render();
 		virtual void update(double dt);
 
+		virtual void drawCollisionRect();
+
 		Vector2 position;
 		Vector2 size;
 		double  speed;

@@ -12,8 +12,10 @@ void Player::render()
 			position.y,
 			size.x,
 			size.y,
-			RED
+			BLUE
 			);
+
+	this->drawCollisionRect();
 }
 void Player::update(double dt)
 {

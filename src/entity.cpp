@@ -29,16 +29,17 @@ Entity::~Entity()
 {
 }
 
+void Entity::drawCollisionRect()
+{
+	DrawRectangleLinesEx(
+			rect.getRect(),
+			2,
+			RED
+	);
+}
+
 void Entity::render()
 {
-	DrawRectangle(
-			rect.getRect().x,
-			rect.getRect().y,
-			rect.getRect().width,
-			rect.getRect().height,
-			DARKGRAY
-			);
-
 	DrawRectangle(
 			position.x,
 			position.y,
@@ -47,6 +48,13 @@ void Entity::render()
 			DARKGRAY
 			);
 
+	DrawRectangleLinesEx(
+			rect.getRect(),
+			rect.thickness,
+			RED
+	);
+
+	// this->drawCollisionRect();
 }
 
 void Entity::update(double dt)
@@ -56,4 +64,7 @@ void Entity::update(double dt)
 
 	position.x += std::cos(c) * speed * dt;
 	position.y += std::sin(c) * speed * dt;
+
+	rect.rect.x += std::cos(c) * speed * dt;
+	rect.rect.y += std::sin(c) * speed * dt;
 }
