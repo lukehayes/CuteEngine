@@ -1,4 +1,6 @@
+#pragma once
 #include "entity/entity.h"
+#include <raylib.h>
 #include <string>
 
 class Sprite : public Entity
@@ -18,26 +20,7 @@ public:
 
 private:
   std::string imagePath;
-  Image imageObject;
+  Texture2D   texture;
   
 };
-
-Sprite::Sprite(const std::string imagePath)
-    : imagePath(imagePath),
-    imageObject(LoadImage(imagePath.c_str()))
-{
-}
-
-Sprite::~Sprite()
-{
-  UnloadImage(this->imageObject);
-}
-
-void Sprite::render() 
-{
-}
-
-void Sprite::update(double dt)
-{
-}
 
