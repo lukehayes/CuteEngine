@@ -33,7 +33,7 @@ void Entity::drawCollisionRect()
 {
 	DrawRectangleLinesEx(
 			rect.getRect(),
-			2,
+			rect.thickness,
 			RED
 	);
 }
