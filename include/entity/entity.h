@@ -27,5 +27,5 @@ class Entity : public GameObject
 		Vector2 position;
 		Vector2 size;
 		double  speed;
-		CollisionRect rect{{position.x + 40, position.y, size.x,size.y}};
+		CollisionRect rect{{position.x, position.y, size.x,size.y}};
 };

@@ -32,12 +32,21 @@ Entity::~Entity()
 void Entity::render()
 {
 	DrawRectangle(
+			rect.getRect().x,
+			rect.getRect().y,
+			rect.getRect().width,
+			rect.getRect().height,
+			DARKGRAY
+			);
+
+	DrawRectangle(
 			position.x,
 			position.y,
 			size.x,
 			size.y,
 			DARKGRAY
 			);
+
 }
 
 void Entity::update(double dt)
