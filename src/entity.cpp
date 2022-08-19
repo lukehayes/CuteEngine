@@ -1,15 +1,16 @@
 #include "entity/entity.h"
 #include <cmath>
+#include "raylib.h"
 
 Entity::Entity(): 
-	position(100,100),
-	size(100,100),
+	position({100,100}),
+	size({100,100}),
 	speed(GetRandomValue(0,100))
 {}
 
 Entity::Entity(const Vector2& position)
 	:position(position),
-	 size(10),
+	 size({10,10}),
 	 speed(GetRandomValue(0,100))
 {}
 
