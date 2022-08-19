@@ -3,6 +3,7 @@
 #include "entity/entity.h"
 #include "entity/player.h"
 #include "container/entity-container.h"
+#include "sprite/sprite.h"
 
 float delta = 0.0;
 
@@ -17,6 +18,8 @@ int main() {
 	entityContainer.add(p);
 
 	entityContainer.fill(10);
+	std::shared_ptr<Entity> sprite = std::make_shared<Sprite>("assets/bernie.png");
+	entityContainer.add(sprite);
 	
     while (!WindowShouldClose())
     {
