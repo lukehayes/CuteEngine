@@ -1,10 +1,14 @@
 #include "sprite/sprite.h"
 #include<cmath>
+#include "container/entity-container.h"
 
 Sprite::Sprite(const std::string imagePath)
     : imagePath(imagePath),
       texture(LoadTexture(imagePath.c_str()))
 {
+    // this->createEntityPtr();
+	std::shared_ptr<Entity> e = std::make_shared<Sprite>(*this);
+	entityContainer.add(e);
 }
 
 Sprite::~Sprite()
@@ -30,3 +34,8 @@ void Sprite::update(double dt)
 	position.y += std::sin(c) * speed * dt;
 }
 
+void Sprite::createEntityPtr()
+{
+	std::shared_ptr<Entity> e = std::make_shared<Sprite>(*this);
+	entityContainer.add(e);
+}

@@ -17,6 +17,8 @@ public:
   virtual void render();
 	virtual void update(double dt);
 
+  void createEntityPtr();
+
 
 private:
   std::string imagePath;

@@ -4,6 +4,7 @@
 #include "raylib.h"
 #include "math/timer.h"
 #include "collision/collision_rect.h"
+#include <memory>
 
 
 /**
@@ -30,4 +31,9 @@ class Entity : public GameObject
 		Vector2 size;
 		double  speed;
 		CollisionRect rect{{position.x, position.y, size.x,size.y}};
+
+
+	private:
+		void createEntityPtr();
+
 };

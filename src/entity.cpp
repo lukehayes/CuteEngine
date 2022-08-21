@@ -1,33 +1,48 @@
 #include "entity/entity.h"
 #include <cmath>
 #include "raylib.h"
+#include "container/entity-container.h"
 
 Entity::Entity(): 
 	position({100,100}),
 	size({100,100}),
 	speed(GetRandomValue(0,100))
-{}
+{
+	this->createEntityPtr();
+}
 
 Entity::Entity(const Vector2& position)
 	:position(position),
 	 size({10,10}),
 	 speed(GetRandomValue(0,100))
-{}
+{
+	this->createEntityPtr();
+}
 
 Entity::Entity(const Vector2& position, const Vector2& size)
 	:position(position),
 	 size(size),
 	 speed(100)
-{}
+{
+	this->createEntityPtr();
+}
 
 Entity::Entity(const Vector2& position, const Vector2& size, const float speed)
 	:position(position),
 	 size(size),
 	 speed(speed)
-{}
+{
+	this->createEntityPtr();
+}
 
 Entity::~Entity()
 {
+}
+
+void Entity::createEntityPtr()
+{
+	std::shared_ptr<Entity> e = std::make_shared<Entity>(*this);
+	entityContainer.add(e);
 }
 
 void Entity::drawCollisionRect()
