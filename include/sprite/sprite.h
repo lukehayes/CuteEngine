@@ -6,7 +6,7 @@
 class Sprite : public Entity
 {
 public:
-  Sprite(const std::string imagePath);
+  Sprite(const std::string imagePath, const Vector2& position);
 
   Sprite(Sprite &&) = default;
   Sprite(const Sprite &) = default;

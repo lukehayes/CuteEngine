@@ -2,8 +2,8 @@
 #include<cmath>
 #include "container/entity-container.h"
 
-Sprite::Sprite(const std::string imagePath)
-    : imagePath(imagePath),
+Sprite::Sprite(const std::string imagePath, const Vector2& position)
+    : Entity(position),
       texture(LoadTexture(imagePath.c_str()))
 {
     // this->createEntityPtr();
