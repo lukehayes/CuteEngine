@@ -14,5 +14,7 @@ public:
 	void render();
 	void update(double dt);
 
+	void shoot();
+
 	Color color;
 };

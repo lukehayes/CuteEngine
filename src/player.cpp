@@ -1,12 +1,13 @@
 #include "entity/player.h"
-#include <iostream>
 #include "raylib.h"
 #include <cmath>
+#include <iostream>
+
 Player::Player(const Vector2& position)
 	: Entity(position, {50,50}),
 		color({50,50,100, 255})
 
-Player::Player() {}
+{}
 Player::~Player() {}
 
 void Player::render()
@@ -16,11 +17,20 @@ void Player::render()
 			position.y,
 			size.x,
 			size.y,
-			BLUE
+			color
 			);
 
-	this->drawCollisionRect();
+	// this->drawCollisionRect();
 }
 void Player::update(double dt)
 {
+	shoot();
+}
+
+void Player::shoot()
+{
+	if(IsKeyPressed(KEY_SPACE))
+	{
+		std::cout << "Shoot" << std::endl;
+	}
 }
