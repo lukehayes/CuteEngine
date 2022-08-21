@@ -1,5 +1,7 @@
 #pragma once
 
+#include "raylib.h"
+
 /**
  * Class defines a basic collision rect for simple collision detection.
  */
