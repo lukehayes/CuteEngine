@@ -4,6 +4,7 @@
 #include "entity/player.h"
 #include "container/entity-container.h"
 #include "sprite/sprite.h"
+#include <iostream>
 
 float delta = 0.0;
 
@@ -12,27 +13,22 @@ int main() {
 	game.init();
 
 	std::shared_ptr<Entity> e = std::make_shared<Entity>();
-	entityContainer.add(e);
-
-	std::shared_ptr<Entity> p = std::make_shared<Player>();
-	entityContainer.add(p);
-
-	entityContainer.fill(10);
-	std::shared_ptr<Entity> sprite = std::make_shared<Sprite>("assets/bernie.png");
-	entityContainer.add(sprite);
+	std::shared_ptr<Entity> a = std::make_shared<Entity>(Vector2(400,400), Vector2(20,20), 130);
+	// Sprite sprite("assets/bernie.png");
+	std::cout << entityContainer.size() << std::endl;
 	
     while (!WindowShouldClose())
     {
-        delta = GetFrameTime();
+    	delta = GetFrameTime();
 
-		entityContainer.update(delta);
+			entityContainer.update(delta);
 
-		BeginDrawing();
+			BeginDrawing();
 			ClearBackground(GRAY);
 
 			entityContainer.render();
 
-        EndDrawing();
+      EndDrawing();
     }
 
 	CloseWindow();
