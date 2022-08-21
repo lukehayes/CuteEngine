@@ -31,6 +31,7 @@ class Entity : public GameObject
 		Vector2 size;
 		double  speed;
 		CollisionRect rect{{position.x, position.y, size.x,size.y}};
+		Color color;
 
 
 	private:

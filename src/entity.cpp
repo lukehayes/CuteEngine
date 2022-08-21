@@ -6,7 +6,8 @@
 Entity::Entity(): 
 	position({100,100}),
 	size({100,100}),
-	speed(GetRandomValue(0,100))
+	speed(GetRandomValue(0,100)),
+	color(DARKGRAY)
 {
 	this->createEntityPtr();
 }
@@ -14,7 +15,8 @@ Entity::Entity():
 Entity::Entity(const Vector2& position)
 	:position(position),
 	 size({10,10}),
-	 speed(GetRandomValue(0,100))
+	 speed(GetRandomValue(0,100)),
+	 color(DARKGRAY)
 {
 	this->createEntityPtr();
 }
@@ -22,7 +24,8 @@ Entity::Entity(const Vector2& position)
 Entity::Entity(const Vector2& position, const Vector2& size)
 	:position(position),
 	 size(size),
-	 speed(100)
+	 speed(100),
+	 color(DARKGRAY)
 {
 	this->createEntityPtr();
 }
@@ -30,7 +33,8 @@ Entity::Entity(const Vector2& position, const Vector2& size)
 Entity::Entity(const Vector2& position, const Vector2& size, const float speed)
 	:position(position),
 	 size(size),
-	 speed(speed)
+	 speed(speed),
+	 color(DARKGRAY)
 {
 	this->createEntityPtr();
 }
@@ -61,7 +65,7 @@ void Entity::render()
 			position.y,
 			size.x,
 			size.y,
-			DARKGRAY
+			color
 			);
 
 	this->drawCollisionRect();
