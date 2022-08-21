@@ -12,24 +12,21 @@ int main() {
 
 	game.init();
 
-	std::shared_ptr<Entity> e = std::make_shared<Sprite>("assets/bernie.png", Vector2{ 100,111});
-	std::shared_ptr<Entity> a = std::make_shared<Entity>(Vector2{ 40,40}, Vector2{100,200});
+	// std::shared_ptr<Entity> e = std::make_shared<Sprite>("assets/bernie.png", Vector2{ 100,111});
+	std::shared_ptr<Entity> p = std::make_shared<Player>(Vector2{((float)game.width - 25)/ 2,((float)game.height - 25) / 2});
 
   while (!WindowShouldClose())
   {
     delta = GetFrameTime();
 
-		// entityContainer.update(delta);
-		a->update(delta);
-		e->update(delta);
+		p->update(delta);
+		// e->update(delta);
 
 		ClearBackground(GRAY);
 		BeginDrawing();
 
-		// entityContainer.render();
-
-		a->render();
-		e->render();
+		p->render();
+		// e->render();
 
     EndDrawing();
   }
