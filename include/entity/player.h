@@ -8,9 +8,11 @@
 class Player : public Entity
 {
 public:
-	Player();
+	Player(const Vector2& position);
 	~Player();
 
 	void render();
 	void update(double dt);
+
+	Color color;
 };

@@ -1,6 +1,10 @@
 #include "entity/player.h"
 #include <iostream>
+#include "raylib.h"
 #include <cmath>
+Player::Player(const Vector2& position)
+	: Entity(position, {50,50}),
+		color({50,50,100, 255})
 
 Player::Player() {}
 Player::~Player() {}
