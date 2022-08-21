@@ -22,7 +22,6 @@ void EntityContainer::update(double delta)
 void EntityContainer::add(std::shared_ptr<Entity>& entity)
 {
 	this->entities.push_back(entity);
-	//this->entities.push_back(std::move(entity));
 }
 
 size_t EntityContainer::size() const
