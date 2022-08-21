@@ -12,27 +12,30 @@ int main() {
 
 	game.init();
 
-	std::shared_ptr<Entity> e = std::make_shared<Entity>();
-	std::shared_ptr<Entity> a = std::make_shared<Entity>(Vector2(400,400), Vector2(20,20), 130);
-	// Sprite sprite("assets/bernie.png");
-	std::cout << entityContainer.size() << std::endl;
-	
-    while (!WindowShouldClose())
-    {
-    	delta = GetFrameTime();
+	std::shared_ptr<Entity> e = std::make_shared<Sprite>("assets/bernie.png", Vector2{ 100,111});
+	std::shared_ptr<Entity> a = std::make_shared<Entity>(Vector2{ 40,40}, Vector2{100,200});
 
-			entityContainer.update(delta);
+  while (!WindowShouldClose())
+  {
+    delta = GetFrameTime();
 
-			BeginDrawing();
-			ClearBackground(GRAY);
+		// entityContainer.update(delta);
+		a->update(delta);
+		e->update(delta);
 
-			entityContainer.render();
+		ClearBackground(GRAY);
+		BeginDrawing();
 
-      EndDrawing();
-    }
+		// entityContainer.render();
+
+		a->render();
+		e->render();
+
+    EndDrawing();
+  }
 
 	CloseWindow();
 
-    return 0;
+  return 0;
 }
 
