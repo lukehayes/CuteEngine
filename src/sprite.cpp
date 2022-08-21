@@ -9,6 +9,9 @@ Sprite::Sprite(const std::string imagePath, const Vector2& position)
     // this->createEntityPtr();
 	std::shared_ptr<Entity> e = std::make_shared<Sprite>(*this);
 	entityContainer.add(e);
+
+	this->rect.rect.width = texture.width;
+	this->rect.rect.height = texture.height;
 }
 
 Sprite::~Sprite()
