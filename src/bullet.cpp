@@ -6,7 +6,7 @@ Bullet::Bullet(const Vector2& position, const Vector2& target)
 		color({150,50,200, 255}),
     target(target),
     angle(this->getTargetAngle()),
-    damage(1)
+    damage(1) {}
 
 {
 }
