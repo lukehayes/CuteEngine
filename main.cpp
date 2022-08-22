@@ -24,7 +24,7 @@ int main() {
 
 		entityContainer.update(delta);
 
-		if(IsKeyPressed(KEY_SPACE))
+		if(IsMouseButtonPressed(0))
 		{
 			std::shared_ptr<Entity> b = std::make_shared<Bullet>(Vector2{500,100}, GetMousePosition());
 			entityContainer.add(b);
