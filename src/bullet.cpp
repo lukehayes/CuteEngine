@@ -8,16 +8,18 @@ Bullet::Bullet(const Vector2& position, const Vector2& target)
     angle(this->getTargetAngle()),
     damage(1) {}
 
-{
-}
-
-Bullet::~Bullet()
-{
-}
+Bullet::~Bullet() {}
 
 void Bullet::render()
 {
-  Entity::render();
+	DrawRectangle(
+			position.x,
+			position.y,
+			size.x,
+			size.y,
+			color
+			);
+
 }
 void Bullet::update(double dt)
 {
