@@ -18,11 +18,17 @@ int main() {
 	std::shared_ptr<Entity> e = std::make_shared<Entity>(Vector2{200,500});
 	std::shared_ptr<Entity> b = std::make_shared<Bullet>(Vector2{500,100}, e->position);
 
-	// b->target = e->position;
-
   while (!WindowShouldClose())
   {
     delta = GetFrameTime();
+
+		entityContainer.update(delta);
+
+		if(IsKeyPressed(KEY_SPACE))
+		{
+			std::shared_ptr<Entity> b = std::make_shared<Bullet>(Vector2{500,100}, GetMousePosition());
+			entityContainer.add(b);
+		}
 
 		p->update(delta);
 		b->update(delta);
@@ -34,6 +40,8 @@ int main() {
 		p->render();
 		b->render();
 		e->render();
+
+		entityContainer.render();
 
     EndDrawing();
   }
