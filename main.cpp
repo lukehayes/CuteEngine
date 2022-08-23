@@ -1,4 +1,5 @@
 #include "common/types.h"
+#include "container/typed-container.h"
 
 float delta = 0.0;
 
@@ -8,16 +9,28 @@ int main() {
 
     std::shared_ptr<Entity> p = std::make_shared<Player>(Vector2{((float)game.width - 25)/ 2,((float)game.height - 25) / 2});
 
+    TypedContainer<Bullet> bullets;
+
     while (!WindowShouldClose())
     {
         delta = GetFrameTime();
 
-        entityContainer.update(delta);
+        bullets.update(delta);
+        std::cout << bullets.entities.size() << std::endl;
 
-        if(IsMouseButtonPressed(0))
+        if(IsMouseButtonDown(0))
         {
-            std::shared_ptr<Entity> b = std::make_shared<Bullet>(p->position, GetMousePosition());
-            entityContainer.add(b);
+            for(int i = 0; i <= 10000; i++)
+            {
+                std::shared_ptr<Bullet> b = std::make_shared<Bullet>(p->position, GetMousePosition());
+                bullets.add(b);
+            }
+        }
+
+        if(IsMouseButtonDown(1))
+        {
+            bullets.entities.clear();
+            std::cout << "Cleared" << std::endl;
         }
 
         p->update(delta);
@@ -25,8 +38,7 @@ int main() {
         ClearBackground(GRAY);
         BeginDrawing();
             p->render();
-        entityContainer.render();
-
+            bullets.render();
         EndDrawing();
     }
 
