@@ -1,11 +1,4 @@
-#include "raylib.h"
-#include "game.h"
-#include "entity/entity.h"
-#include "bullet/bullet.h"
-#include "entity/player.h"
-#include "container/entity-container.h"
-#include "sprite/sprite.h"
-#include <iostream>
+#include "common/types.h"
 
 float delta = 0.0;
 
