@@ -9,7 +9,8 @@ Entity::Entity():
 	speed(GetRandomValue(0,100)),
 	color(DARKGRAY)
 {
-	this->createEntityPtr();
+	// TODO Fix this rendering bug. Entity creation disabled for now.
+	// this->createEntityPtr();
 }
 
 Entity::Entity(const Vector2& position)
@@ -18,7 +19,8 @@ Entity::Entity(const Vector2& position)
 	 speed(GetRandomValue(0,100)),
 	 color(DARKGRAY)
 {
-	this->createEntityPtr();
+	// TODO Fix this rendering bug. Entity creation disabled for now.
+	// this->createEntityPtr();
 }
 
 Entity::Entity(const Vector2& position, const Vector2& size)
@@ -27,7 +29,8 @@ Entity::Entity(const Vector2& position, const Vector2& size)
 	 speed(100),
 	 color(DARKGRAY)
 {
-	this->createEntityPtr();
+	// TODO Fix this rendering bug. Entity creation disabled for now.
+	// this->createEntityPtr();
 }
 
 Entity::Entity(const Vector2& position, const Vector2& size, const float speed)
@@ -36,7 +39,8 @@ Entity::Entity(const Vector2& position, const Vector2& size, const float speed)
 	 speed(speed),
 	 color(DARKGRAY)
 {
-	this->createEntityPtr();
+	// TODO Fix this rendering bug. Entity creation disabled for now.
+	// this->createEntityPtr();
 }
 
 Entity::~Entity()
