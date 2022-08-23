@@ -4,43 +4,34 @@ float delta = 0.0;
 
 int main() {
 
-	game.init();
+    game.init();
 
-	// std::shared_ptr<Entity> e = std::make_shared<Sprite>("assets/bernie.png", Vector2{ 100,111});
-	std::shared_ptr<Entity> p = std::make_shared<Player>(Vector2{((float)game.width - 25)/ 2,((float)game.height - 25) / 2});
-	std::shared_ptr<Entity> e = std::make_shared<Entity>(Vector2{200,500});
-	std::shared_ptr<Entity> b = std::make_shared<Bullet>(Vector2{500,100}, e->position);
+    std::shared_ptr<Entity> p = std::make_shared<Player>(Vector2{((float)game.width - 25)/ 2,((float)game.height - 25) / 2});
 
-  while (!WindowShouldClose())
-  {
-    delta = GetFrameTime();
+    while (!WindowShouldClose())
+    {
+        delta = GetFrameTime();
 
-		entityContainer.update(delta);
+        entityContainer.update(delta);
 
-		if(IsMouseButtonPressed(0))
-		{
-			std::shared_ptr<Entity> b = std::make_shared<Bullet>(Vector2{500,100}, GetMousePosition());
-			entityContainer.add(b);
-		}
+        if(IsMouseButtonPressed(0))
+        {
+            std::shared_ptr<Entity> b = std::make_shared<Bullet>(p->position, GetMousePosition());
+            entityContainer.add(b);
+        }
 
-		p->update(delta);
-		b->update(delta);
-		// e->update(delta);
+        p->update(delta);
 
-		ClearBackground(GRAY);
-		BeginDrawing();
+        ClearBackground(GRAY);
+        BeginDrawing();
+            p->render();
+        entityContainer.render();
 
-		p->render();
-		b->render();
-		e->render();
+        EndDrawing();
+    }
 
-		entityContainer.render();
+    CloseWindow();
 
-    EndDrawing();
-  }
-
-	CloseWindow();
-
-  return 0;
+    return 0;
 }
 
