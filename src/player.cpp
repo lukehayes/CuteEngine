@@ -4,33 +4,33 @@
 #include <iostream>
 
 Player::Player(const Vector2& position)
-	: Entity(position, {50,50}, GetRandomValue(10,100)),
-		color({50,50,100, 255})
+    : Entity(position, {20,20}, GetRandomValue(10,100)),
+    color({50,50,100, 255})
 
 {}
 Player::~Player() {}
 
 void Player::render()
 {
-	DrawRectangle(
-			position.x,
-			position.y,
-			size.x,
-			size.y,
-			color
-			);
+    DrawRectangle(
+            position.x,
+            position.y,
+            size.x,
+            size.y,
+            color
+            );
 
-	// this->drawCollisionRect();
+    // this->drawCollisionRect();
 }
 void Player::update(double dt)
 {
-	shoot();
+    shoot();
 }
 
 void Player::shoot()
 {
-	if(IsKeyPressed(KEY_SPACE))
-	{
-		std::cout << "Shoot" << std::endl;
-	}
+    if(IsKeyPressed(KEY_SPACE))
+    {
+        std::cout << "Shoot" << std::endl;
+    }
 }
