@@ -5,7 +5,7 @@
 class Bullet : public Entity
 {
 public:
-  Bullet(const Vector2& position, const Vector2& target);
+	Bullet(const Vector2& position, const Vector2& size, const float speed);
   virtual ~Bullet();
 
 	virtual void render();

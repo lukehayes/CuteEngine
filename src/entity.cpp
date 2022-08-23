@@ -3,36 +3,6 @@
 #include "raylib.h"
 #include "container/entity-container.h"
 
-Entity::Entity(): 
-	position({100,100}),
-	size({100,100}),
-	speed(GetRandomValue(0,100)),
-	color(DARKGRAY)
-{
-	// TODO Fix this rendering bug. Entity creation disabled for now.
-	// this->createEntityPtr();
-}
-
-Entity::Entity(const Vector2& position)
-	:position(position),
-	 size({10,10}),
-	 speed(GetRandomValue(0,100)),
-	 color(DARKGRAY)
-{
-	// TODO Fix this rendering bug. Entity creation disabled for now.
-	// this->createEntityPtr();
-}
-
-Entity::Entity(const Vector2& position, const Vector2& size)
-	:position(position),
-	 size(size),
-	 speed(100),
-	 color(DARKGRAY)
-{
-	// TODO Fix this rendering bug. Entity creation disabled for now.
-	// this->createEntityPtr();
-}
-
 Entity::Entity(const Vector2& position, const Vector2& size, const float speed)
 	:position(position),
 	 size(size),

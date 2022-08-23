@@ -4,7 +4,7 @@
 #include <iostream>
 
 Player::Player(const Vector2& position)
-	: Entity(position, {50,50}),
+	: Entity(position, {50,50}, GetRandomValue(10,100)),
 		color({50,50,100, 255})
 
 {}

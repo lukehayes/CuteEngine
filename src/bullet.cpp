@@ -1,7 +1,7 @@
 #include "bullet/bullet.h"
 #include <cmath>
 
-Bullet::Bullet(const Vector2& position, const Vector2& target)
+Bullet::Bullet(const Vector2& position, const Vector2& size, const float speed)
 	: Entity(position, {5,5}, 80),
 		color({150,50,200, 255}),
     target(target),

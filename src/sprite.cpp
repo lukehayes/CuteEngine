@@ -3,7 +3,7 @@
 #include "container/entity-container.h"
 
 Sprite::Sprite(const std::string imagePath, const Vector2& position)
-    : Entity(position),
+	: Entity(position, {50,50}, GetRandomValue(10,100)),
       texture(LoadTexture(imagePath.c_str()))
 {
     // this->createEntityPtr();
