@@ -1,24 +1,48 @@
 #pragma once
 
-#include <memory>
-
+#include "common/types.h"
 
 /**
- * A very basic container for all entities. Class just to test an idea.
+ * A generic container to hold specific groups of things.
  */
+template<class T>
 class TypedContainer
 {
-public:
-	TypedContainer();
-	~TypedContainer();
+    public:
+        TypedContainer() {}
+        ~TypedContainer() {}
 
-	void render();
+        void render();
 
-	void update(double delta);
+        void update(double delta);
 
-	void add(const Entity& entity);
+        void add(std::shared_ptr<T>& entity);
 
-	std::vector<Entity> entities;
+        std::vector<std::shared_ptr<T>> entities;
 };
 
-extern TypedContainer typedContainer;
+template<class T>
+void TypedContainer<T>::add(std::shared_ptr<T>& entity)
+{
+    this->entities.push_back(entity);
+}
+
+template<class T>
+void TypedContainer<T>::render()
+{
+    for(auto &e : this->entities)
+    {
+        e->render();
+    }
+}
+
+template<class T>
+void TypedContainer<T>::update(double delta)
+{
+    for(auto &e : this->entities)
+    {
+        e->update(delta);
+    }
+}
+
+//extern TypedContainer typedContainer;
