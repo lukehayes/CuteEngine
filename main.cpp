@@ -15,25 +15,15 @@ int main() {
     {
         delta = GetFrameTime();
 
-        bullets.update(delta);
-        std::cout << bullets.entities.size() << std::endl;
 
         if(IsMouseButtonDown(0))
         {
-            for(int i = 0; i <= 10000; i++)
-            {
-                std::shared_ptr<Bullet> b = std::make_shared<Bullet>(p->position, GetMousePosition());
-                bullets.add(b);
-            }
-        }
-
-        if(IsMouseButtonDown(1))
-        {
-            bullets.entities.clear();
-            std::cout << "Cleared" << std::endl;
+            std::shared_ptr<Bullet> b = std::make_shared<Bullet>(p->position, GetMousePosition());
+            bullets.add(b);
         }
 
         p->update(delta);
+        bullets.update(delta);
 
         ClearBackground(GRAY);
         BeginDrawing();
