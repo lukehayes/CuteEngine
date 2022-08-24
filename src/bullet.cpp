@@ -3,7 +3,7 @@
 
 Bullet::Bullet(const Vector2& position, const Vector2& target)
     : Entity(position, {5,5}, 200),
-    color({150,50,200, 255}),
+    color({0,50,100, 255}),
     target(target),
     angle(this->getTargetAngle()),
     damage(1) {}
