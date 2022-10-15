@@ -4,8 +4,8 @@
 
 struct Game
 {
-	int width         = 1024;
-	int height        = 768;
+	int width         = 640;
+	int height        = 480;
 	const char* title = "Game";
 
 	/**
