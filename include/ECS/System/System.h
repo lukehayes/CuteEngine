@@ -2,7 +2,7 @@
 #include <string>
 #include "common/types.h"
 
-namespace ECS
+namespace ECS::System
 {
     /**
      * Base class for all systems.

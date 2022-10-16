@@ -1,6 +1,6 @@
 #include "common/types.h"
 #include "ECS/World.h"
-#include "ECS/System.h"
+#include "ECS/System/System.h"
 
 float delta = 0.0;
 
@@ -9,7 +9,7 @@ int main() {
     game.init();
 
     ECS::World world;
-    ECS::System system;
+    ECS::System::System system;
 
     while (!WindowShouldClose())
     {

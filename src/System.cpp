@@ -1,6 +1,6 @@
-#include "ECS/System.h"
+#include "ECS/System/System.h"
 
-namespace ECS
+namespace ECS::System
 {
     System::System() {}
     System::~System() {}
