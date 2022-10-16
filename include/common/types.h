@@ -14,11 +14,6 @@
 // Framework Specific Includes
 ============================================================*/
 #include "game.h"
-#include "entity/entity.h"
-#include "bullet/bullet.h"
-#include "entity/player.h"
-#include "container/entity-container.h"
-#include "sprite/sprite.h"
 
 /*============================================================
 // Primitives
