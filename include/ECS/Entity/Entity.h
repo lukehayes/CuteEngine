@@ -1,5 +1,6 @@
 #include <vector>
 #include "ECS/Component/Component.h"
+#include <algorithm>
 
 namespace ECS::Entity
 {
@@ -32,6 +33,18 @@ namespace ECS::Entity
              * @return bool
              */
             bool hasComponent(const std::string& name);
+
+            /**
+             * Get the entities component.
+             *
+             * @param const std::string& name
+             *
+             * @return ECS::Component::Component
+             */
+            ECS::Component::Component getComponent(const std::string name)
+            {
+                auto res = std::find(this->components.begin(), this->components.end(), name);
+            }
 
             /**
              * Get all of the entities components.

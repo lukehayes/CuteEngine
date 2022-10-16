@@ -21,7 +21,7 @@ namespace ECS::Entity
             }
         }
 
-        return  exists;
+        return exists;
     }
 
     std::vector<ComponentBase> Entity::getComponents() const
