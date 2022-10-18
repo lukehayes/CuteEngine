@@ -58,7 +58,7 @@ namespace ECS::Entity
              *
              * @param ECS::Component::Component.
              */
-            void addComponent(const ComponentBase& component);
+            void addComponent(const ComponentBase component);
 
     private:
             std::vector<ComponentBase> components;

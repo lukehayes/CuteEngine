@@ -29,7 +29,7 @@ namespace ECS::Entity
         return this->components;
     }
 
-    void Entity::addComponent(const ComponentBase& component)
+    void Entity::addComponent(const ComponentBase component)
     {
         this->components.push_back(component);
     }
