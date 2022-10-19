@@ -41,7 +41,7 @@ namespace ECS::Entity
              *
              * @return ECS::Component::Component
              */
-            std::pair<std::string, ComponentBase>
+            ComponentBase
             getComponent(const std::string name);
 
             /**

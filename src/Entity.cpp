@@ -20,11 +20,11 @@ namespace ECS::Entity
         return this->components;
     }
 
-    std::pair<std::string, ComponentBase>
+    ComponentBase
     Entity::getComponent(const std::string name)
     {
         auto it = this->components.find(name);
-        return *it;
+        return (*it).second;
     }
 
     void Entity::addComponent(std::string name, ComponentBase& component)
