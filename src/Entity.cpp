@@ -1,8 +1,9 @@
 #include "ECS/Entity/Entity.h"
+#include <iostream>
 
 namespace ECS::Entity
 {
-    using ComponentBase = ECS::Component::Component;
+    using ComponentBase = std::shared_ptr<ECS::Component::Component>;
 
     Entity::Entity() {}
     Entity::~Entity() {}
@@ -11,27 +12,26 @@ namespace ECS::Entity
 
     bool Entity::hasComponent(const std::string& name)
     {
-        bool exists = false;
-
-        for(auto c : this->components)
-        {
-            if(c.getName() == name)
-            {
-                exists = true;
-            }
-        }
-
-        return exists;
+        return this->components.contains(name);
     }
 
-    std::vector<ComponentBase> Entity::getComponents() const
+    std::map<std::string, ComponentBase> Entity::getComponents()
     {
         return this->components;
     }
 
-    void Entity::addComponent(const ComponentBase component)
+    std::pair<std::string, ComponentBase>
+    Entity::getComponent(const std::string name)
     {
-        this->components.push_back(component);
+        auto it = this->components.find(name);
+        return *it;
+    }
+
+    void Entity::addComponent(std::string name, ComponentBase& component)
+    {
+        this->components.insert(std::pair(name, component));
+
+        std::cout << "Added Entity ->" + name << ". Entities Size: " << this->components.size() << std::endl;
     }
 }
 

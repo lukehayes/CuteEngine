@@ -1,6 +1,6 @@
-#include <vector>
 #include "ECS/Component/Component.h"
-#include <algorithm>
+#include <map>
+#include <memory>
 
 namespace ECS::Entity
 {
@@ -10,7 +10,7 @@ namespace ECS::Entity
     class Entity
     {
 
-    using ComponentBase = ECS::Component::Component;
+    using ComponentBase = std::shared_ptr<ECS::Component::Component>;
 
     public:
             Entity();
@@ -35,33 +35,32 @@ namespace ECS::Entity
             bool hasComponent(const std::string& name);
 
             /**
-             * Get the entities component.
+             * Get the entities specific component.
              *
              * @param const std::string& name
              *
              * @return ECS::Component::Component
              */
-            ECS::Component::Component getComponent(const std::string name)
-            {
-                auto res = std::find(this->components.begin(), this->components.end(), name);
-            }
+            std::pair<std::string, ComponentBase>
+            getComponent(const std::string name);
 
             /**
              * Get all of the entities components.
              *
              * @return std::vector<ECS::Component::Component>
              */
-            std::vector<ComponentBase> getComponents() const;
+            std::map<std::string, ComponentBase> getComponents();
 
             /**
              * Add a new component to the entity.
              *
+             * @param std::string name
              * @param ECS::Component::Component.
              */
-            void addComponent(const ComponentBase component);
+            void addComponent(std::string name, ComponentBase& component);
 
     private:
-            std::vector<ComponentBase> components;
+            std::map<std::string, ComponentBase> components;
     };
 }
 
