@@ -31,7 +31,7 @@ namespace ECS::Entity
     {
         this->components.insert(std::pair(name, component));
 
-        std::cout << "Added Entity ->" + name << ". Entities Size: " << this->components.size() << std::endl;
+        std::cout << "Added Entity: " + name << ". Entities Size: " << this->components.size() << std::endl;
     }
 }
 
