@@ -5,12 +5,13 @@ namespace ECS::Component
     class ColorComponent : public Component
     {
     public:
-            ColorComponent(float r, float g, float b) : Component("Color"), r(r), g(g), b(b) {}
+            ColorComponent(int r, int g, int b, int a) : Component("Color"), r(r), g(g), b(b), a(a) {}
             ~ColorComponent() {}
 
-            float r;
-            float g;
-            float b;
+            int r;
+            int g;
+            int b;
+            int a;
 
     };
 }
