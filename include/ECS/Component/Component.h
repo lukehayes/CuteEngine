@@ -9,7 +9,7 @@ namespace ECS::Component
     public:
             Component();
             Component(const std::string& name);
-            ~Component();
+            virtual ~Component();
 
             /**
              * Get the name of the component.
