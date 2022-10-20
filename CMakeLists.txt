@@ -4,6 +4,7 @@ project(RayEngine)
 # Variables.
 # 
 set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(INCLUDE_DIRS "include")
 set(BIN_NAME "game")
 
