@@ -19,16 +19,28 @@ int main() {
 
     ECS::World world;
     ECS::System::System system;
-    
-    ECS::Entity::Entity p;
-    std::shared_ptr<ECS::Component::Component> pos = std::make_shared<ECS::Component::PositionComponent>(11.0,23.0);
+
+    std::vector<ECS::Entity::Entity> entities;
+
+    for(int i = 0; i <= 10; i++)
+    {
+
+        ECS::Entity::Entity entity;
+        std::shared_ptr<ECS::Component::Component> pos = std::make_shared<ECS::Component::PositionComponent>(GetRandomValue(10,400), GetRandomValue(10,400));
+        entity.addComponent("Position", pos);
+        entities.push_back(entity);
+    }
+
+    ECS::Entity::Entity player;
+    std::shared_ptr<ECS::Component::Component> pos = std::make_shared<ECS::Component::PositionComponent>(100.0,203.0);
     std::shared_ptr<ECS::Component::Component> col = std::make_shared<ECS::Component::ColorComponent>(0.5,1.0,0);
 
-    p.addComponent("Position", pos);
-    p.addComponent("Color", col);
+    player.addComponent("Position", pos);
+    player.addComponent("Color", col);
 
-    auto posComp = std::dynamic_pointer_cast<ECS::Component::PositionComponent>(p.getComponent("Position"));
-    auto colComp = std::dynamic_pointer_cast<ECS::Component::ColorComponent>(p.getComponent("Color"));
+    auto posComp = std::dynamic_pointer_cast<ECS::Component::PositionComponent>(player.getComponent("Position"));
+    auto colComp = std::static_pointer_cast<ECS::Component::ColorComponent>(player.getComponent("Color"));
+
 
     while (!WindowShouldClose())
     {
@@ -37,6 +49,13 @@ int main() {
 
         ClearBackground(GRAY);
         BeginDrawing();
+
+            for(auto &e : entities)
+            {
+                auto posComp = std::dynamic_pointer_cast<ECS::Component::PositionComponent>(e.getComponent("Position"));
+                DrawRectangle(posComp->x, posComp->y, 10,10, BLACK);
+            }
+
         EndDrawing();
     }
 
