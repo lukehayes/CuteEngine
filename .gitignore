@@ -123,6 +123,7 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+build/
 bin/
 obj/
 .cache
