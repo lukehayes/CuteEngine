@@ -25,12 +25,8 @@ int main() {
     for(int i = 0; i <= 10; i++)
     {
         ECS::Entity::Entity e(i);
-        std::shared_ptr<ECS::Component::PositionComponent> pos = std::make_shared<ECS::Component::PositionComponent>(GetRandomValue(10,400), GetRandomValue(10,400));
+        std::shared_ptr<ECS::Component::PositionComponent> pos = std::make_shared<ECS::Component::PositionComponent>(GetRandomValue(10,400), GetRandomValue(10,400), GetRandomValue(-100,100), GetRandomValue(-100,100));
         pos->entity_id = e.entity_id;
-
-        std::cout << i << std::endl;
-        std::cout << e.entity_id << std::endl;
-
         positionSystem.components.push_back(pos);
     }
 

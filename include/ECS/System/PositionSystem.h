@@ -13,11 +13,10 @@ namespace ECS::System
 
             void update(float delta)
             {
-                std::cout << "Upating Postions" << std::endl;
                 for(auto& component : this->components)
                 {
-                    component->x += 10 * delta;
-                    component->y += 10 * delta;
+                    component->x += component->vx * delta;
+                    component->y += component->vy * delta;
 
                     DrawRectangle(
                             component->x,
