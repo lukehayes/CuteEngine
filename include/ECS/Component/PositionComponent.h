@@ -1,4 +1,7 @@
+#pragma once
+
 #include <string>
+#include "ECS/Component/Component.h"
 
 namespace ECS::Component
 {
