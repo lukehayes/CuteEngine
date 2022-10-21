@@ -1,15 +1,11 @@
 #include "common/types.h"
 #include "ECS/World.h"
-#include "ECS/System/System.h"
+#include "ECS/System/PositionSystem.h"
 #include "ECS/Entity/Entity.h"
 #include "ECS/Component/PositionComponent.h"
 #include "ECS/Component/ColorComponent.h"
 #include "ECS/Component/Component.h"
-#include <ios>
-#include <iostream>
 #include <memory>
-#include <raylib.h>
-
 
 float delta = 0.0;
 
@@ -21,61 +17,69 @@ int main() {
     game.init();
 
     ECS::World world;
-    ECS::System::System system;
+    ECS::System::PositionSystem positionSystem;
 
     std::vector<ECS::Entity::Entity> entities;
+    std::vector<std::shared_ptr<ECS::Component::PositionComponent>> positionComponents;
 
     for(int i = 0; i <= 10; i++)
     {
-        ECS::Entity::Entity entity;
-        std::shared_ptr<ECS::Component::Component> pos = std::make_shared<ECS::Component::PositionComponent>(GetRandomValue(10,400), GetRandomValue(10,400));
-        std::shared_ptr<ECS::Component::Component> col = std::make_shared<ECS::Component::ColorComponent>(
-                GetRandomValue(100,255),
-                GetRandomValue(100,255),
-                GetRandomValue(100,255),
-                GetRandomValue(100,255)
-        );
+        ECS::Entity::Entity e(i);
+        std::shared_ptr<ECS::Component::PositionComponent> pos = std::make_shared<ECS::Component::PositionComponent>(GetRandomValue(10,400), GetRandomValue(10,400));
+        pos->entity_id = e.entity_id;
 
-        entity.addComponent("Position", pos);
-        entity.addComponent("Color", col);
-        entities.push_back(entity);
+        std::cout << i << std::endl;
+        std::cout << e.entity_id << std::endl;
+
+        positionSystem.components.push_back(pos);
     }
 
-    ECS::Entity::Entity player;
-    std::shared_ptr<ECS::Component::Component> pos = std::make_shared<ECS::Component::PositionComponent>(100.0,203.0);
-    std::shared_ptr<ECS::Component::Component> col = std::make_shared<ECS::Component::ColorComponent>(0.5,1.0,0, 1.0);
+    //for(int i = 0; i <= 10; i++)
+    //{
+        //ECS::Entity::Entity entity(i);
+        //std::shared_ptr<ECS::Component::Component> pos = std::make_shared<ECS::Component::PositionComponent>(GetRandomValue(10,400), GetRandomValue(10,400));
+        //std::shared_ptr<ECS::Component::Component> col = std::make_shared<ECS::Component::ColorComponent>(
+                //GetRandomValue(100,255),
+                //GetRandomValue(100,255),
+                //GetRandomValue(100,255),
+                //GetRandomValue(100,255)
+        //);
 
-    player.addComponent("Position", pos);
-    player.addComponent("Color", col);
+        //entity.addComponent("Position", pos);
+        //entity.addComponent("Color", col);
+        //entities.push_back(entity);
+    //}
 
-    auto posComp = std::dynamic_pointer_cast<ECS::Component::PositionComponent>(player.getComponent("Position"));
-    auto colComp = std::static_pointer_cast<ECS::Component::ColorComponent>(player.getComponent("Color"));
+    float speed = 10.0;
 
     while (!WindowShouldClose())
     {
         delta = GetFrameTime();
         world.update(delta);
 
+
+        positionSystem.update(delta);
+
         ClearBackground(GRAY);
         BeginDrawing();
+            DrawRectangle(10,10,10,10, BLUE);
 
-            for(auto e : entities)
-            {
-                auto posComp = std::dynamic_pointer_cast<ECS::Component::PositionComponent>(e.getComponent("Position"));
-                auto colComp = std::dynamic_pointer_cast<ECS::Component::ColorComponent>(e.getComponent("Color"));
+            //for(auto pos : positionComponents)
+            //{
+                ////auto posComp = std::dynamic_pointer_cast<ECS::Component::PositionComponent>(e.getComponent("Position"));
+                ////auto colComp = std::dynamic_pointer_cast<ECS::Component::ColorComponent>(e.getComponent("Color"));
 
-                DrawRectangle(
-                    posComp->x,
-                    posComp->y,
-                    10,10,
-                    {
-                        colComp->r,
-                        colComp->g,
-                        colComp->b,
-                        colComp->a
-                    }
-                );
-            }
+                //pos->x += GetRandomValue(-110,100) * delta;
+                //pos->y += GetRandomValue(-100,100) * delta;
+
+
+                //DrawRectangle(
+                    //pos->x,
+                    //pos->y,
+                    //10,10,
+                    //BLACK
+                //);
+            //}
 
         EndDrawing();
     }
