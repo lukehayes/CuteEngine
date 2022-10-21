@@ -3,7 +3,7 @@
 
 namespace ECS::Component
 {
-    Component::Component() :name("Component") {}
+    Component::Component() :name("Component"), entity_id(0) {}
     Component::Component(const std::string& name) :name(name) {}
     Component::~Component() {}
 

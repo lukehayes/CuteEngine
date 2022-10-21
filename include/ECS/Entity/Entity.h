@@ -1,4 +1,5 @@
 #include "ECS/Component/Component.h"
+#include "common/types.h"
 #include <map>
 #include <memory>
 
@@ -13,8 +14,15 @@ namespace ECS::Entity
     using ComponentBase = std::shared_ptr<ECS::Component::Component>;
 
     public:
-            Entity();
-            ~Entity();
+            /**
+             * Constructor.
+             *
+             * @param int id     The id of this particular entity.
+             *
+             * @abstract
+             */
+            Entity(int id);
+            virtual ~Entity();
 
             /**
              * Update the entity.
@@ -59,6 +67,7 @@ namespace ECS::Entity
              */
             void addComponent(std::string name, ComponentBase& component);
 
+            s8 entity_id;
     private:
             std::map<std::string, ComponentBase> components;
     };

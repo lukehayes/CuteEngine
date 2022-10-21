@@ -5,7 +5,7 @@ namespace ECS::Entity
 {
     using ComponentBase = std::shared_ptr<ECS::Component::Component>;
 
-    Entity::Entity() {}
+    Entity::Entity(int id) : entity_id(id) {}
     Entity::~Entity() {}
 
     void Entity::update(float delta) {}
