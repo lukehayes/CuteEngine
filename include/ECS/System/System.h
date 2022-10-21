@@ -11,9 +11,9 @@ namespace ECS::System
     {
     public:
             System(const std::string& name);
-            ~System();
+            virtual ~System();
 
-            void update(float delta);
+            virtual void update(float delta) = 0;
 
             /**
              * Set requirements for the specific system to work
