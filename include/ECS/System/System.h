@@ -10,7 +10,7 @@ namespace ECS::System
     class System
     {
     public:
-            System();
+            System(const std::string& name);
             ~System();
 
             void update(float delta);
