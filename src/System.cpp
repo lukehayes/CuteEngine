@@ -2,6 +2,6 @@
 
 namespace ECS::System
 {
-    System::System(const std::string& name) : name() {}
+    System::System(const std::string& name) : name(name) {}
     System::~System() {}
 }
