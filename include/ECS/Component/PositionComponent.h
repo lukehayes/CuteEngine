@@ -15,6 +15,7 @@ namespace ECS::Component
             double y;
             double vx;
             double vy;
+            double speed = GetRandomValue(-5,5);
     };
 }
 
