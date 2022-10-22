@@ -23,7 +23,7 @@ namespace ECS::System
              */
             void required(const std::string& requirement);
 
-            std::string getName() const;
+            str getName() const;
 
     private:
             std::string name;
