@@ -3,8 +3,6 @@
 
 namespace ECS::Entity
 {
-    using ComponentBase = std::shared_ptr<ECS::Component::Component>;
-
     Entity::Entity(int id) : entity_id(id) {}
     Entity::~Entity() {}
 
@@ -15,22 +13,21 @@ namespace ECS::Entity
         return this->components.contains(name);
     }
 
-    std::map<std::string, ComponentBase> Entity::getComponents()
+    std::map<std::string, std::shared_ptr<ECS::Component::Component>> Entity::getComponents()
     {
         return this->components;
     }
 
-    ComponentBase
+    std::shared_ptr<ECS::Component::Component>
     Entity::getComponent(const std::string name)
     {
         auto it = this->components.find(name);
         return (*it).second;
     }
 
-    void Entity::addComponent(std::string name, ComponentBase component)
+    void Entity::addComponent(std::string name, const std::shared_ptr<ECS::Component::Component>& component)
     {
         this->components.insert(std::pair(name, component));
-
         std::cout << "Added Entity: " + name << ". Entities Size: " << this->components.size() << std::endl;
     }
 }

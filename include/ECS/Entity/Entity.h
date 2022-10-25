@@ -13,8 +13,6 @@ namespace ECS::Entity
     class Entity
     {
 
-    using ComponentBase = std::shared_ptr<ECS::Component::Component>;
-
     public:
             /**
              * Constructor.
@@ -51,15 +49,20 @@ namespace ECS::Entity
              *
              * @return ECS::Component::Component
              */
-            ComponentBase
+            std::shared_ptr<ECS::Component::Component>
             getComponent(const std::string name);
+
+            virtual void sexy()
+            {
+
+            }
 
             /**
              * Get all of the entities components.
              *
              * @return std::vector<ECS::Component::Component>
              */
-            std::map<std::string, ComponentBase> getComponents();
+            std::map<std::string, std::shared_ptr<ECS::Component::Component>> getComponents();
 
             /**
              * Add a new component to the entity.
@@ -67,11 +70,11 @@ namespace ECS::Entity
              * @param std::string name
              * @param ECS::Component::Component.
              */
-            void addComponent(std::string name, ComponentBase component);
+            void addComponent(std::string name, const std::shared_ptr<ECS::Component::Component>& component);
 
             s8 entity_id;
     private:
-            std::map<std::string, ComponentBase> components;
+            std::map<std::string,std::shared_ptr<ECS::Component::Component>> components;
     };
 }
 
