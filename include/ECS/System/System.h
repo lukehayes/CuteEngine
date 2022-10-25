@@ -1,12 +1,15 @@
 #pragma once
 
-#include <string>
 #include "common/types.h"
+#include "ECS/Component/Component.h"
+
+#include <string>
+#include <vector>
 
 namespace ECS::System
 {
     /**
-     * Base class for all systems.
+     * A system can be defined to manage a particular set of components.
      */
     class System
     {
@@ -14,17 +17,19 @@ namespace ECS::System
             System(const std::string& name);
             virtual ~System();
 
-            virtual void update(float delta) = 0;
+            void update(float delta);
 
             /**
              * Set requirements for the specific system to work
              *
              * @param const std::string& requirements
-             *
              */
-            void required(const std::string& requirement);
+            void required(const std::initializer_list<std::string>& requirements);
 
             str getName() const;
+
+    protected:
+        std::vector<std::string> requirements;
 
     private:
             std::string name;

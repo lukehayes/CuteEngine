@@ -9,4 +9,12 @@ namespace ECS::System
     {
         return this->name;
     }
+
+    void System::required(const std::initializer_list<std::string>& requirements)
+    {
+        for(auto r : requirements)
+        {
+            this->requirements.push_back(r);
+        }
+    }
 }
