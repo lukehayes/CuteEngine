@@ -7,7 +7,6 @@ namespace ECS::Component
     class Component
     {
     public:
-            Component();
             Component(const std::string& name);
             virtual ~Component();
 
