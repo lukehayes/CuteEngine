@@ -27,7 +27,7 @@ namespace ECS::Entity
         return (*it).second;
     }
 
-    void Entity::addComponent(std::string name, ComponentBase& component)
+    void Entity::addComponent(std::string name, ComponentBase component)
     {
         this->components.insert(std::pair(name, component));
 

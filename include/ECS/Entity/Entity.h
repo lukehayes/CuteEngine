@@ -1,3 +1,5 @@
+#pragma once
+
 #include "ECS/Component/Component.h"
 #include "common/types.h"
 #include <map>
@@ -65,7 +67,7 @@ namespace ECS::Entity
              * @param std::string name
              * @param ECS::Component::Component.
              */
-            void addComponent(std::string name, ComponentBase& component);
+            void addComponent(std::string name, ComponentBase component);
 
             s8 entity_id;
     private:

@@ -1,3 +1,4 @@
+#pragma once
 #include <string>
 #include "ECS/Component/Component.h"
 #include "common/types.h"

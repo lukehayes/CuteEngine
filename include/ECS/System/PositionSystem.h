@@ -1,4 +1,5 @@
 #pragma once
+
 #include "ECS/System/System.h"
 #include "ECS/Component/PositionComponent.h"
 #include <memory>
@@ -28,12 +29,6 @@ namespace ECS::System
                         component->vy = -component->vy;
                     }
 
-                    DrawRectangle(
-                            component->x,
-                            component->y,
-                            10,10,
-                            {0,0,0,255}
-                    );
                 }
             }
 

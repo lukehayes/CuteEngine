@@ -1,4 +1,5 @@
 #pragma once
+
 #include "ECS/System/System.h"
 #include "ECS/Component/DrawComponent.h"
 #include <memory>
