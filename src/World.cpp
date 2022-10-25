@@ -11,3 +11,5 @@ namespace ECS
 
     }
 }
+
+ECS::World world;

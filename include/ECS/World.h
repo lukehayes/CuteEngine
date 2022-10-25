@@ -1,6 +1,8 @@
 #pragma once
-#include <string>
+
 #include "common/types.h"
+#include "ECS/Entity/Entity.h"
+#include <vector>
 
 namespace ECS
 {
@@ -14,7 +16,10 @@ namespace ECS
             ~World();
 
             void update(float delta);
+            std::vector<ECS::Entity::Entity> entities;
     };
 }
 
+// Make the world global.
+extern ECS::World world;
 
