@@ -39,7 +39,7 @@ int main() {
   {
     ECS::Entity::Entity e(2);
     std::shared_ptr<ECS::Component::Component> posPtr = std::make_shared<ECS::Component::PositionComponent>(GetRandomValue(30,300), GetRandomValue(30,300), 10,10);
-    std::shared_ptr<ECS::Component::Component> color  = std::make_shared<ECS::Component::ColorComponent>(130,30,GetRandomValue(60,255),255);
+    std::shared_ptr<ECS::Component::Component> color  = std::make_shared<ECS::Component::ColorComponent>(0,30,GetRandomValue(130,255),255);
 
     e.addComponent("Position", posPtr);
     e.addComponent("Color", color);
@@ -61,7 +61,7 @@ int main() {
 
     positionSystem.update(delta);
 
-    ClearBackground(BLACK);
+    ClearBackground(GRAY);
     BeginDrawing();
       drawSystem.render();
     EndDrawing();
