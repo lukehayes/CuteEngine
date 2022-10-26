@@ -3,9 +3,11 @@
 #include "ECS/System/System.h"
 #include "ECS/Component/PositionComponent.h"
 #include "ECS/World.h"
+#include "Game.h"
 #include <memory>
 
 extern ECS::World world;
+extern Game  game;
 
 namespace ECS::System
 {
@@ -28,12 +30,12 @@ namespace ECS::System
                     pos->x += pos->speed * pos->vx * delta;
                     pos->y += pos->speed * pos->vy * delta;
 
-                    if(pos->x < 0 || pos->x > 580)
+                    if(pos->x < 0 || pos->x > game.width)
                     {
                         pos->vx = -pos->vx;
                     }
 
-                    if(pos->y < 0 || pos->y > 480)
+                    if(pos->y < 0 || pos->y > game.height)
                     {
                         pos->vy = -pos->vy;
                     }
