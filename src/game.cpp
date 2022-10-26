@@ -1,5 +1,11 @@
 #include "game.h"
 
+	Game::Game()
+		: width(800),
+		  height(600),
+		  title("Game Title")
+	{}
+
 void Game::init()
 {
 	InitWindow(

@@ -4,14 +4,17 @@
 
 struct Game
 {
-	int width         = 640;
-	int height        = 480;
-	const char* title = "Game";
+
+	Game();
 
 	/**
-	 * Initialize Raylib etc.
+	 * Intialize Raylib, call raylib functions like SetFPS() etc.
 	 */
 	void init();
+
+	int width;
+	int height;
+	const char* title;
 };
 
 extern Game game;
