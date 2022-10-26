@@ -28,7 +28,6 @@ namespace ECS::Entity
     void Entity::addComponent(std::string name, const std::shared_ptr<ECS::Component::Component>& component)
     {
         this->components.insert(std::pair(name, component));
-        std::cout << "Added Entity: " + name << ". Entities Size: " << this->components.size() << std::endl;
     }
 }
 
