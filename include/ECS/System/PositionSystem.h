@@ -12,50 +12,34 @@ namespace ECS::System
     class PositionSystem : public System
     {
     public:
-            PositionSystem() : System("Position") {}
-            ~PositionSystem() {}
+        PositionSystem() : System("Position") {}
+        ~PositionSystem() {}
 
-            void update(float delta)
+        void update(float delta)
+        {
+            // TODO Brute force method of checking if an entity
+            // has the required components - refactor.
+            for(auto& entity : world.entities)
             {
-                int requirement_size = this->requirements.size();
-                int requirement_count = 0;
-
-                // TODO Brute force method of checking if an entity
-                // has the required components - refactor.
-                for(auto& entity : world.entities)
+                if(entityMeetsRequirements(entity))
                 {
-                    for(auto& req : this->requirements)
+                    auto pos = std::dynamic_pointer_cast<ECS::Component::PositionComponent>(entity.getComponent("Position"));
+
+                    pos->x += pos->speed * pos->vx * delta;
+                    pos->y += pos->speed * pos->vy * delta;
+
+                    if(pos->x < 0 || pos->x > 580)
                     {
-                        if(entity.hasComponent(req))
-                        {
-                            requirement_count++;
-                        }
+                        pos->vx = -pos->vx;
                     }
 
-                    if(requirement_count == requirement_size)
+                    if(pos->y < 0 || pos->y > 480)
                     {
-                        auto pos = std::dynamic_pointer_cast<ECS::Component::PositionComponent>(entity.getComponent("Position"));
-
-                        pos->x += pos->speed * pos->vx * delta;
-                        pos->y += pos->speed * pos->vy * delta;
-
-                        if(pos->x < 0 || pos->x > 580)
-                        {
-                            pos->vx = -pos->vx;
-                        }
-
-                        if(pos->y < 0 || pos->y > 480)
-                        {
-                            pos->vy = -pos->vy;
-                        }
-
-                        requirement_count = 0;
-                    }else
-                    {
-                        requirement_count = 0;
+                        pos->vy = -pos->vy;
                     }
                 }
             }
+        }
     };
 }
 
