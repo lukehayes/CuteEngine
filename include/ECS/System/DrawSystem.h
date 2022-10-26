@@ -18,19 +18,15 @@ namespace ECS::System
 
             void render()
             {
-                ClearBackground(GRAY);
-                BeginDrawing();
                 for(auto& entity : world.entities)
                 {
                     if(entityMeetsRequirements(entity))
                     {
                         auto pos = std::dynamic_pointer_cast<ECS::Component::PositionComponent>(entity.getComponent("Position"));
                         auto color = std::dynamic_pointer_cast<ECS::Component::ColorComponent>(entity.getComponent("Color"));
-                        DrawRectangle(pos->x, pos->y, 30,30, {color->r, color->g, color->b, color->a});
+                        DrawRectangle(pos->x, pos->y, 3,3, {color->r, color->g, color->b, color->a});
                     }
                 }
-
-                EndDrawing();
             }
     };
 }
