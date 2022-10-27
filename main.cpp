@@ -25,9 +25,10 @@ int main() {
   /* == Temporary Working Solution ==================================== */
   ECS::Entity::Entity e(1);
   ECS::Entity::Entity ee(2);
-  std::shared_ptr<ECS::Component::Component> posPtr = std::make_shared<ECS::Component::PositionComponent>(100,100,10,10);
-  std::shared_ptr<ECS::Component::Component> posPtr2 = std::make_shared<ECS::Component::PositionComponent>(200,300,10,10);
-  std::shared_ptr<ECS::Component::Component> color  = std::make_shared<ECS::Component::ColorComponent>(50,100,100,255);
+
+  std::shared_ptr<ECS::Component::Component> posPtr = std::make_shared<ECS::Component::PositionComponent>((Vector2){10,10}, (Vector2){10,10});
+  std::shared_ptr<ECS::Component::Component> posPtr2 = std::make_shared<ECS::Component::PositionComponent>((Vector2){200,90},(Vector2){10,10});
+  std::shared_ptr<ECS::Component::Component> color  = std::make_shared<ECS::Component::ColorComponent>(50,50,100,255);
 
   e.addComponent("Position", posPtr);
   e.addComponent("Color", color);
