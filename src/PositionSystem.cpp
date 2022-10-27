@@ -22,8 +22,8 @@ namespace ECS::System
             {
                 auto pos = std::dynamic_pointer_cast<ECS::Component::PositionComponent>(entity.getComponent("Position"));
 
-                pos->position.x += pos->speed * pos->velocity.x * delta;
-                pos->position.y += pos->speed * pos->velocity.y * delta;
+                pos->position.x += pos->velocity.x * pos->speed * delta;
+                pos->position.y += pos->velocity.y * pos->speed * delta;
 
                 if(pos->position.x < 0 || pos->position.x > game.width)
                 {
