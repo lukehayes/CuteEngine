@@ -22,17 +22,17 @@ namespace ECS::System
             {
                 auto pos = std::dynamic_pointer_cast<ECS::Component::PositionComponent>(entity.getComponent("Position"));
 
-                pos->x += pos->speed * pos->vx * delta;
-                pos->y += pos->speed * pos->vy * delta;
+                pos->position.x += pos->speed * pos->velocity.x * delta;
+                pos->position.y += pos->speed * pos->velocity.y * delta;
 
-                if(pos->x < 0 || pos->x > game.width)
+                if(pos->position.x < 0 || pos->position.x > game.width)
                 {
-                    pos->vx = -pos->vx;
+                    pos->velocity.x = -pos->velocity.x;
                 }
 
-                if(pos->y < 0 || pos->y > game.height)
+                if(pos->position.y < 0 || pos->position.y > game.height)
                 {
-                    pos->vy = -pos->vy;
+                    pos->velocity.x = -pos->velocity.y;
                 }
             }
         }

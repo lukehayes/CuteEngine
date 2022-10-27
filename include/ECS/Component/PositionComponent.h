@@ -8,21 +8,18 @@ namespace ECS::Component
     class PositionComponent : public Component
     {
     public:
-            PositionComponent(double x, double y, double vx, double vy, int size = 25)
-                : Component("Position"), x(x),
-                  y(y),
-                  vx(vx),
-                  vy(vy),
+            PositionComponent(Vector2 position, Vector2 velocity, int size = 25)
+                : Component("Position"),
+                  position(position),
+                  velocity(velocity),
                   speed(GetRandomValue(-50,50)),
                   size(size)
             {}
 
             ~PositionComponent() {}
 
-            double x;
-            double y;
-            double vx;
-            double vy;
+            Vector2 position;
+            Vector2 velocity;
             double speed;
             int size;
     };
