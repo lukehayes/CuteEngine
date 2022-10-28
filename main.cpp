@@ -22,7 +22,7 @@ int main() {
 
   // FIXME Work out and refactor this.
   //
-  /* == Temporary Working Solution ==================================== */
+  /* == Add Entities and Components Here =================================== */
   ECS::Entity::Entity e(1);
   ECS::Entity::Entity ee(2);
 
@@ -35,13 +35,12 @@ int main() {
   ee.addComponent("Position", posPtr2);
   ee.addComponent("Color", color);
 
-
   world.entities.push_back(e);
   world.entities.push_back(ee);
 
   // std::shared_ptr<ECS::Component::PositionComponent> pos = e.getComponent("Position");
   // std::shared_ptr<ECS::Component::PositionComponent> pos = std::dynamic_pointer_cast<ECS::Component::PositionComponent>(e.getComponent("Position"));
-  /* ================================================================== */
+  /* ======================================================================= */
     
 
   while (!WindowShouldClose()) {

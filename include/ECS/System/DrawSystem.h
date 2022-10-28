@@ -24,7 +24,7 @@ namespace ECS::System
                     {
                         auto pos = std::dynamic_pointer_cast<ECS::Component::PositionComponent>(entity.getComponent("Position"));
                         auto color = std::dynamic_pointer_cast<ECS::Component::ColorComponent>(entity.getComponent("Color"));
-                        DrawRectangle(pos->x, pos->y, pos->size, pos->size, {color->r, color->g, color->b, color->a});
+                        DrawRectangle(pos->position.x, pos->position.y, pos->size, pos->size, {color->r, color->g, color->b, color->a});
                     }
                 }
             }
