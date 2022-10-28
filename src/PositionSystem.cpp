@@ -32,7 +32,7 @@ namespace ECS::System
 
                 if(pos->position.y < 0 || pos->position.y > game.height)
                 {
-                    pos->velocity.x = -pos->velocity.y;
+                    pos->velocity.y = -pos->velocity.y;
                 }
             }
         }
