@@ -8,7 +8,7 @@ namespace ECS::Component
     class PositionComponent : public Component
     {
     public:
-            PositionComponent(Vector2 position, Vector2 velocity, int size = 25)
+            PositionComponent(Vector2 position, Vector2 velocity, int size = 5)
                 : Component("Position"),
                   position(position),
                   velocity(velocity),
