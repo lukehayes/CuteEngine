@@ -10,12 +10,6 @@
 
 float delta = 0.0;
 
-#if DEV_DEBUG == 1
-#define LOG(x) (printf("LOG: %s \n", x))
-#else
-#define LOG(x)
-#endif
-
 /**
  * Draw lots of entities for testing.
  */
