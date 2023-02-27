@@ -8,6 +8,13 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(INCLUDE_DIRS "include")
 set(BIN_NAME "app")
 
+# Add debugging option.
+#
+option(DEV_DEBUG "Enter debug mode" 0)
+if (DEV_DEBUG)
+  add_definitions(-DDEV_DEBUG)
+endif()
+
 # Find all source files.
 # 
 file(GLOB SRC_FILES "${CMAKE_SOURCE_DIR}/src/*.cpp")
