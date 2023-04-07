@@ -9,6 +9,14 @@ namespace ECS
   class Component
   {
     public:
+
+      /**
+       * Update the component.
+       *
+       * @param double dt    Delta time.
+       * 
+       * @return void.
+       */
       virtual void update(double dt) = 0;
   };
 }
