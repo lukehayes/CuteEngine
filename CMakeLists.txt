@@ -17,7 +17,7 @@ endif()
 
 # Find all source files.
 # 
-file(GLOB SRC_FILES "${CMAKE_SOURCE_DIR}/src/*.cpp")
+# file(GLOB SRC_FILES "${CMAKE_SOURCE_DIR}/src/*.cpp")
 
 # Find raylib library.
 # 
@@ -31,6 +31,12 @@ include_directories(${INCLUDE_DIRS})
 # 
 add_executable(${BIN_NAME} main.cpp ${SRC_FILES})
 
+add_subdirectory(src)
+
 # Link in any libraies the binary needs.
 # 
 target_link_libraries(${BIN_NAME} raylib)
+
+# Link all cpp source files in src/
+# 
+target_link_libraries(${BIN_NAME} RayEngineLib)
