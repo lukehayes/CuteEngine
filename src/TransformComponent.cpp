@@ -2,7 +2,7 @@
 
 namespace ECS
 {
-  TransformComponent::TransformComponent(float x, float y, float w, float h)
+  TransformComponent::TransformComponent(float x, float y, float w, float h, Color color)
     : position({x,y}),size({w,h}) {}
 
 
@@ -11,6 +11,4 @@ namespace ECS
   {
     printf("Updating Transform Component \n");
   }
-
-
 }

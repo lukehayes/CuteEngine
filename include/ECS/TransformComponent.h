@@ -15,12 +15,13 @@ namespace ECS
   {
     public:
 
-      TransformComponent(float x, float y, float w, float h);
+      TransformComponent(float x, float y, float w, float h, Color color = PINK);
 
       virtual void update(double dt);
 
       Vector2 position;
       Vector2 size;
+      Color   color;
   };
 }
 
