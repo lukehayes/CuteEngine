@@ -1,6 +1,7 @@
 #pragma once
 
 #include "raylib.h"
+#include "common/types.h"
 
 struct Game
 {
@@ -17,6 +18,12 @@ struct Game
 	const char* title;
 };
 
+// Make the game object available throughout the codebase
 extern Game game;
 
+
+/*============================================================
+// Helpful Global Externs (defined in Game.cpp)
+============================================================*/
+extern EntityArray entities;
 
