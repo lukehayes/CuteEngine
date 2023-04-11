@@ -1,4 +1,5 @@
 #include "ECS/TransformComponent.h"
+#include "Game.h"
 
 namespace ECS
 {
@@ -14,6 +15,20 @@ namespace ECS
   void
   TransformComponent::update(double dt)
   {
-    printf("Updating Transform Component \n");
+    static int SPEED = 200;
+
+    // Movement.
+    this->position.x += this->dx * SPEED * dt;
+    this->position.y += this->dy * SPEED * dt;
+
+    // Screen Edge Check.
+    if(
+      this->position.x < 10 || this->position.x > (game.width - 20) ||
+      this->position.y < 10 || this->position.y > (game.height - 20)
+    )
+    {
+      this->position.x = -this->dx;
+      this->position.y = -this->dy;
+    }
   }
 }

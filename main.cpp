@@ -24,7 +24,6 @@ int main() {
 
     for(int i = 0; i <= MAX_ENTITIES - 1; i++)
     {
-
         Color color = {
             (unsigned char)GetRandomValue(10,255),
             (unsigned char)GetRandomValue(10,255),
@@ -32,12 +31,13 @@ int main() {
             (unsigned char)GetRandomValue(200,255)
         };
 
-        entities[i][0] = new ECS::TransformComponent(GetRandomValue(10,game.width), GetRandomValue(10,game.height), 10,10, color);
+        int size = GetRandomValue(2,20);
+
+        entities[i][0] = new ECS::TransformComponent(GetRandomValue(10,game.width), GetRandomValue(10,game.height), size, size, color);
         entities[i][1] = nullptr;
         entities[i][2] = nullptr;
     }
     // --------------------------------------------------- 
-
 
     while (!WindowShouldClose()) {
         delta = GetFrameTime();
@@ -51,6 +51,8 @@ int main() {
         {
             ECS::TransformComponent* tc = dynamic_cast<ECS::TransformComponent*>(e[0]);
 
+            tc->update(delta);
+
             DrawRectangle(
                 tc->position.x,
                 tc->position.y,
@@ -58,22 +60,6 @@ int main() {
                 tc->size.y,
                 tc->color
             );
-
-            tc->position.x += tc->dx * SPEED * delta;
-            tc->position.y += tc->dy * SPEED * delta;
-
-
-            
-            if(
-                tc->position.x < 10 || tc->position.x > (game.width - 20) ||
-                tc->position.y < 10 || tc->position.y > (game.height - 20)
-            )
-            {
-                tc->position.x = -tc->dx;
-                tc->position.y = -tc->dy;
-
-            }
-
 
         }
 
