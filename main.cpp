@@ -3,12 +3,13 @@
 #include "ECS/Component.h"
 #include "ECS/TransformComponent.h"
 
+#include <cstdio>
 #include <vector>
 #include <array>
 
 float delta = 0.0;
 
-constexpr int MAX_ENTITIES = 10;
+constexpr int MAX_ENTITIES = 3;
 
 int main() {
 
@@ -20,7 +21,7 @@ int main() {
     {
         // std::vector<ECS::Component*> components = entities.at(i);
         // components.at(0) = new ECS::TransformComponent(10,10, GetRandomValue(10,400), GetRandomValue(10,400));
-        entities[i][0] = new ECS::TransformComponent(1,1, GetRandomValue(10,400), GetRandomValue(10,400), RED);
+        entities[i][0] = new ECS::TransformComponent(GetRandomValue(10,300), GetRandomValue(10,300), 10,10, PINK);
         entities[i][1] = nullptr;
         entities[i][2] = nullptr;
     }
@@ -29,26 +30,25 @@ int main() {
     while (!WindowShouldClose()) {
         delta = GetFrameTime();
 
-        ClearBackground(GRAY);
+        ClearBackground(BLACK);
         BeginDrawing();
-        
-        for(auto& e : entities)
+
+
+        for(auto e : entities)
         {
-            for(auto& comp : e)
-            {
-                if(!comp) break;
+            ECS::TransformComponent* tc = dynamic_cast<ECS::TransformComponent*>(e[0]);
 
-                ECS::TransformComponent* c = dynamic_cast<ECS::TransformComponent*>(comp);
-
-                DrawRectangle(
-                        c->position.x,
-                        c->position.y,
-                        c->size.x,
-                        c->size.y,
-                        c->color
-                        );
-            }
+            DrawRectangle(
+                tc->position.x,
+                tc->position.y,
+                tc->size.x,
+                tc->size.y,
+                tc->color
+            );
         }
+
+
+        
 
         EndDrawing();
     }
