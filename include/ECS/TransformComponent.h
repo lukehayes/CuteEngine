@@ -22,6 +22,8 @@ namespace ECS
       Vector2 position;
       Vector2 size;
       Color   color;
+      float   dx; // X Direction
+      float   dy; // Y Direction
   };
 }
 
