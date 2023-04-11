@@ -3,7 +3,7 @@
 namespace ECS
 {
   TransformComponent::TransformComponent(float x, float y, float w, float h, Color color)
-    : position({x,y}),size({w,h}) {}
+    : position({x,y}),size({w,h}), color(color) {}
 
 
   void
