@@ -14,7 +14,7 @@ void Game::init()
 			this->title
 		  );
 
-  SetTargetFPS(60);
+	SetTargetFPS(60);
 	SetExitKey(KEY_Q);
 }
 
