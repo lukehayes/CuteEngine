@@ -1,6 +1,9 @@
 add_library(RayEngineLib
   Game.cpp
 
-  # ECS
+  # ECS Componets
   TransformComponent.cpp
+
+  # ECS Systems
+  RenderSystem.cpp
 )
