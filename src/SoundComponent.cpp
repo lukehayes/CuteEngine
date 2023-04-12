@@ -30,4 +30,9 @@ namespace ECS
     {
         SetSoundVolume(this->sound, volume);
     }
+
+    SoundComponent::~SoundComponent()
+    {
+        UnloadSound(this->sound);
+    }
 }

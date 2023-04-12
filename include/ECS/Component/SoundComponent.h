@@ -19,6 +19,11 @@ namespace ECS
       SoundComponent(const char* filename);
 
       /**
+       * Destructor.
+       */
+      ~SoundComponent();
+
+      /**
        * Play the sound file associated with this component.
        *
        * @return void.
