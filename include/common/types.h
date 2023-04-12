@@ -67,4 +67,4 @@ using V2        =      Vector2;
 /*============================================================
 // ECS Typedefs
 ============================================================*/
-using EntityArray =   std::array<std::array<ECS::Component*, 3>, MAX_ENTITIES>;
+using EntityArray =   std::array<std::array<ECS::Component*, 4>, MAX_ENTITIES>;

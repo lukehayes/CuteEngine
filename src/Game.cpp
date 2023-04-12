@@ -14,6 +14,8 @@ void Game::init()
 			this->title
 		  );
 
+	InitAudioDevice();
+
 	SetTargetFPS(60);
 	SetExitKey(KEY_Q);
 }

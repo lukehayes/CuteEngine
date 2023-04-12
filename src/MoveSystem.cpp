@@ -1,7 +1,9 @@
 #include "ECS/System/MoveSystem.h"
 #include "ECS/Component/TransformComponent.h"
+#include "ECS/Component/SoundComponent.h"
 
 #include "Game.h"
+#include <cstdio>
 
 namespace ECS
 {
@@ -13,9 +15,13 @@ namespace ECS
           // Transform Component is at index 0.
           if(!entity[0]) return;
 
-            auto* tc = dynamic_cast<ECS::TransformComponent*>(entity[0]);
+          // Sound Component is at index 3.
+          if(!entity[3]) return;
 
-            static int SPEED = 200;
+            auto* tc = dynamic_cast<ECS::TransformComponent*>(entity[0]);
+            auto* sc = dynamic_cast<ECS::SoundComponent*>(entity[3]);
+
+            static int SPEED = 500;
 
             // Movement.
             tc->position.x += tc->dx * SPEED * dt;
@@ -29,6 +35,8 @@ namespace ECS
             {
               tc->dx = -tc->dx;
               tc->dy = -tc->dy;
+
+              sc->play();
             }
         }
     }

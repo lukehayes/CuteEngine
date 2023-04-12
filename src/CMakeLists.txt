@@ -3,6 +3,7 @@ add_library(RayEngineLib
 
   # ECS Componets
   TransformComponent.cpp
+  SoundComponent.cpp
 
   # ECS Systems
   RenderSystem.cpp
