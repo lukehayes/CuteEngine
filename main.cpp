@@ -4,6 +4,7 @@
 #include "ECS/TransformComponent.h"
 
 #include "ECS/System/RenderSystem.h"
+#include "ECS/System/MoveSystem.h"
 
 #include "common/types.h"
 
@@ -46,17 +47,14 @@ int main() {
 
 
     ECS::RenderSystem renderSystem;
+    ECS::MoveSystem   moveSystem;
 
 
     while (!WindowShouldClose()) {
         delta = GetFrameTime();
-        
-        for(auto e : entities)
-        {
-            ECS::TransformComponent* tc = dynamic_cast<ECS::TransformComponent*>(e[0]);
-            tc->update(delta);
-        }
 
+        moveSystem.update(delta);
+        
         renderSystem.update(BLACK, delta);
     }
 

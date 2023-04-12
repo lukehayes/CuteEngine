@@ -6,4 +6,5 @@ add_library(RayEngineLib
 
   # ECS Systems
   RenderSystem.cpp
+  MoveSystem.cpp
 )
