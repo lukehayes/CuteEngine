@@ -2,7 +2,7 @@
 #ifndef ECS_TRANSFORM_COMPONENT_H
 #define ECS_TRANSFORM_COMPONENT_H
 
-#include "ECS/Component.h"
+#include "ECS/Component/Component.h"
 #include "raylib.h"
 #include <stdio.h>
 

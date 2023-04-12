@@ -1,5 +1,5 @@
 #include "ECS/System/MoveSystem.h"
-#include "ECS/TransformComponent.h"
+#include "ECS/Component/TransformComponent.h"
 
 #include "Game.h"
 

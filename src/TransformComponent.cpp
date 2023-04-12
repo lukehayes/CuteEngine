@@ -1,4 +1,4 @@
-#include "ECS/TransformComponent.h"
+#include "ECS/Component/TransformComponent.h"
 #include "Game.h"
 
 namespace ECS

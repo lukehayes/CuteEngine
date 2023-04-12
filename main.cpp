@@ -1,7 +1,7 @@
 #include "Game.h"
 
-#include "ECS/Component.h"
-#include "ECS/TransformComponent.h"
+#include "ECS/Component/Component.h"
+#include "ECS/Component/TransformComponent.h"
 
 #include "ECS/System/RenderSystem.h"
 #include "ECS/System/MoveSystem.h"
