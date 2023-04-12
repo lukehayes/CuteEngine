@@ -12,11 +12,6 @@
 #include <vector>
 #include <array>
 
-/*============================================================
-// Useful Variables
-============================================================*/
-float delta = 0.0;
-
 // Stack limit is 1000000;
 // constexpr int MAX_ENTITIES = 100;
 
@@ -24,10 +19,13 @@ float delta = 0.0;
 int main() {
 
     game.init();
+    game.deltaTime = 0.0;
 
     printf("Initializing %i Entities \n", MAX_ENTITIES);
 
-    // Initialize entities
+    /*============================================================
+    // Entity Initializtion
+    ============================================================*/
     for(int i = 0; i <= MAX_ENTITIES - 1; i++)
     {
         Color color = {
@@ -43,19 +41,20 @@ int main() {
         entities[i][1] = nullptr;
         entities[i][2] = nullptr;
     }
-    // --------------------------------------------------- 
 
 
+    /*============================================================
+    // System Initializtion
+    ============================================================*/
     ECS::RenderSystem renderSystem;
     ECS::MoveSystem   moveSystem;
 
 
     while (!WindowShouldClose()) {
-        delta = GetFrameTime();
+        game.deltaTime = GetFrameTime();
 
-        moveSystem.update(delta);
-        
-        renderSystem.update(BLACK, delta);
+        moveSystem.update(game.deltaTime);
+        renderSystem.update(BLACK, game.deltaTime);
     }
 
     CloseWindow();

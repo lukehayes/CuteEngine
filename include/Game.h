@@ -16,6 +16,8 @@ struct Game
 	int width;
 	int height;
 	const char* title;
+
+	double deltaTime;
 };
 
 // Make the game object available throughout the codebase
