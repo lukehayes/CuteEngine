@@ -1,12 +1,12 @@
 cmake_minimum_required(VERSION 3.2)
-project(RayEngine)
+project(CuteEngine)
 
 # Variables.
 # 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(INCLUDE_DIRS "include")
-set(BIN_NAME "app")
+set(BIN_NAME "CuteEngine")
 
 # Add debugging option.
 #
@@ -39,4 +39,4 @@ target_link_libraries(${BIN_NAME} raylib)
 
 # Link all cpp source files in src/
 # 
-target_link_libraries(${BIN_NAME} RayEngineLib)
+target_link_libraries(${BIN_NAME} CuteEngineLib)
