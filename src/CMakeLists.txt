@@ -1,4 +1,4 @@
-add_library(RayEngineLib
+add_library(CuteEngineLib
   Game.cpp
 
   # ECS Componets
