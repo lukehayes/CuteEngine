@@ -36,7 +36,7 @@ int main() {
             (unsigned char)GetRandomValue(200,255)
         };
 
-        int size = 1;
+        int size = 10;
 
         entities[i][0] = new ECS::TransformComponent(GetRandomValue(100,game.width), GetRandomValue(100,game.height), size, size, color);
         entities[i][1] = nullptr;
@@ -57,12 +57,7 @@ int main() {
             tc->update(delta);
         }
 
-        ClearBackground(BLACK);
-        BeginDrawing();
-
-            renderSystem.update(delta);
-
-        EndDrawing();
+        renderSystem.update(BLACK, delta);
     }
 
     CloseWindow();

@@ -7,8 +7,11 @@
 namespace ECS
 {
   void
-  RenderSystem::update(double dt)
+  RenderSystem::update(Color clearColor, double dt)
   {
+    ClearBackground(clearColor);
+    BeginDrawing();
+
     for(auto entity : entities)
     {
       // Transform Component is at index 0.
@@ -23,8 +26,9 @@ namespace ECS
           tc->size.y,
           tc->color
       );
-
-
     }
+
+    EndDrawing();
+
   }
 }
