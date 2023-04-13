@@ -25,11 +25,9 @@ namespace ECS
             auto* sc = dynamic_cast<ECS::SoundComponent*>(entity[SOUND_COMPONENT_INDEX]);
             sc->volume(0.07);
 
-            static int SPEED = 500;
-
             // Movement.
-            tc->position.x += tc->dx * SPEED * dt;
-            tc->position.y += tc->dy * SPEED * dt;
+            tc->position.x += tc->dx * tc->speed * dt;
+            tc->position.y += tc->dy * tc->speed * dt;
 
             // Screen Edge Check.
             if(

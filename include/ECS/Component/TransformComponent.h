@@ -15,7 +15,7 @@ namespace ECS
   {
     public:
 
-      TransformComponent(float x, float y, float w, float h, Color color = PINK);
+      TransformComponent(float x, float y, float w, float h, Color color = PINK, float speed = 400);
 
       virtual void update(double dt);
 
@@ -24,6 +24,7 @@ namespace ECS
       Color   color;
       float   dx; // X Direction
       float   dy; // Y Direction
+      float   speed;
   };
 }
 
