@@ -1,5 +1,7 @@
 add_library(CuteEngineLib
+  # Engine Specific
   Game.cpp
+  Globals.cpp
 
   # ECS Componets
   TransformComponent.cpp

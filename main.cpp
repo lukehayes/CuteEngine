@@ -1,4 +1,6 @@
 #include "Game.h"
+#include "common/Constants.h"
+#include "common/Globals.h"
 
 #include "ECS/Component/Component.h"
 #include "ECS/Component/TransformComponent.h"
