@@ -9,15 +9,6 @@
 #include "ECS/System/RenderSystem.h"
 #include "ECS/System/MoveSystem.h"
 
-#include "common/Constants.h"
-
-#include <cstdio>
-#include <vector>
-#include <array>
-
-// Stack limit is 1000000;
-// constexpr int MAX_ENTITIES = 100;
-
 int main() {
 
     game.init();
@@ -28,7 +19,6 @@ int main() {
     /*============================================================
     // Entity Initializtion
     ============================================================*/
-
     /**
      * Entity Array Layout:
      *
