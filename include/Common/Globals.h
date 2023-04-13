@@ -2,7 +2,7 @@
 #define CT_GLOBALS_H
 
 #include "Game.h"
-#include "types.h"
+#include "Types.h"
 
 /**
  * Useful global variables, usually externs, are stored in here.

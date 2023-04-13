@@ -3,8 +3,8 @@
 #include "ECS/Component/SoundComponent.h"
 
 #include "Game.h"
-#include "common/types.h"
-#include "common/Constants.h"
+#include "Common/Types.h"
+#include "Common/Constants.h"
 
 #include <math.h>
 

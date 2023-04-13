@@ -15,7 +15,7 @@
 // Framework Specific Includes
 ============================================================*/
 #include "Game.h"
-#include "common/Constants.h"
+#include "Common/Constants.h"
 
 /*============================================================
 // ECS Specific Includes

@@ -1,4 +1,4 @@
-#include "common/Globals.h"
+#include "Common/Globals.h"
 
 Game game = {};
 EntityArray entities = {};
