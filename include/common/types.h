@@ -65,3 +65,11 @@ using V2 = Vector2;
 using EntityArray = std::array<std::array<ECS::Component*, 4>, MAX_ENTITIES>;
 
 using EntityMap   = std::vector<std::map<std::string, ECS::Component*>>;
+/** EntityMap initialization example:
+EntityMap entMap = {
+    {
+        {"Transform" , new ECS::TransformComponent(10,10,10,10, GREEN) }, 
+        {"Sound",      new ECS::SoundComponent("FirstSound.mp4")}
+    }
+};
+*/
