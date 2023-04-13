@@ -3,6 +3,7 @@
 #include "ECS/Component/SoundComponent.h"
 
 #include "Game.h"
+#include "common/types.h"
 
 #include <math.h>
 
@@ -11,19 +12,16 @@ namespace ECS
     void
     MoveSystem::update(double dt)
     {
-        int TransformComponentIndex = 0;
-        int SoundComponentIndex = 3;
-
         for(auto entity : entities)
         {
           // Transform Component is at index 0.
-          if(!entity[TransformComponentIndex]) return;
+          if(!entity[TRANSFORM_COMPONENT_INDEX]) return;
 
           // Sound Component is at index 3.
-          if(!entity[SoundComponentIndex]) return;
+          if(!entity[SOUND_COMPONENT_INDEX]) return;
 
-            auto* tc = dynamic_cast<ECS::TransformComponent*>(entity[TransformComponentIndex]);
-            auto* sc = dynamic_cast<ECS::SoundComponent*>(entity[SoundComponentIndex]);
+            auto* tc = dynamic_cast<ECS::TransformComponent*>(entity[TRANSFORM_COMPONENT_INDEX]);
+            auto* sc = dynamic_cast<ECS::SoundComponent*>(entity[SOUND_COMPONENT_INDEX]);
             sc->volume(0.07);
 
             static int SPEED = 500;

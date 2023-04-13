@@ -15,7 +15,6 @@
 ============================================================*/
 #include "Game.h"
 
-
 /*============================================================
 // ECS Specific Includes
 ============================================================*/
@@ -25,7 +24,9 @@
 /*============================================================
 // ECS Constants
 ============================================================*/
-constexpr int MAX_ENTITIES = 10;
+constexpr int MAX_ENTITIES              = 10;
+constexpr int TRANSFORM_COMPONENT_INDEX = 0;
+constexpr int SOUND_COMPONENT_INDEX     = 3;
 
 
 /*============================================================
@@ -61,10 +62,10 @@ using VecInt    =      std::vector<size_t>;
 /*============================================================
 // Math Aliases
 ============================================================*/
-using V2        =      Vector2;
+using V2 = Vector2;
 
 
 /*============================================================
 // ECS Typedefs
 ============================================================*/
-using EntityArray =   std::array<std::array<ECS::Component*, 4>, MAX_ENTITIES>;
+using EntityArray = std::array<std::array<ECS::Component*, 4>, MAX_ENTITIES>;

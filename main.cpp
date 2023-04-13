@@ -16,7 +16,6 @@
 // Stack limit is 1000000;
 // constexpr int MAX_ENTITIES = 100;
 
-
 int main() {
 
     game.init();
@@ -47,10 +46,10 @@ int main() {
 
         int size = 10;
 
-        entities[i][0] = new ECS::TransformComponent(GetRandomValue(100,game.width), GetRandomValue(100,game.height), size, size, color);
+        entities[i][TRANSFORM_COMPONENT_INDEX] = new ECS::TransformComponent(GetRandomValue(100,game.width), GetRandomValue(100,game.height), size, size, color);
         entities[i][1] = nullptr;
         entities[i][2] = nullptr;
-        entities[i][3] = new ECS::SoundComponent("../assets/sounds/blip.wav");
+        entities[i][SOUND_COMPONENT_INDEX] = new ECS::SoundComponent("../assets/sounds/blip.wav");
     }
 
     /*============================================================
