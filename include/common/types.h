@@ -6,6 +6,7 @@
 #include "raylib.h" 
 #include <array>
 #include <vector>
+#include <map>
 #include <string>
 #include <memory>
 #include <iostream>
@@ -62,3 +63,5 @@ using V2 = Vector2;
 // ECS Typedefs
 ============================================================*/
 using EntityArray = std::array<std::array<ECS::Component*, 4>, MAX_ENTITIES>;
+
+using EntityMap   = std::vector<std::map<std::string, ECS::Component*>>;
