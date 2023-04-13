@@ -1,9 +1,10 @@
 #include "Game.h"
+#include "common/Constants.h"
 
 	Game::Game()
-		: width(1920),
-		  height(1080),
-		  title("Game Title")
+		: width(WINDOW_WIDTH),
+		  height(WINDOW_HEIGHT),
+		  title(GAME_TITLE)
 	{}
 
 void Game::init()

@@ -7,7 +7,7 @@
 #include "ECS/System/RenderSystem.h"
 #include "ECS/System/MoveSystem.h"
 
-#include "common/types.h"
+#include "common/Constants.h"
 
 #include <cstdio>
 #include <vector>

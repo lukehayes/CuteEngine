@@ -14,19 +14,12 @@
 // Framework Specific Includes
 ============================================================*/
 #include "Game.h"
+#include "common/Constants.h"
 
 /*============================================================
 // ECS Specific Includes
 ============================================================*/
 #include "ECS/Component/Component.h"
-
-
-/*============================================================
-// ECS Constants
-============================================================*/
-constexpr int MAX_ENTITIES              = 10;
-constexpr int TRANSFORM_COMPONENT_INDEX = 0;
-constexpr int SOUND_COMPONENT_INDEX     = 3;
 
 
 /*============================================================
@@ -52,12 +45,12 @@ using const_str     = const char*;
 /*============================================================
 // Template Typedefs
 ============================================================*/
-using Array2f   =      std::array<f32,2>;
-using Array3f   =      std::array<f32,3>;
-using Array4f   =      std::array<f32,4>;
-using Array8f   =      std::array<f32,8>;
-using VecFloat  =      std::vector<float>;
-using VecInt    =      std::vector<size_t>;
+using Array2f       = std::array<f32,2>;
+using Array3f       = std::array<f32,3>;
+using Array4f       = std::array<f32,4>;
+using Array8f       = std::array<f32,8>;
+using VecFloat      = std::vector<float>;
+using VecInt        = std::vector<size_t>;
 
 /*============================================================
 // Math Aliases
