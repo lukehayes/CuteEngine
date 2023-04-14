@@ -7,12 +7,12 @@
 namespace ECS
 {
   void
-  RenderSystem::update(Color clearColor, double dt)
+  RenderSystem::update(Color clearColor, double dt) 
   {
     ClearBackground(clearColor);
     BeginDrawing();
 
-    for(auto entity : entities)
+    for(auto entity : this->entities)
     {
         // Transform Component is at index 0.
         if(!entity[0]) return;

@@ -18,7 +18,12 @@ int main() {
     // System Initializtion
     ============================================================*/
     ECS::RenderSystem renderSystem;
+
+    renderSystem.entities = ev ;
+
+
     ECS::MoveSystem   moveSystem;
+    moveSystem.entities = ev ;
 
 
     while (!WindowShouldClose()) {

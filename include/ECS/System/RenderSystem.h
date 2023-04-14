@@ -1,6 +1,8 @@
 #ifndef ECS_RENDER_SYSTEM_H
 #define ECS_RENDER_SYSTEM_H
 
+#include "ECS/System/System.h"
+
 struct Color;
 
 namespace ECS
@@ -8,7 +10,7 @@ namespace ECS
   /**
    * Base class for all systems.
    */
-  class RenderSystem
+  class RenderSystem : public ECS::System
   {
     public:
 

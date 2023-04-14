@@ -1,10 +1,11 @@
 #ifndef ECS_MOVE_SYSTEM_H
 #define ECS_MOVE_SYSTEM_H
 
+#include "ECS/System/System.h"
 
 namespace ECS
 {
-    class MoveSystem
+    class MoveSystem : public ECS::System
     {
     public:
       /**
