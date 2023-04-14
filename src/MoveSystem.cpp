@@ -5,6 +5,7 @@
 #include "Game.h"
 #include "Common/Types.h"
 #include "Common/Constants.h"
+#include "Common/Globals.h"
 
 #include <math.h>
 

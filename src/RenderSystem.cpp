@@ -1,5 +1,6 @@
 #include "ECS/System/RenderSystem.h"
 #include "ECS/Component/TransformComponent.h"
+#include "Common/Globals.h"
 
 #include "Game.h"
 
