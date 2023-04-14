@@ -63,6 +63,7 @@ using V2 = Vector2;
 // ECS Typedefs
 ============================================================*/
 using EntityArray = std::array<std::array<ECS::Component*, 4>, MAX_ENTITIES>;
+using EntityVector = std::vector<std::array<ECS::Component*, 4>>;
 
 using EntityMap   = std::vector<std::map<std::string, ECS::Component*>>;
 /** EntityMap initialization example:
