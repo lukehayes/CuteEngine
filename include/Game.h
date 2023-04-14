@@ -20,12 +20,3 @@ struct Game
 	double deltaTime;
 };
 
-// Make the game object available throughout the codebase
-extern Game game;
-
-
-/*============================================================
-// Helpful Global Externs (defined in Game.cpp)
-============================================================*/
-extern EntityArray entities;
-
