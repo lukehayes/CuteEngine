@@ -1,7 +1,7 @@
 #ifndef ECS_SYSTEM_H
 #define ECS_SYSTEM_H
 
-#include "Common/Types.h";
+#include "Common/Types.h"
 
 namespace ECS
 {
@@ -12,7 +12,7 @@ namespace ECS
     {
     public:
 
-      EntityVector entities;
+    EntityArray* entities = nullptr;
   };
 }
 

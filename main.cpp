@@ -12,18 +12,17 @@ int main() {
     game.init();
     game.deltaTime = 0.0;
 
-    EntityVector ev = ECS::GenerateEntities(MAX_ENTITIES);
+    EntityArray ev = ECS::GenerateEntities(MAX_ENTITIES);
 
     /*============================================================
     // System Initializtion
     ============================================================*/
     ECS::RenderSystem renderSystem;
-
-    renderSystem.entities = ev ;
+    renderSystem.entities = &ev ;
 
 
     ECS::MoveSystem   moveSystem;
-    moveSystem.entities = ev ;
+    moveSystem.entities = &ev ;
 
 
     while (!WindowShouldClose()) {

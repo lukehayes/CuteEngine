@@ -13,11 +13,11 @@
 
 namespace ECS
 {
-    EntityVector GenerateEntities(int count)
+    EntityArray GenerateEntities(int count)
     {
         printf("Initializing %i Entities \n", count);
 
-        EntityVector entities;
+        EntityArray entities;
 
         /*============================================================
         // Entity Initializtion
@@ -41,10 +41,10 @@ namespace ECS
 
             int size = 10;
 
-            entities[i][TRANSFORM_COMPONENT_INDEX] = new ECS::TransformComponent(GetRandomValue(100,game.width), GetRandomValue(100,game.height), size, size, color);
-            entities[i][1] = nullptr;
-            entities[i][2] = nullptr;
-            entities[i][SOUND_COMPONENT_INDEX] = new ECS::SoundComponent("../assets/sounds/blip.wav");
+            entities.at(i)[TRANSFORM_COMPONENT_INDEX] = new ECS::TransformComponent(GetRandomValue(100,game.width), GetRandomValue(100,game.height), size, size, color);
+            entities.at(i)[1] = nullptr;
+            entities.at(i)[2] = nullptr;
+            entities.at(i)[SOUND_COMPONENT_INDEX] = new ECS::SoundComponent("../assets/sounds/blip.wav");
         }
 
         return entities;
@@ -54,7 +54,7 @@ namespace ECS
      * Destroy all the entities using the EXTERN variable 
      * defined in common/Globals.h
      */
-    void DestroyEntities(EntityVector& entities, int count)
+    void DestroyEntities(EntityArray& entities, int count)
     {
         // TODO Cheeky memory allocation cleanup.
         for(int i = 0; i <= count - 1; i++)

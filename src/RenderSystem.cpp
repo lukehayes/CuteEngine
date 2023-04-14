@@ -12,7 +12,7 @@ namespace ECS
     ClearBackground(clearColor);
     BeginDrawing();
 
-    for(auto entity : this->entities)
+    for(auto entity : *this->entities)
     {
         // Transform Component is at index 0.
         if(!entity[0]) return;

@@ -14,7 +14,7 @@ namespace ECS
     void
     MoveSystem::update(double dt)
     {
-        for(auto entity : entities)
+        for(auto entity : *this->entities)
         {
           // Transform Component is at index 0.
           if(!entity[TRANSFORM_COMPONENT_INDEX]) return;
