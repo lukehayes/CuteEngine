@@ -4,7 +4,6 @@
 
 #include "ECS/Component/Component.h"
 #include "raylib.h"
-#include <stdio.h>
 
 namespace ECS
 {

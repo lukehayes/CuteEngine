@@ -5,7 +5,6 @@
 #include "ECS/System/RenderSystem.h"
 #include "ECS/System/MoveSystem.h"
 #include "ECS/Factory/EntityFactory.h"
-#include <stdio.h>
 
 int main() {
 
