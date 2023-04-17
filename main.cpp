@@ -34,6 +34,7 @@ int main() {
         game.deltaTime = GetFrameTime();
 
         moveSystem.update(game.deltaTime);
+        collisionSystem.update(game.deltaTime);
         renderSystem.update(BLACK, game.deltaTime);
     }
 
