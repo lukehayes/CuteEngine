@@ -6,6 +6,7 @@ add_library(CuteEngineLib
   # ECS Componets
   TransformComponent.cpp
   SoundComponent.cpp
+  CollisionComponent.cpp
 
   # ECS Systems
   RenderSystem.cpp
