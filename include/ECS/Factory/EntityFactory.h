@@ -12,6 +12,8 @@
 #include "Common/Constants.h"
 #include "Common/Globals.h"
 
+#include <algorithm>
+
 namespace ECS
 {
     EntityArray GenerateEntities(int count)
@@ -71,14 +73,27 @@ namespace ECS
         {
             auto* tc = dynamic_cast<ECS::TransformComponent*>(entities[i][TRANSFORM_COMPONENT_INDEX]);
             auto* sc = dynamic_cast<ECS::SoundComponent*>(entities[i][SOUND_COMPONENT_INDEX]);
+            auto* cc = dynamic_cast<ECS::CollisionComponent*>(entities[i][COLLISION_COMPONENT_INDEX]);
 
-            delete tc;
-            tc = nullptr;
-            printf("Deleted Transform Component %i\n", i);
+            if(tc){
+                delete tc;
+                tc = nullptr;
+                printf("Deleted Transform Component %i\n", i);
+            }
 
-            delete sc;
-            sc = nullptr;
-            printf("Deleted Sound Component %i\n", i);
+            if(sc){
+                delete sc;
+                sc = nullptr;
+                printf("Deleted Sound Component %i\n", i);
+            }
+
+            if(cc){
+                delete cc;
+                cc = nullptr;
+                printf("Deleted Collision Component %i\n", i);
+            }
+
+            printf("________ \n");
         }
 
         printf("All memory deleted \n");
