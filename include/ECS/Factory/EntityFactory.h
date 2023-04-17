@@ -20,6 +20,15 @@ namespace ECS
 
         EntityArray entities;
 
+        // Make sure all entity components are set to nullptr on initialization.
+        for(auto ent : entities)
+        {
+            for(auto comp: ent)
+            {
+                comp = nullptr;
+            }
+        }
+
         /*============================================================
         // Entity Initializtion
         ============================================================*/
