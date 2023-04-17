@@ -7,6 +7,7 @@
 #include "ECS/Component/Component.h"
 #include "ECS/Component/TransformComponent.h"
 #include "ECS/Component/SoundComponent.h"
+#include "ECS/Component/CollisionComponent.h"
 
 #include "Common/Constants.h"
 #include "Common/Globals.h"
@@ -43,7 +44,7 @@ namespace ECS
 
             entities.at(i)[TRANSFORM_COMPONENT_INDEX] = new ECS::TransformComponent(GetRandomValue(100,game.width), GetRandomValue(100,game.height), size, size, color);
             entities.at(i)[1] = nullptr;
-            entities.at(i)[2] = nullptr;
+            entities.at(i)[2] = new ECS::CollisionComponent();
             entities.at(i)[SOUND_COMPONENT_INDEX] = new ECS::SoundComponent("../assets/sounds/blip.wav");
         }
 

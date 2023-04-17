@@ -4,10 +4,13 @@
 
 #include "ECS/System/RenderSystem.h"
 #include "ECS/System/MoveSystem.h"
+#include "ECS/System/CollisionSystem.h"
+
 #include "ECS/Factory/EntityFactory.h"
 
 int main() {
 
+    SetTraceLogLevel(LOG_NONE);
     game.init();
     game.deltaTime = 0.0;
 
@@ -22,6 +25,9 @@ int main() {
 
     ECS::MoveSystem   moveSystem;
     moveSystem.entities = &ev ;
+
+    ECS::CollisionSystem   collisionSystem;
+    collisionSystem.entities = &ev ;
 
 
     while (!WindowShouldClose()) {

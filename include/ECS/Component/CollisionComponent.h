@@ -2,6 +2,7 @@
 #define ECS_COLLISION_COMPONENT_H
 
 #include "ECS/Component/Component.h"
+#include "Common/Types.h"
 
 namespace ECS
 {
@@ -21,7 +22,15 @@ namespace ECS
          */
         virtual void update(double dt) override;
 
-        bool hasCollision();
+        /**
+         * Check if the current component is colliding
+         * with another entity.
+         *
+         * @param EntityArray* entities.
+         *
+         * @return bool
+         */
+        bool hasCollision(EntityArray& entities);
 
     };
 }
