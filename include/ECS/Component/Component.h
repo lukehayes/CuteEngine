@@ -1,34 +1,24 @@
-#pragma once
+#ifndef ECS_COMPONENT_H
+#define ECS_COMPONENT_H
 
-#include <string>
-
-namespace ECS::Component
+namespace ECS
 {
-    class Component
-    {
+  /**
+   * Base class for all components.
+   */
+  class Component
+  {
     public:
-            Component(const std::string& name);
-            virtual ~Component();
 
-            /**
-             * Get the name of the component.
-             *
-             * @return std::string
-             */
-            std::string getName() const;
-
-            /**
-             * Get the id of the entity this component is attached to.
-             *
-             * @return int
-             */
-            inline int getEntityId() const { return this->entity_id; }
-
-
-            int entity_id = 0;
-    private:
-            std::string name;
-
-    };
+      /**
+       * Update the component.
+       *
+       * @param double dt    Delta time.
+       * 
+       * @return void.
+       */
+      virtual void update(double dt) = 0;
+  };
 }
 
+#endif // ECS_COMPONENT_H

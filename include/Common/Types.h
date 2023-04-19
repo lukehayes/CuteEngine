@@ -6,6 +6,7 @@
 #include "raylib.h" 
 #include <array>
 #include <vector>
+#include <map>
 #include <string>
 #include <memory>
 #include <iostream>
@@ -14,6 +15,13 @@
 // Framework Specific Includes
 ============================================================*/
 #include "Game.h"
+#include "Common/Constants.h"
+
+/*============================================================
+// ECS Specific Includes
+============================================================*/
+#include "ECS/Component/Component.h"
+
 
 /*============================================================
 // Primitives
@@ -38,14 +46,31 @@ using const_str     = const char*;
 /*============================================================
 // Template Typedefs
 ============================================================*/
-using Array2f   =      std::array<f32,2>;
-using Array3f   =      std::array<f32,3>;
-using Array4f   =      std::array<f32,4>;
-using Array8f   =      std::array<f32,8>;
-using VecFloat  =      std::vector<float>;
-using VecInt    =      std::vector<size_t>;
+using Array2f       = std::array<f32,2>;
+using Array3f       = std::array<f32,3>;
+using Array4f       = std::array<f32,4>;
+using Array8f       = std::array<f32,8>;
+using VecFloat      = std::vector<float>;
+using VecInt        = std::vector<size_t>;
 
 /*============================================================
 // Math Aliases
 ============================================================*/
-using V2        =      Vector2;
+using V2 = Vector2;
+
+
+/*============================================================
+// ECS Typedefs
+============================================================*/
+using EntityArray = std::array<std::array<ECS::Component*, 4>, MAX_ENTITIES>;
+using EntityVector = std::vector<std::array<ECS::Component*, 4>>;
+
+using EntityMap   = std::vector<std::map<std::string, ECS::Component*>>;
+/** EntityMap initialization example:
+EntityMap entMap = {
+    {
+        {"Transform" , new ECS::TransformComponent(10,10,10,10, GREEN) }, 
+        {"Sound",      new ECS::SoundComponent("FirstSound.mp4")}
+    }
+};
+*/

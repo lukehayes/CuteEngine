@@ -1,6 +1,7 @@
 #pragma once
 
 #include "raylib.h"
+#include "Common/Types.h"
 
 struct Game
 {
@@ -15,8 +16,7 @@ struct Game
 	int width;
 	int height;
 	const char* title;
+
+	double deltaTime;
 };
-
-extern Game game;
-
 
