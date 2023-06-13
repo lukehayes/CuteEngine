@@ -4,7 +4,8 @@
 Game::Game()
 	: width(WINDOW_WIDTH),
 	  height(WINDOW_HEIGHT),
-	  title(GAME_TITLE)
+	  title(GAME_TITLE),
+	  deltaTime(0.0)
 {}
 
 void Game::init()
