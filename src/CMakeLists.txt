@@ -3,11 +3,12 @@ add_library(CuteEngineLib
   Game.cpp
   Globals.cpp
 
-  # ECS Componets
+  # ECS Components
   TransformComponent.cpp
   SoundComponent.cpp
   CollisionComponent.cpp
   CollisionSystem.cpp
+  TimerComponent.cpp
 
   # ECS Systems
   RenderSystem.cpp
