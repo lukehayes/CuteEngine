@@ -11,6 +11,27 @@
 
 namespace ECS
 {
+    using Entity = std::array<ECS::Component*,4>;
+
+    void checkCollision(Entity& entity)
+    {
+        auto* tc = dynamic_cast<ECS::TransformComponent*>(entity[TRANSFORM_COMPONENT_INDEX]);
+
+        // Screen Edge Check.
+        if(
+          tc->position.x < 5 || tc->position.x > (game.width - 5) ||
+          tc->position.y < 5 || tc->position.y > (game.height - 5)
+        )
+        {
+          tc->dx = -tc->dx;
+          tc->dy = -tc->dy;
+
+          int size = GetRandomValue(3,100);
+          tc->size.x = size;
+          tc->size.y = size;
+        }
+    }
+
     void
     MoveSystem::update(double dt)
     {
@@ -30,21 +51,7 @@ namespace ECS
             tc->position.x += tc->dx * tc->speed * dt;
             tc->position.y += tc->dy * tc->speed * dt;
 
-            // Screen Edge Check.
-            if(
-              tc->position.x < 5 || tc->position.x > (game.width - 5) ||
-              tc->position.y < 5 || tc->position.y > (game.height - 5)
-            )
-            {
-              tc->dx = -tc->dx;
-              tc->dy = -tc->dy;
-
-              sc->play();
-
-              int size = GetRandomValue(3,100);
-              tc->size.x = size;
-              tc->size.y = size;
-            }
+            checkCollision(entity);
         }
     }
 }
