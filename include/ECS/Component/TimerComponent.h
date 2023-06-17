@@ -12,14 +12,27 @@ namespace ECS
   {
     public:
 
+      // TODO Need to implement what the timer should do after
+      //      the it has finished - callback fn or similar.
+
+      TimerComponent();
+
+      TimerComponent(bool oneshot, double time);
+
       /**
        * Update the component.
        *
-       * @param double dt    Delta time.
+       * @sparam double dt    Delta time.
        * 
-       * @return void.
+   s    * @return void.
        */
       virtual void update(double dt) override;
+
+      bool   oneshot;
+      double time;
+      double elapsedTime;
+      bool running;
+
   };
 }
 
