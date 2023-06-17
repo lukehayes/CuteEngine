@@ -12,7 +12,6 @@ int main() {
 
     SetTraceLogLevel(LOG_NONE);
     game.init();
-    game.deltaTime = 0.0;
 
     EntityArray ev = ECS::GenerateEntities(MAX_ENTITIES);
 
