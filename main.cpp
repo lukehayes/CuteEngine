@@ -13,6 +13,9 @@ int main() {
     SetTraceLogLevel(LOG_NONE);
     game.init();
 
+    /*============================================================
+    // Fill the entity array with entities
+    ============================================================*/
     EntityArray ev = ECS::GenerateEntities(MAX_ENTITIES);
 
     /*============================================================
