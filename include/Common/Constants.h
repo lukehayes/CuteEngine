@@ -16,7 +16,9 @@ constexpr const char* GAME_TITLE = "Game Title";
 ============================================================*/
 constexpr int MAX_ENTITIES              = 5;
 constexpr int TRANSFORM_COMPONENT_INDEX = 0;
+constexpr int SPRITE_COMPONENT_INDEX    = 1;
 constexpr int COLLISION_COMPONENT_INDEX = 2;
-constexpr int SOUND_COMPONENT_INDEX     = 3;
+constexpr int TIMER_COMPONENT_INDEX     = 3;
+constexpr int SOUND_COMPONENT_INDEX     = 4;
 
 #endif  // CT_CONSTANTS_H
