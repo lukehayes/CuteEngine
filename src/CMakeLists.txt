@@ -13,4 +13,5 @@ add_library(CuteEngineLib
   # ECS Systems
   RenderSystem.cpp
   MoveSystem.cpp
+  TimerSystem.cpp
 )
