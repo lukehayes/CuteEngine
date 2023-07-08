@@ -12,13 +12,8 @@ namespace ECS
     {
         for(auto entity : *this->entities)
         {
-            // Transform Component is at index 0.
             if(!entity[TRANSFORM_COMPONENT_INDEX]) return;
-            if(!entity[TIMER_COMPONENT_INDEX])
-            {
-                printf("NO TIMRE \n");
-                return;
-            };
+            if(!entity[TIMER_COMPONENT_INDEX])     return;
 
             auto* transform = dynamic_cast<ECS::TransformComponent*>(entity[TRANSFORM_COMPONENT_INDEX]);
             auto* timer = dynamic_cast<ECS::TimerComponent*>(entity[TIMER_COMPONENT_INDEX]);
@@ -28,6 +23,7 @@ namespace ECS
                 timer->elapsedTime += dt;
             }else
             {
+                transform->color = Color(255,255,255,120);
             }
         }
     }
