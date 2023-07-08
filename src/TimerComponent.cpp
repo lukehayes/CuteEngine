@@ -13,25 +13,13 @@ namespace ECS
   {}
 
   TimerComponent::TimerComponent(bool oneshot, double time)
-    : oneshot(false),
+    : oneshot(oneshot),
       running(true),
       finished(false),
-      time(1.0),
+      time(time),
       elapsedTime(0.0)
   {}
 
   void
-  TimerComponent::update(double dt) 
-  {
-    this->elapsedTime += dt;
-
-    if(this->running)
-    {
-      if(this->elapsedTime >= this->time)
-      {
-        printf("Timer Up\n");
-        this->running = false;
-      }
-    }
-  }
+  TimerComponent::update(double dt) {}
 }

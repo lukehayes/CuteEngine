@@ -22,9 +22,9 @@ namespace ECS
       /**
        * Update the component.
        *
-       * @sparam double dt    Delta time.
-       * 
-   s    * @return void.
+       * @param double dt    Delta time.
+       *
+       * @return void.
        */
       virtual void update(double dt) override;
 
