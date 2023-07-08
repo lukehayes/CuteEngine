@@ -8,6 +8,7 @@
 #include "ECS/Component/TransformComponent.h"
 #include "ECS/Component/SoundComponent.h"
 #include "ECS/Component/CollisionComponent.h"
+#include "ECS/Component/TimerComponent.h"
 
 #include "Common/Constants.h"
 #include "Common/Globals.h"
@@ -39,8 +40,9 @@ namespace ECS
          *
          * [0] Transform Component - Always defined
          * [1] Sprite Component    - Can be null
-         * [2] Timer Component     - Can be null - Possible Map
-         * [3] Sound Component     - Can be null - Possible Map
+         * [2] Collision Component - Can be null
+         * [3] Timer Component     - Can be null - Possible Map
+         * [4] Sound Component     - Can be null - Possible Map
          */
         for(int i = 0; i <= count - 1; i++)
         {
@@ -54,9 +56,10 @@ namespace ECS
             int size = 10;
 
             entities.at(i)[TRANSFORM_COMPONENT_INDEX] = new ECS::TransformComponent(GetRandomValue(100,game.width), GetRandomValue(100,game.height), size, size, color);
-            entities.at(i)[1] = nullptr;
-            entities.at(i)[COLLISION_COMPONENT_INDEX] = new ECS::CollisionComponent();
-            entities.at(i)[SOUND_COMPONENT_INDEX]     = new ECS::SoundComponent("../assets/sounds/blip.wav");
+            entities.at(i)[SPRITE_COMPONENT_INDEX]    = nullptr;
+            entities.at(i)[COLLISION_COMPONENT_INDEX] = nullptr;
+            entities.at(i)[TIMER_COMPONENT_INDEX]     = new ECS::TimerComponent();
+            entities.at(i)[SOUND_COMPONENT_INDEX]     = nullptr;
         }
 
         return entities;
@@ -71,26 +74,33 @@ namespace ECS
         // TODO Cheeky memory allocation cleanup.
         for(int i = 0; i <= count - 1; i++)
         {
-            auto* tc = dynamic_cast<ECS::TransformComponent*>(entities[i][TRANSFORM_COMPONENT_INDEX]);
-            auto* sc = dynamic_cast<ECS::SoundComponent*>(entities[i][SOUND_COMPONENT_INDEX]);
-            auto* cc = dynamic_cast<ECS::CollisionComponent*>(entities[i][COLLISION_COMPONENT_INDEX]);
+            auto* transform_comp = dynamic_cast<ECS::TransformComponent*>(entities[i][TRANSFORM_COMPONENT_INDEX]);
+            auto* sound_comp     = dynamic_cast<ECS::SoundComponent*>(entities[i][SOUND_COMPONENT_INDEX]);
+            auto* collision_comp = dynamic_cast<ECS::CollisionComponent*>(entities[i][COLLISION_COMPONENT_INDEX]);
+            auto* timer_comp     = dynamic_cast<ECS::TimerComponent*>(entities[i][TIMER_COMPONENT_INDEX]);
 
-            if(tc){
-                delete tc;
-                tc = nullptr;
+            if(transform_comp){
+                delete transform_comp;
+                transform_comp = nullptr;
                 printf("Deleted Transform Component %i\n", i);
             }
 
-            if(sc){
-                delete sc;
-                sc = nullptr;
+            if(sound_comp){
+                delete sound_comp;
+                sound_comp = nullptr;
                 printf("Deleted Sound Component %i\n", i);
             }
 
-            if(cc){
-                delete cc;
-                cc = nullptr;
+            if(collision_comp){
+                delete collision_comp;
+                collision_comp = nullptr;
                 printf("Deleted Collision Component %i\n", i);
+            }
+
+            if(timer_comp){
+                delete timer_comp;
+                timer_comp = nullptr;
+                printf("Deleted Timer Component %i\n", i);
             }
 
             printf("________ \n");
