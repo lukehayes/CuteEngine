@@ -12,7 +12,6 @@ namespace ECS
        * Update the system.
        *
        * @param double dt    Delta time.
-       * @param Color  clearColor.
        * 
        * @return void.
        */

@@ -40,12 +40,7 @@ namespace ECS
           // Transform Component is at index 0.
           if(!entity[TRANSFORM_COMPONENT_INDEX]) return;
 
-          // Sound Component is at index 3.
-          if(!entity[SOUND_COMPONENT_INDEX]) return;
-
             auto* tc = dynamic_cast<ECS::TransformComponent*>(entity[TRANSFORM_COMPONENT_INDEX]);
-            auto* sc = dynamic_cast<ECS::SoundComponent*>(entity[SOUND_COMPONENT_INDEX]);
-            sc->volume(0.07);
 
             // Movement.
             tc->position.x += tc->dx * tc->speed * dt;
