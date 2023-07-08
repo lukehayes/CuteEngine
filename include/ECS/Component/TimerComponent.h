@@ -29,9 +29,10 @@ namespace ECS
       virtual void update(double dt) override;
 
       bool   oneshot;
+      bool   running;
+      bool   finished;
       double time;
       double elapsedTime;
-      bool running;
 
   };
 }

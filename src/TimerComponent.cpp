@@ -6,16 +6,18 @@ namespace ECS
 {
   TimerComponent::TimerComponent()
     : oneshot(false),
+      running(true),
+      finished(false),
       time(1.0),
-      elapsedTime(0.0),
-      running(true)
+      elapsedTime(0.0)
   {}
 
   TimerComponent::TimerComponent(bool oneshot, double time)
-    : oneshot(oneshot),
-      time(time),
-      elapsedTime(0.0),
-      running(true)
+    : oneshot(false),
+      running(true),
+      finished(false),
+      time(1.0),
+      elapsedTime(0.0)
   {}
 
   void
