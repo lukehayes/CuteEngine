@@ -5,6 +5,7 @@
 #include "ECS/System/RenderSystem.h"
 #include "ECS/System/MoveSystem.h"
 #include "ECS/System/CollisionSystem.h"
+#include "ECS/System/TimerSystem.h"
 
 #include "ECS/Factory/EntityFactory.h"
 
@@ -24,6 +25,8 @@ int main() {
     ECS::RenderSystem renderSystem;
     renderSystem.entities = &ev ;
 
+    ECS::TimerSystem timerSystem;
+    timerSystem.entities = &ev ;
 
     ECS::MoveSystem   moveSystem;
     moveSystem.entities = &ev ;
@@ -37,6 +40,7 @@ int main() {
 
         moveSystem.update(game.deltaTime);
         //collisionSystem.update(game.deltaTime);
+        timerSystem.update(game.deltaTime);
         renderSystem.update(BLACK, game.deltaTime);
     }
 
