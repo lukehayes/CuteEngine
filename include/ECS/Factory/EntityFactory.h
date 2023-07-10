@@ -9,6 +9,7 @@
 #include "ECS/Component/SoundComponent.h"
 #include "ECS/Component/CollisionComponent.h"
 #include "ECS/Component/TimerComponent.h"
+#include "ECS/Component/SpriteComponent.h"
 
 #include "Common/Constants.h"
 #include "Common/Globals.h"
@@ -56,7 +57,7 @@ namespace ECS
             int size = 10;
 
             entities.at(i)[TRANSFORM_COMPONENT_INDEX] = new ECS::TransformComponent(GetRandomValue(100,game.width), GetRandomValue(100,game.height), size, size, color);
-            entities.at(i)[SPRITE_COMPONENT_INDEX]    = nullptr;
+            entities.at(i)[SPRITE_COMPONENT_INDEX]    = GetRandomValue(0,1) ? new ECS::SpriteComponent("assets/bernie.png", 10) : nullptr;
             entities.at(i)[COLLISION_COMPONENT_INDEX] = nullptr;
             entities.at(i)[TIMER_COMPONENT_INDEX]     = new ECS::TimerComponent();
             entities.at(i)[SOUND_COMPONENT_INDEX]     = nullptr;
@@ -78,6 +79,7 @@ namespace ECS
             auto* sound_comp     = dynamic_cast<ECS::SoundComponent*>(entities[i][SOUND_COMPONENT_INDEX]);
             auto* collision_comp = dynamic_cast<ECS::CollisionComponent*>(entities[i][COLLISION_COMPONENT_INDEX]);
             auto* timer_comp     = dynamic_cast<ECS::TimerComponent*>(entities[i][TIMER_COMPONENT_INDEX]);
+            auto* sprite_comp    = dynamic_cast<ECS::SpriteComponent*>(entities[i][SPRITE_COMPONENT_INDEX]);
 
             if(transform_comp){
                 delete transform_comp;
@@ -89,6 +91,12 @@ namespace ECS
                 delete sound_comp;
                 sound_comp = nullptr;
                 printf("Deleted Sound Component %i\n", i);
+            }
+
+            if(sprite_comp){
+                delete sprite_comp;
+                sprite_comp = nullptr;
+                printf("Deleted Sprite Component %i\n", i);
             }
 
             if(collision_comp){
