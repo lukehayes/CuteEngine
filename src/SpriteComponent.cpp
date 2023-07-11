@@ -3,13 +3,13 @@
 
 namespace ECS
 {
-  SpriteComponent::SpriteComponent(const char* texture_path, float scale)
-    : texture(LoadTexture(texture_path)),
+  SpriteComponent::SpriteComponent(Texture2D* texture, float scale)
+    : texture(texture),
       scale(scale) {}
 
   SpriteComponent::~SpriteComponent()
   {
-    UnloadTexture(this->texture);
+    // UnloadTexture(this->texture);
   }
 }
 

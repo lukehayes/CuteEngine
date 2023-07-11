@@ -14,12 +14,14 @@
 #include "Common/Constants.h"
 #include "Common/Globals.h"
 
-#include <algorithm>
+#include "Factory/TextureFactory.h"
 
 namespace ECS
 {
     EntityArray GenerateEntities(int count)
     {
+        CTFactory::TextureFactory textureFactory;
+
         printf("Initializing %i Entities \n", count);
 
         EntityArray entities;
@@ -56,8 +58,10 @@ namespace ECS
 
             int size = 10;
 
+
             entities.at(i)[TRANSFORM_COMPONENT_INDEX] = new ECS::TransformComponent(GetRandomValue(100,game.width), GetRandomValue(100,game.height), size, size, color);
-            entities.at(i)[SPRITE_COMPONENT_INDEX]    = GetRandomValue(0,1) ? new ECS::SpriteComponent("assets/bernie.png", 10) : nullptr;
+            // entities.at(i)[SPRITE_COMPONENT_INDEX]    = GetRandomValue(0,1) ? new ECS::SpriteComponent(&textureFactory.bernie, 10) : nullptr;
+            entities.at(i)[SPRITE_COMPONENT_INDEX]    = new ECS::SpriteComponent(&textureFactory.bernie, 10);
             entities.at(i)[COLLISION_COMPONENT_INDEX] = nullptr;
             entities.at(i)[TIMER_COMPONENT_INDEX]     = new ECS::TimerComponent();
             entities.at(i)[SOUND_COMPONENT_INDEX]     = nullptr;
