@@ -1,9 +1,9 @@
-#ifndef ECS_TIMER_COMPONENT_H
-#define ECS_TIMER_COMPONENT_H
+#ifndef CT_ECS_TIMER_COMPONENT_H
+#define CT_ECS_TIMER_COMPONENT_H
 
-#include "ECS/Component/Component.h"
+#include "CT/ECS/Component/Component.h"
 
-namespace ECS
+namespace CT::ECS
 {
   /**
    * Timer component.

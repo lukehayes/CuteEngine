@@ -1,14 +1,14 @@
 #ifndef ECS_COLLISION_SYSTEM_H
 #define ECS_COLLISION_SYSTEM_H
 
-#include "ECS/System/System.h"
+#include "CT/ECS/System/System.h"
 
-namespace ECS
+namespace CT::ECS
 {
   /**
    * Base class for all systems.
    */
-  class CollisionSystem : public ECS::System
+  class CollisionSystem : public CT::ECS::System
   {
     public:
 

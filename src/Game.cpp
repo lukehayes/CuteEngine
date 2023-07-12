@@ -1,5 +1,5 @@
-#include "Game.h"
-#include "Common/Constants.h"
+#include "CT/Game.h"
+#include "CT/Common/Constants.h"
 
 Game::Game()
 	: width(WINDOW_WIDTH),

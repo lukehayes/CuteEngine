@@ -1,7 +1,7 @@
-#include "ECS/Component/TransformComponent.h"
-#include "Game.h"
+#include "CT/ECS/Component/TransformComponent.h"
+#include "CT/Game.h"
 
-namespace ECS
+namespace CT::ECS
 {
   TransformComponent::TransformComponent(float x, float y, float w, float h, Color color, float speed)
     : position({x,y}),

@@ -9,6 +9,7 @@ add_library(CuteEngineLib
   CollisionComponent.cpp
   CollisionSystem.cpp
   TimerComponent.cpp
+  SpriteComponent.cpp
 
   # ECS Systems
   RenderSystem.cpp

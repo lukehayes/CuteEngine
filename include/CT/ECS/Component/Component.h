@@ -1,7 +1,7 @@
 #ifndef ECS_COMPONENT_H
 #define ECS_COMPONENT_H
 
-namespace ECS
+namespace CT::ECS
 {
   /**
    * Base class for all components.

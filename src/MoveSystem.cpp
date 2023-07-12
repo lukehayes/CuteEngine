@@ -1,17 +1,17 @@
-#include "ECS/System/MoveSystem.h"
-#include "ECS/Component/TransformComponent.h"
-#include "ECS/Component/SoundComponent.h"
+#include "CT/ECS/System/MoveSystem.h"
+#include "CT/ECS/Component/TransformComponent.h"
+#include "CT/ECS/Component/SoundComponent.h"
 
-#include "Game.h"
-#include "Common/Types.h"
-#include "Common/Constants.h"
-#include "Common/Globals.h"
+#include "CT/Game.h"
+#include "CT/Common/Types.h"
+#include "CT/Common/Constants.h"
+#include "CT/Common/Globals.h"
 
 #include <math.h>
 
-namespace ECS
+namespace CT::ECS
 {
-    using Entity = std::array<ECS::Component*,4>;
+    using Entity = std::array<CT::ECS::Component*,4>;
 
     void checkCollision(Entity& entity)
     {

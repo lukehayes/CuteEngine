@@ -1,11 +1,11 @@
 
-#include "ECS/Component/CollisionComponent.h"
+#include "CT/ECS/Component/CollisionComponent.h"
 #include <raylib.h>
 #include <stdio.h>
 
-#include "ECS/Component/TransformComponent.h"
+#include "CT/ECS/Component/TransformComponent.h"
 
-namespace ECS
+namespace CT::ECS
 {
     void
     CollisionComponent::update(double dt) 

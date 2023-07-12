@@ -13,13 +13,13 @@
 /*============================================================
 // Framework Specific Includes
 ============================================================*/
-#include "Game.h"
-#include "Common/Constants.h"
+#include "CT/Game.h"
+#include "CT/Common/Constants.h"
 
 /*============================================================
 // ECS Specific Includes
 ============================================================*/
-#include "ECS/Component/Component.h"
+#include "CT/ECS/Component/Component.h"
 
 
 /*============================================================
@@ -61,10 +61,10 @@ using V2 = Vector2;
 /*============================================================
 // ECS Typedefs
 ============================================================*/
-using EntityArray = std::array<std::array<ECS::Component*, 4>, MAX_ENTITIES>;
-using EntityVector = std::vector<std::array<ECS::Component*, 4>>;
+using EntityArray = std::array<std::array<CT::ECS::Component*, 4>, MAX_ENTITIES>;
+using EntityVector = std::vector<std::array<CT::ECS::Component*, 4>>;
 
-using EntityMap   = std::vector<std::map<std::string, ECS::Component*>>;
+using EntityMap   = std::vector<std::map<std::string, CT::ECS::Component*>>;
 /** EntityMap initialization example:
 EntityMap entMap = {
     {
