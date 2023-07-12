@@ -1,11 +1,11 @@
 
-#ifndef ECS_TRANSFORM_COMPONENT_H
-#define ECS_TRANSFORM_COMPONENT_H
+#ifndef CT_ECS_TRANSFORM_COMPONENT_H
+#define CT_ECS_TRANSFORM_COMPONENT_H
 
-#include "ECS/Component/Component.h"
+#include "CT/ECS/Component/Component.h"
 #include "raylib.h"
 
-namespace ECS
+namespace CT::ECS
 {
   /**
    * Base class for all components.

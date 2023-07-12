@@ -1,7 +1,7 @@
-#include "ECS/Component/SoundComponent.h"
+#include "CT/ECS/Component/SoundComponent.h"
 #include <raylib.h>
 
-namespace ECS
+namespace CT::ECS
 {
     SoundComponent::SoundComponent(const char* filename)
         : sound(LoadSound(filename))

@@ -1,11 +1,11 @@
-#include "ECS/System/RenderSystem.h"
-#include "ECS/Component/TransformComponent.h"
-#include "ECS/Component/SpriteComponent.h"
+#include "CT/ECS/System/RenderSystem.h"
+#include "CT/ECS/Component/TransformComponent.h"
+#include "CT/ECS/Component/SpriteComponent.h"
 
-#include "Game.h"
+#include "CT/Game.h"
 #include <cstdio>
 
-namespace ECS
+namespace CT::ECS
 {
   void
   RenderSystem::update(Color clearColor, double dt) 

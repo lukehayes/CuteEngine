@@ -1,26 +1,26 @@
-#ifndef ECS_ENTITY_FACTORY_H
-#define ECS_ENTITY_FACTORY_H
+#ifndef CT_ECS_ENTITY_FACTORY_H
+#define CT_ECS_ENTITY_FACTORY_H
 
 #include <raylib.h>
 #include <stdio.h>
 
-#include "ECS/Component/Component.h"
-#include "ECS/Component/TransformComponent.h"
-#include "ECS/Component/SoundComponent.h"
-#include "ECS/Component/CollisionComponent.h"
-#include "ECS/Component/TimerComponent.h"
-#include "ECS/Component/SpriteComponent.h"
+#include "CT/ECS/Component/Component.h"
+#include "CT/ECS/Component/TransformComponent.h"
+#include "CT/ECS/Component/SoundComponent.h"
+#include "CT/ECS/Component/CollisionComponent.h"
+#include "CT/ECS/Component/TimerComponent.h"
+#include "CT/ECS/Component/SpriteComponent.h"
 
-#include "Common/Constants.h"
-#include "Common/Globals.h"
+#include "CT/Common/Constants.h"
+#include "CT/Common/Globals.h"
 
-#include "Factory/TextureFactory.h"
+#include "CT/Factory/TextureFactory.h"
 
-namespace ECS
+namespace CT::ECS
 {
     EntityArray GenerateEntities(int count)
     {
-        CTFactory::TextureFactory textureFactory;
+        CT::Factory::TextureFactory textureFactory;
 
         printf("Initializing %i Entities \n", count);
 

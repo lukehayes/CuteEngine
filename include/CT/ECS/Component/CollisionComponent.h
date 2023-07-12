@@ -1,10 +1,10 @@
 #ifndef ECS_COLLISION_COMPONENT_H
 #define ECS_COLLISION_COMPONENT_H
 
-#include "ECS/Component/Component.h"
-#include "Common/Types.h"
+#include "CT/ECS/Component/Component.h"
+#include "CT/Common/Types.h"
 
-namespace ECS
+namespace CT::ECS
 {
     /**
      * Collision component checks for collisions.  

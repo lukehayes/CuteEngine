@@ -1,11 +1,11 @@
-#include "ECS/System/TimerSystem.h"
-#include "ECS/Component/TimerComponent.h"
-#include "ECS/Component/TransformComponent.h"
+#include "CT/ECS/System/TimerSystem.h"
+#include "CT/ECS/Component/TimerComponent.h"
+#include "CT/ECS/Component/TransformComponent.h"
 #include <cstdio>
 
-namespace ECS
+namespace CT::ECS
 {
-    using Entity = std::array<ECS::Component*,4>;
+    using Entity = std::array<CT::ECS::Component*,4>;
 
     void
     TimerSystem::update(double dt)

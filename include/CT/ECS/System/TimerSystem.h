@@ -1,11 +1,11 @@
 #ifndef ECS_TIMER_SYSTEM_H
 #define ECS_TIMER_SYSTEM_H
 
-#include "ECS/System/System.h"
+#include "CT/ECS/System/System.h"
 
-namespace ECS
+namespace CT::ECS
 {
-  class TimerSystem : public ECS::System
+  class TimerSystem : public CT::ECS::System
   {
     public:
       /**

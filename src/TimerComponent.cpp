@@ -1,8 +1,8 @@
-#include "ECS/Component/TimerComponent.h"
+#include "CT/ECS/Component/TimerComponent.h"
 
 #include <stdio.h>
 
-namespace ECS
+namespace CT::ECS
 {
   TimerComponent::TimerComponent()
     : oneshot(false),

@@ -1,13 +1,13 @@
-#include "Game.h"
-#include "Common/Constants.h"
-#include "Common/Globals.h"
+#include "CT/Game.h"
+#include "CT/Common/Constants.h"
+#include "CT/Common/Globals.h"
 
-#include "ECS/System/RenderSystem.h"
-#include "ECS/System/MoveSystem.h"
-#include "ECS/System/CollisionSystem.h"
-#include "ECS/System/TimerSystem.h"
+#include "CT/ECS/System/RenderSystem.h"
+#include "CT/ECS/System/MoveSystem.h"
+#include "CT/ECS/System/CollisionSystem.h"
+#include "CT/ECS/System/TimerSystem.h"
 
-#include "ECS/Factory/EntityFactory.h"
+#include "CT/ECS/Factory/EntityFactory.h"
 
 int main() {
 
@@ -17,21 +17,21 @@ int main() {
     /*============================================================
     // Fill the entity array with entities
     ============================================================*/
-    EntityArray ev = ECS::GenerateEntities(MAX_ENTITIES);
+    EntityArray ev = CT::ECS::GenerateEntities(MAX_ENTITIES);
 
     /*============================================================
     // System Initializtion
     ============================================================*/
-    ECS::RenderSystem renderSystem;
+    CT::ECS::RenderSystem renderSystem;
     renderSystem.entities = &ev ;
 
-    ECS::TimerSystem timerSystem;
+    CT::ECS::TimerSystem timerSystem;
     timerSystem.entities = &ev ;
 
-    ECS::MoveSystem   moveSystem;
+    CT::ECS::MoveSystem   moveSystem;
     moveSystem.entities = &ev ;
 
-    ECS::CollisionSystem   collisionSystem;
+    CT::ECS::CollisionSystem   collisionSystem;
     collisionSystem.entities = &ev ;
 
 
@@ -44,7 +44,7 @@ int main() {
         renderSystem.update(BLACK, game.deltaTime);
     }
 
-    ECS::DestroyEntities(ev, MAX_ENTITIES);
+    CT::ECS::DestroyEntities(ev, MAX_ENTITIES);
 
     CloseWindow();
 

@@ -2,9 +2,9 @@
 #define CT_TEXTURE_FACTORY_H
 
 #include "raylib.h"
-#include "Asset/Asset.h"
+#include "CT/Asset/Asset.h"
 
-namespace CTFactory
+namespace CT::Factory
 {
     class TextureFactory
     {

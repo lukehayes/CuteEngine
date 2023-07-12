@@ -1,7 +1,7 @@
 #pragma once
 
 #include "raylib.h"
-#include "Common/Types.h"
+#include "CT/Common/Types.h"
 
 struct Game
 {

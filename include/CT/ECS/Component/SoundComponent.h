@@ -1,10 +1,10 @@
-#ifndef ECS_SOUND_COMP_H
-#define ECS_SOUND_COMP_H
+#ifndef CT_ECS_SOUND_COMP_H
+#define CT_ECS_SOUND_COMP_H
 
-#include "ECS/Component/Component.h"
+#include "CT/ECS/Component/Component.h"
 #include "raylib.h"
 
-namespace ECS
+namespace CT::ECS
 {
   class SoundComponent : public Component
   {

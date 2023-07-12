@@ -1,9 +1,8 @@
-#include "ECS/System/CollisionSystem.h"
+#include "CT/ECS/System/CollisionSystem.h"
+#include "CT/ECS/Component/TransformComponent.h"
+#include "CT/ECS/Component/CollisionComponent.h"
 
-#include "ECS/Component/TransformComponent.h"
-#include "ECS/Component/CollisionComponent.h"
-
-namespace ECS
+namespace CT::ECS
 {
     void
     CollisionSystem::update(double dt) 

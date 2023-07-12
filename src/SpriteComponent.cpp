@@ -1,7 +1,7 @@
-#include "ECS/Component/SpriteComponent.h"
+#include "CT/ECS/Component/SpriteComponent.h"
 #include <cstdio>
 
-namespace ECS
+namespace CT::ECS
 {
   SpriteComponent::SpriteComponent(const char* texture_path, float scale)
     : texture(LoadTexture(texture_path)),

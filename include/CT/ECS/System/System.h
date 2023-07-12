@@ -1,9 +1,9 @@
 #ifndef ECS_SYSTEM_H
 #define ECS_SYSTEM_H
 
-#include "Common/Types.h"
+#include "CT/Common/Types.h"
 
-namespace ECS
+namespace CT::ECS
 {
   /**
    * Base class for all systems.

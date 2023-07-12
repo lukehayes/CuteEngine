@@ -1,10 +1,10 @@
-#ifndef ECS_SPRITE_COMPONENT_H
-#define ECS_SPRITE_COMPONENT_H
+#ifndef CT_ECS_SPRITE_COMPONENT_H
+#define CT_ECS_SPRITE_COMPONENT_H
 
-#include "ECS/Component/Component.h"
+#include "CT/ECS/Component/Component.h"
 #include "raylib.h"
 
-namespace ECS
+namespace CT::ECS
 {
   class SpriteComponent : public Component
   {
