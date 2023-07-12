@@ -24,6 +24,18 @@ namespace CTAsset
         }
 
         /**
+         * Get the a full path to an image.
+         *
+         * @param const std::string& image.
+         *
+         * @return std::string.
+         */
+        static std::string getImage(const std::string& image)
+        {
+            return "../assets/images/" + image;
+        }
+
+        /**
          * Get the path to the fonts directory.
          *
          * @return std::string.
