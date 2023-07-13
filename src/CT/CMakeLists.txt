@@ -14,4 +14,7 @@ add_library(CuteEngineLib SHARED
   RenderSystem.cpp
   MoveSystem.cpp
   TimerSystem.cpp
+
+  # Scene
+  SceneTree.cpp
 )
