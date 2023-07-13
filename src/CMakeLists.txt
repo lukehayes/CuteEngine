@@ -1,18 +1,1 @@
-add_library(CuteEngineLib
-  # Engine Specific
-  Game.cpp
-  Globals.cpp
-
-  # ECS Components
-  TransformComponent.cpp
-  SoundComponent.cpp
-  CollisionComponent.cpp
-  CollisionSystem.cpp
-  TimerComponent.cpp
-  SpriteComponent.cpp
-
-  # ECS Systems
-  RenderSystem.cpp
-  MoveSystem.cpp
-  TimerSystem.cpp
-)
+add_subdirectory("CT")
