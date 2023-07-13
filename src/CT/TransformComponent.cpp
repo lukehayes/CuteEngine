@@ -1,5 +1,5 @@
 #include "CT/ECS/Component/TransformComponent.h"
-#include "CT/Game.h"
+#include "Game/Game.h"
 
 namespace CT::ECS
 {

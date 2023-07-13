@@ -1,7 +1,7 @@
 #ifndef CT_GLOBALS_H
 #define CT_GLOBALS_H
 
-#include "CT/Game.h"
+#include "Game/Game.h"
 #include "Types.h"
 
 /**

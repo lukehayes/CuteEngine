@@ -2,7 +2,7 @@
 #include "CT/ECS/Component/TransformComponent.h"
 #include "CT/ECS/Component/SoundComponent.h"
 
-#include "CT/Game.h"
+#include "Game/Game.h"
 #include "CT/Common/Types.h"
 #include "CT/Common/Constants.h"
 #include "CT/Common/Globals.h"

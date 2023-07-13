@@ -1,6 +1,5 @@
 add_library(CuteEngineLib SHARED
   # Engine Specific
-  Game.cpp
   Globals.cpp
 
   # ECS Components

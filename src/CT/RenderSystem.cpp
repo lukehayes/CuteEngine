@@ -2,7 +2,7 @@
 #include "CT/ECS/Component/TransformComponent.h"
 #include "CT/ECS/Component/SpriteComponent.h"
 
-#include "CT/Game.h"
+#include "Game/Game.h"
 #include <cstdio>
 
 namespace CT::ECS

@@ -1,4 +1,4 @@
-#include "CT/Game.h"
+#include "Game/Game.h"
 #include "CT/Common/Constants.h"
 
 Game::Game()

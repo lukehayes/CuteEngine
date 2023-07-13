@@ -37,6 +37,10 @@ add_subdirectory(src)
 # 
 target_link_libraries(${BIN_NAME} raylib)
 
-# Link all cpp source files in src/
+# Build Cute Engine library.
 # 
 target_link_libraries(${BIN_NAME} CuteEngineLib)
+
+# Build game library.
+# 
+target_link_libraries(${BIN_NAME} GameLib)
