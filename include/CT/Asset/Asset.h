@@ -18,10 +18,7 @@ namespace CTAsset
          *
          * @return std::string.
          */
-        static std::string getAssetPath()
-        {
-            return "../assets";
-        }
+        static std::string getAssetPath();
 
         /**
          * Get the a full path to an image.
@@ -30,30 +27,21 @@ namespace CTAsset
          *
          * @return std::string.
          */
-        static std::string getImage(const std::string& image)
-        {
-            return "../assets/images/" + image;
-        }
+        static std::string getImage(const std::string& image);
 
         /**
          * Get the path to the fonts directory.
          *
          * @return std::string.
          */
-        static std::string getFontPath()
-        {
-            return Asset::getAssetPath() + "/fonts";
-        }
+        static std::string getFontPath();
 
         /**
          * Get the path to the sounds directory.
          *
          * @return std::string.
          */
-        static std::string getSoundsPath() 
-        {
-            return Asset::getAssetPath() + "/sounds";
-        }
+        static std::string getSoundsPath();
 
     };
 }
