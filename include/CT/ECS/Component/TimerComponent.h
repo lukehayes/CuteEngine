@@ -28,11 +28,15 @@ namespace CT::ECS
        */
       virtual void update(double dt) override;
 
+      void setCallback(void (*callback)());
+
       bool   oneshot;
       bool   running;
       bool   finished;
       double time;
       double elapsedTime;
+
+      void (*callback)();
 
   };
 }

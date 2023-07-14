@@ -22,4 +22,10 @@ namespace CT::ECS
 
   void
   TimerComponent::update(double dt) {}
+
+  void
+  TimerComponent::setCallback(void (*callback)())
+  {
+    this->callback = callback;
+  }
 }
