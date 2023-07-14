@@ -14,8 +14,6 @@ namespace CT::Scene
   {
   public:
 
-    SceneTree();
-
    /**
     * Insert a scene into the scene tree.
     *

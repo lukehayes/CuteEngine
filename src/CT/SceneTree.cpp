@@ -2,11 +2,6 @@
 
 namespace CT::Scene
 {
-    SceneTree::SceneTree() 
-        : scene_id(0)
-    {}
-
-
     void
     SceneTree::insert(const CT::Scene::Scene& scene)
     {
