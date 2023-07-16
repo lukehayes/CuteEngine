@@ -4,7 +4,7 @@
 #include "raylib.h"
 #include <string>
 
-namespace CTAsset
+namespace CT::Asset
 {
     /**
      * Class contains helper functions for getting paths to assets etc.

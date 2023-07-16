@@ -20,7 +20,7 @@ namespace CT::Factory
          */
         void loadAssetsIntoGPUMemory()
         {
-            std::string assets = CTAsset::Asset::getAssetPath();
+            std::string assets = CT::Asset::Asset::getAssetPath();
             printf("Assets: %s \n", assets.c_str());
             this->bernie = LoadTexture((assets + "/bernie.png").c_str());
         }

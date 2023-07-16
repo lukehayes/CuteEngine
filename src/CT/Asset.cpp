@@ -1,6 +1,6 @@
 #include "CT/Asset/Asset.h"
 
-namespace CTAsset
+namespace CT::Asset
 {
     std::string Asset::getAssetPath()
     {
