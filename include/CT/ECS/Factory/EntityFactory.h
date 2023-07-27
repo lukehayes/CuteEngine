@@ -64,7 +64,7 @@ namespace CT::ECS
             // entities.at(i)[SPRITE_COMPONENT_INDEX]    = GetRandomValue(0,1) ? new ECS::SpriteComponent(&textureFactory.bernie, 10) : nullptr;
 
             // TODO Implement textureFactory functionality.
-            entities.at(i)[SPRITE_COMPONENT_INDEX]    = GetRandomValue(0,1) ? new ECS::SpriteComponent(CTAsset::Asset::getImage("bernie.png").c_str(), 2) : nullptr;
+            entities.at(i)[SPRITE_COMPONENT_INDEX]    = GetRandomValue(0,1) ? new ECS::SpriteComponent(CT::Asset::Asset::getImage("bernie.png").c_str(), 2) : nullptr;
             entities.at(i)[COLLISION_COMPONENT_INDEX] = nullptr;
             entities.at(i)[TIMER_COMPONENT_INDEX]     = new ECS::TimerComponent();
             entities.at(i)[SOUND_COMPONENT_INDEX]     = nullptr;
