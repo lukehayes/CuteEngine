@@ -19,9 +19,9 @@ namespace CT::Scene
     *
     * @param const CT::Scene::Scene.
     *
-    * @return void.
+    * @return int.
     */
-    void insert(const CT::Scene::Scene& scene);
+    int insert(CT::Scene::Scene* scene);
 
    /**
     * Find a scene in the scene tree.
@@ -42,7 +42,7 @@ namespace CT::Scene
     void remove(int scene_id);
   
     int scene_id;
-    std::map<int, CT::Scene::Scene> tree;
+    std::map<int, CT::Scene::Scene*> tree;
 
   };
 }
