@@ -20,4 +20,5 @@ add_library(CuteEngineLib SHARED
 
   # Scene
   SceneTree.cpp
+  Scene.cpp
 )
