@@ -5,10 +5,15 @@
 
 namespace CT::Scene
 {
-  s   void 
-    Scene::addChild(CT::Scene::Scene* child)
-    {
-      this->children.push_back(child);
-      childrenCount++;
-    }
+  void
+  Scene::addChild(CT::Scene::Scene* child)
+  {
+    this->children.push_back(child);
+  }
+
+  int 
+  Scene::getChildCount() const
+  {
+    return this->children.size();
+  }
 }

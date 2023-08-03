@@ -1,3 +1,11 @@
+  /**
+   * @file  CT/Scene/SceneTree.h
+   *
+   * @brief A SceneTree holds children of type CT::Scene::Scene.
+   * 
+   * @namespace CT::Scene.
+   * @author LDH.
+   */
 #ifndef CT_SCENE_SCENETREE_E_H
 #define CT_SCENE_SCENETREE_E_H
 
@@ -6,10 +14,6 @@
 
 namespace CT::Scene
 {
-
-  /**
-   * Main SceneTree implementation.
-   */
   class SceneTree
   {
   public:

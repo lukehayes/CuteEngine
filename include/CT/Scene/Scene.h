@@ -1,3 +1,10 @@
+/**
+ * @file  CT/Scene/Scene.h
+ *
+ * @brief A Scene represents a node inside a SceneTree.
+ * @namespace CT::Scene.
+ * @author LDH.
+ */
 #ifndef CT_SCENE_SCENE_H
 #define CT_SCENE_SCENE_H
 
@@ -5,18 +12,35 @@
 
 namespace CT::Scene
 {
-  /**
-   * Base class for all scenes in the SceneTree.
-   */
   class Scene
   {
   public:
 
+    /**
+    * Pure virtual update method. Updates once per frame.
+    *
+    * @param dt Delta time.
+    */
     virtual void update(double dt) = 0;
 
-    void addChild(CT::Scene::Scene* child);
+    virtual void render() = 0;
 
-    inline static int childrenCount = 0;
+    /**
+    * Add a scene as a child to this scene.
+    *
+    * @param child An instance of CT::Scene::Scene*.
+    *
+    * @return void.
+    */
+    void addChild(CT::Scene::Scene* child);
+    
+    /**
+    * Get this scenes children amount.
+    *
+    * @return The number of chilren this scene has.
+    */
+    int getChildCount() const;
+
 
     std::vector<CT::Scene::Scene*> children;
   };
