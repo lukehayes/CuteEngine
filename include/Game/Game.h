@@ -3,20 +3,24 @@
 #include "raylib.h"
 #include "CT/Common/Types.h"
 
-struct Game
+namespace Game
 {
+	struct Game
+	{
 
-	Game();
+		Game();
 
-	/**
-	 * Intialize Raylib, call raylib functions like SetFPS() etc.
-	 */
-	void init();
+		/**
+		 * Intialize Raylib, call raylib functions like SetFPS() etc.
+		 */
+		void init();
 
-	int width;
-	int height;
-	const char* title;
+		int width;
+		int height;
+		const char* title;
 
-	double deltaTime;
-};
+		double deltaTime;
+	};
+}
+
 

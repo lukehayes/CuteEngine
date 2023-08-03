@@ -1,23 +1,27 @@
 #include "Game/Game.h"
 #include "CT/Common/Constants.h"
 
-Game::Game()
-	: width(WINDOW_WIDTH),
-	  height(WINDOW_HEIGHT),
-	  title(GAME_TITLE),
-	  deltaTime(0.0)
-{}
-
-void Game::init()
+namespace Game
 {
-	InitWindow(
-		this->width,
-		this->height,
-		this->title
-	);
+	Game::Game()
+		: width(WINDOW_WIDTH),
+		  height(WINDOW_HEIGHT),
+		  title(GAME_TITLE),
+		  deltaTime(0.0)
+	{}
 
-	InitAudioDevice();
+	void  
+	Game::Game::init()
+	{
+		InitWindow(
+			this->width,
+			this->height,
+			this->title
+		);
 
-	SetTargetFPS(60);
-	SetExitKey(KEY_Q);
+		InitAudioDevice();
+
+		SetTargetFPS(60);
+		SetExitKey(KEY_Q);
+	}
 }

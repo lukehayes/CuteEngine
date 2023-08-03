@@ -1,5 +1,5 @@
 #include "CT/Common/Globals.h"
 
-Game game = {};
+Game::Game game = {};
 EntityArray entities = {};
 
