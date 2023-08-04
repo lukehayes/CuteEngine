@@ -17,7 +17,7 @@ namespace CT::Scene
   public:
 
     Scene();
-    Scene(Vector2& position, Vector2& size, Color color);
+    Scene(const Vector2& position, const Vector2& size, Color color);
 
     /**
     * Pure virtual update method. Updates once per frame.

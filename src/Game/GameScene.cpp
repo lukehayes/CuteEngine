@@ -1,11 +1,13 @@
 #include "Game/GameScene.h"
 
 #include "stdio.h"
+#include <iostream>
 
 namespace Game
 {
-	GameScene::GameScene(Vector2& position, Vector2& size, Color color)
-		CT::Scene::Scene(position, size, color) {}
+	GameScene::GameScene(const Vector2& position, const Vector2& size, Color color)
+		: CT::Scene::Scene(position, size, color)
+	{}
 
 	GameScene::GameScene() {}
 
@@ -13,20 +15,18 @@ namespace Game
 
 	void GameScene::update(double dt)
 	{
-		printf("Updating Game Scene: %f \n", dt);
-		this->position.x += 1 * this->speed * dt;
+		this->position.x += 0.1 * this->speed * dt;
 	}
 
 	void GameScene::render()
 	{
-		printf("Rendering Game Scene: %f \n");
-          DrawRectangle(
-              this->position.x,
-              this->position.y,
-              this->size.x,
-              this->size.y,
-              this->color
-            );
+        DrawRectangle(
+			this->position.x,
+			this->position.y,
+			this->size.x,
+			this->size.y,
+			this->color
+        );
 	}
 }
 

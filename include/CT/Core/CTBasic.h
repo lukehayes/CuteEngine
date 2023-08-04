@@ -17,13 +17,13 @@ namespace CT::Core
 	{
 	public:
 		CTBasic();
-		CTBasic(Vector2& position, Vector2& size, Color color);
+		CTBasic(const Vector2& position, const Vector2& size, Color color);
 		~CTBasic();
 
 		Vector2 position;
 		Vector2 size;
 		Color color;
-		float speed = GetRandomValue(10,300);
+		float speed;
 	private:
 	};
 }

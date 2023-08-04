@@ -11,24 +11,21 @@
 
 namespace Game
 {
-class GameScene : public CT::Scene::Scene
-{
-public:
-	GameScene();
-	GameScene(Vector2& position, Vector2& size, Color color);
+	class GameScene : public CT::Scene::Scene
+	{
+	public:
+		GameScene();
 
-	//GameScene(GameScene &&) = default;
-	//GameScene(const GameScene &) = default;
-	//GameScene &operator=(GameScene &&) = default;
-	//GameScene &operator=(const GameScene &) = default;
-	~GameScene();
+		GameScene(const Vector2& position, const Vector2& size, Color color);
 
-	void update(double dt);
+		~GameScene();
 
-	void render();
+		void update(double dt);
 
-private:
-};
+		void render();
+
+	private:
+	};
 }
 
 #endif // !GAME_GAMESCENE_H

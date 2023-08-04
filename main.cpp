@@ -12,6 +12,7 @@
 #include "Game/GameScene.h"
 
 #include "CT/Core/CTBasic.h"
+#include <cstdio>
 
 int main() {
 
@@ -23,16 +24,20 @@ int main() {
     ============================================================*/
     EntityArray ev = CT::ECS::GenerateEntities(MAX_ENTITIES);
 
-    std::vector<Game::GameScene> scenes;
-    std::vector<Color> colors { RED, BLUE, GREEN };
+    std::vector<Game::GameScene*> scenes;
+    std::vector<Color> colors { {200,0,100, 255}, {0,0,200,255}, {0,200,100,255} };
 
 
-    for (int i = 0; i <= 2; i++) {
-        Game::GameScene gs({
-            {GetRandomValue(10,500), GetRandomValue(10,500)},
-            {GetRandomValue(10,500), GetRandomValue(10,500)},
-            colors[GetRandomValue(0,colors.size())]
-        });
+    for (int i = 0; i <= 10; i++) {
+
+        Vector2 position = {(float)GetRandomValue(100.0f,400.0f), (float)GetRandomValue(100.0f,800.0f)};
+        Vector2 size = {(float)GetRandomValue(10.0f,100.0f), (float)GetRandomValue(10.0f,100.0f)};
+
+        Game::GameScene* gs = new Game::GameScene {
+            position,
+            size,
+            colors[GetRandomValue(0,2)]
+        };
 
         scenes.push_back(gs);
     }
@@ -44,8 +49,8 @@ int main() {
     gs2.position.y = 300;
     gs2.color = BLUE;
 
-    CT::Core::CTBasic b1({100,100}, {20,200}, RED);
-    CT::Core::CTBasic b2({10,10}, {120,20}, BLUE);
+    //CT::Core::CTBasic b1({100,100}, {20,200}, RED);
+    //CT::Core::CTBasic b2({10,10}, {120,20}, BLUE);
 
 
 
@@ -70,14 +75,14 @@ int main() {
 
         for(auto s : scenes)
         {
-            s.update(game.deltaTime);
+            s->update(game.deltaTime);
         }
 
         ClearBackground(BLACK);
         BeginDrawing();
             for(auto s : scenes)
             {
-                s.render();
+                s->render();
             }
         EndDrawing();
 
@@ -88,6 +93,11 @@ int main() {
     }
 
     CT::ECS::DestroyEntities(ev, MAX_ENTITIES);
+
+    for(auto s : scenes)
+    {
+        delete s;
+    }
 
     CloseWindow();
 

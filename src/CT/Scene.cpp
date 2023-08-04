@@ -4,7 +4,7 @@
 
 namespace CT::Scene
 {
-  Scene::Scene(Vector2& position, Vector2& size, Color color)
+  Scene::Scene(const Vector2& position, const Vector2& size, Color color)
       : CT::Core::CTBasic(position, size, color)
   {}
 
