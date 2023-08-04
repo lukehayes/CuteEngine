@@ -9,6 +9,10 @@
 
 #include "CT/ECS/Factory/EntityFactory.h"
 
+#include "Game/GameScene.h"
+
+#include "CT/Core/CTBasic.h"
+
 int main() {
 
     SetTraceLogLevel(LOG_NONE);
@@ -18,6 +22,32 @@ int main() {
     // Fill the entity array with entities
     ============================================================*/
     EntityArray ev = CT::ECS::GenerateEntities(MAX_ENTITIES);
+
+    std::vector<Game::GameScene> scenes;
+    std::vector<Color> colors { RED, BLUE, GREEN };
+
+
+    for (int i = 0; i <= 2; i++) {
+        Game::GameScene gs({
+            {GetRandomValue(10,500), GetRandomValue(10,500)},
+            {GetRandomValue(10,500), GetRandomValue(10,500)},
+            colors[GetRandomValue(0,colors.size())]
+        });
+
+        scenes.push_back(gs);
+    }
+
+
+    Game::GameScene gs1;
+    Game::GameScene gs2;
+    gs2.position.x = 300;
+    gs2.position.y = 300;
+    gs2.color = BLUE;
+
+    CT::Core::CTBasic b1({100,100}, {20,200}, RED);
+    CT::Core::CTBasic b2({10,10}, {120,20}, BLUE);
+
+
 
     /*============================================================
     // System Initializtion
@@ -38,10 +68,23 @@ int main() {
     while (!WindowShouldClose()) {
         game.deltaTime = GetFrameTime();
 
-        moveSystem.update(game.deltaTime);
+        for(auto s : scenes)
+        {
+            s.update(game.deltaTime);
+        }
+
+        ClearBackground(BLACK);
+        BeginDrawing();
+            for(auto s : scenes)
+            {
+                s.render();
+            }
+        EndDrawing();
+
+        //moveSystem.update(game.deltaTime);
         //collisionSystem.update(game.deltaTime);
-        timerSystem.update(game.deltaTime);
-        renderSystem.update(BLACK, game.deltaTime);
+        //timerSystem.update(game.deltaTime);
+        //renderSystem.update(BLACK, game.deltaTime);
     }
 
     CT::ECS::DestroyEntities(ev, MAX_ENTITIES);

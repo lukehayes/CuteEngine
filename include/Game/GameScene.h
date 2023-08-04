@@ -1,3 +1,9 @@
+/** @file  Game/GameScene.h
+ *
+ * @brief A test GameScene class.
+ * @namespace Game.
+ * @author LDH.
+ */
 #ifndef GAME_GAMESCENE_H
 #define GAME_GAMESCENE_H
 
@@ -9,6 +15,7 @@ class GameScene : public CT::Scene::Scene
 {
 public:
 	GameScene();
+	GameScene(Vector2& position, Vector2& size, Color color);
 
 	//GameScene(GameScene &&) = default;
 	//GameScene(const GameScene &) = default;

@@ -1,5 +1,4 @@
-/**
- * @file  CT/Scene/Scene.h
+/** @file  CT/Scene/Scene.h
  *
  * @brief A Scene represents a node inside a SceneTree.
  * @namespace CT::Scene.
@@ -9,12 +8,16 @@
 #define CT_SCENE_SCENE_H
 
 #include <vector>
+#include "CT/Core/CTBasic.h"
 
 namespace CT::Scene
 {
-  class Scene
+  class Scene : public CT::Core::CTBasic
   {
   public:
+
+    Scene();
+    Scene(Vector2& position, Vector2& size, Color color);
 
     /**
     * Pure virtual update method. Updates once per frame.
