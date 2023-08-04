@@ -18,6 +18,8 @@ public:
 
 	void update(double dt);
 
+	void render();
+
 private:
 };
 }

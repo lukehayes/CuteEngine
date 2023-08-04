@@ -1,10 +1,9 @@
   /**
    * @file  CT/Scene/SceneTree.h
    *
-   * @brief A SceneTree holds children of type CT::Scene::Scene.
-   * 
    * @namespace CT::Scene.
    * @author LDH.
+   * @brief A SceneTree holds children of type CT::Scene::Scene.
    */
 #ifndef CT_SCENE_SCENETREE_E_H
 #define CT_SCENE_SCENETREE_E_H

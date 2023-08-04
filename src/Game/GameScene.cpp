@@ -16,6 +16,11 @@ namespace Game
 	{
 		printf("Updating Game Scene: %f \n", dt);
 	}
+
+	void GameScene::render()
+	{
+		printf("Rendering Game Scene: %f \n");
+	}
 }
 
 
