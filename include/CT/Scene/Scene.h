@@ -23,6 +23,9 @@ namespace CT::Scene
     */
     virtual void update(double dt) = 0;
 
+    /**
+    * Pure virtual render method. Updates once per frame.
+    */
     virtual void render() = 0;
 
     /**
