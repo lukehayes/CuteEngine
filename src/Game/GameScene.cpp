@@ -16,6 +16,11 @@ namespace Game
 	void GameScene::update(double dt)
 	{
 		this->position.x += 0.1 * this->speed * dt;
+
+		for(auto child : this->children)
+		{
+			child->update(dt);
+		}
 	}
 
 	void GameScene::render()
@@ -27,6 +32,11 @@ namespace Game
 			this->size.y,
 			this->color
         );
+
+		for(auto child : this->children)
+		{
+			child->render();
+		}
 	}
 }
 
