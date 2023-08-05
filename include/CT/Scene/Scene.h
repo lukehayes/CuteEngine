@@ -10,6 +10,7 @@
 #include <vector>
 #include "CT/Core/CTBasic.h"
 
+// TODO See GameScene.h
 namespace CT::Scene
 {
   class Scene : public CT::Core::CTBasic

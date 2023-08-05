@@ -15,10 +15,11 @@ namespace Game
 
 	void GameScene::update(double dt)
 	{
-		this->position.x += 0.1 * this->speed * dt;
-
+		//this->position.x += 1 * this->speed * dt;
 		for(auto child : this->children)
 		{
+			child->position.x = position.x + 100;
+			child->position.y = position.y + 100;
 			child->update(dt);
 		}
 	}
