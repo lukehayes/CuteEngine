@@ -14,6 +14,19 @@ namespace CT::Factory
         {
             this->loadAssetsIntoGPUMemory();
         }
+
+        void loadToTexturePtr(Texture2D* texture, const std::string& imagePath)
+        {
+            std::string assets = CT::Asset::Asset::getAssetPath();
+            printf("Loading texture to Texture2D*");
+            *texture = LoadTexture((assets + imagePath).c_str());
+        }
+
+        void unloadFromTexturePtr(Texture2D* texture)
+        {
+            printf("Unloading Texture Pointer \n");
+            UnloadTexture(*texture);
+        }
         
         /**
          * Load all of the default textures into the GPU.
@@ -31,11 +44,11 @@ namespace CT::Factory
         void unloadAssetsIntoGPUMemory()
         {
             UnloadTexture(this->bernie);
-            printf("Unloaded bernie texture");
+            printf("Unloaded bernie.png texture \n");
         }
 
         Texture2D bernie;
-
+        Texture2D* testTexture;
     };
 }
 

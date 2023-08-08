@@ -24,7 +24,7 @@ namespace CT::ECS
         if(sc)
         {
           DrawTexturePro(
-              sc->texture,
+              *sc->texture,
               {0,0, 100,100},
               {tc->position.x, tc->position.y, sc->tileSize * sc->scale, sc->tileSize * sc->scale},
               {0,0},
