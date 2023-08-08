@@ -9,12 +9,12 @@ namespace CT::ECS
   class SpriteComponent : public Component
   {
     public:
-      SpriteComponent(Texture2D* texture, float scale);
+      SpriteComponent(Texture2D texture, float scale);
       ~SpriteComponent();
 
       void update(double dt) override {}
 
-      Texture2D* texture;
+      Texture2D texture;
       float scale;
       float tileSize = 16;
   };

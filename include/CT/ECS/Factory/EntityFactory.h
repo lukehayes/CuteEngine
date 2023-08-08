@@ -13,15 +13,13 @@
 
 #include "CT/Common/Constants.h"
 #include "CT/Common/Globals.h"
+#include <iostream>
 
-#include "CT/Factory/TextureFactory.h"
 
 namespace CT::ECS
 {
     EntityArray GenerateEntities(int count)
     {
-        textureFactory.loadToTexturePtr(textureFactory.testTexture, "../assets/bernie.png");
-
         printf("Initializing %i Entities \n", count);
 
         EntityArray entities;
@@ -60,7 +58,8 @@ namespace CT::ECS
 
 
             entities.at(i)[TRANSFORM_COMPONENT_INDEX] = new ECS::TransformComponent(GetRandomValue(100,game.width), GetRandomValue(100,game.height), size, size, color);
-            entities.at(i)[SPRITE_COMPONENT_INDEX]    = GetRandomValue(0,1) ? new ECS::SpriteComponent(textureFactory.testTexture, 10) : nullptr;
+            //entities.at(i)[SPRITE_COMPONENT_INDEX]    = new ECS::SpriteComponent(textureFactory.textures[0], size);
+            //entities.at(i)[SPRITE_COMPONENT_INDEX]    = GetRandomValue(0,1) ? new ECS::SpriteComponent(textureFactory.textures[0], 100) : nullptr;
 
             // TODO Implement textureFactory functionality.
             //entities.at(i)[SPRITE_COMPONENT_INDEX]    = GetRandomValue(0,1) ? new ECS::SpriteComponent(CT::Asset::Asset::getImage("bernie.png").c_str(), 2) : nullptr;
