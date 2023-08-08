@@ -18,6 +18,9 @@ add_library(CuteEngineLib SHARED
   # Assets
   Asset.cpp
 
+  # Factory
+  TextureFactory.cpp
+
   # Scene
   SceneTree.cpp
 )
