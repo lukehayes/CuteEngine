@@ -7,6 +7,7 @@ namespace CT::Factory
     TextureFactory::TextureFactory()
     {
         this->loadTexturePointers();
+        printf("Texture Factory Loaded");
     }
 
     TextureFactory::~TextureFactory()
