@@ -3,4 +3,4 @@
 Game game = {};
 EntityArray entities = {};
 
-CT::Factory::TextureFactory textureFactory = {};
+CT::Service::Container container = {};

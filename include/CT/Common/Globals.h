@@ -4,7 +4,7 @@
 #include "Game/Game.h"
 #include "Types.h"
 
-#include "CT/Factory/TextureFactory.h"
+#include "CT/Service/Container.h"
 
 /**
  * Useful global variables, usually externs, are stored in here.
@@ -21,8 +21,8 @@ extern EntityArray entities;
 extern EntityMap   entityMap;
 
 /*============================================================
-// TextureFactory
+// ServiceContainer
 ============================================================*/
-extern CT::Factory::TextureFactory   textureFactory;
+extern CT::Service::Container container;
 
 #endif  // CT_GLOBALS_H
