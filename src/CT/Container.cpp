@@ -1,6 +1,7 @@
 #include "CT/Service/Container.h"
 
 #include "CT/Service/TextureFactoryService.h"
+#include <cstdio>
 
 namespace CT::Service
 {
@@ -30,6 +31,9 @@ namespace CT::Service
         {
             return this->services.at(name)->getService();
         }
+
         return nullptr;
     }
+
+    std::map<std::string, CT::Service::Service*> Container::getServices() const { return this->services; }
 }

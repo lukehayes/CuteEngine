@@ -10,7 +10,7 @@ namespace CT::Service
 	/**
 	* @brief The main Service Container for the application.
 	* 
-	* @namespace CT::Service
+	* @namespace CT::Service.
 	*/
 	class Container
 	{
@@ -41,6 +41,13 @@ namespace CT::Service
 		* @return Instance of CT::Service::Service* or nullptr.
 		*/
 		CT::Service::Service* getService(const std::string& name);
+
+		/**
+		* Get the services std::map.
+		*
+		* @return std::map.
+		*/
+		std::map<std::string, CT::Service::Service*> getServices() const;
 
 	private:
 		std::map<std::string, CT::Service::Service*> services;
