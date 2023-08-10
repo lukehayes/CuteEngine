@@ -15,6 +15,9 @@
 #include "CT/Common/Globals.h"
 #include <iostream>
 
+#include "CT/Service/TextureFactoryService.h"
+#include "CT/Factory/TextureFactory.h"
+
 
 namespace CT::ECS
 {
@@ -55,10 +58,13 @@ namespace CT::ECS
             };
 
             int size = 10;
+            
+            CT::Service::Service* service = container->getService("texture_factory");
+            CT::Factory::TextureFactory* textureFactory = dynamic_cast<CT::Factory::TextureFactory*>(service->getService());
 
 
             entities.at(i)[TRANSFORM_COMPONENT_INDEX] = new ECS::TransformComponent(GetRandomValue(100,game.width), GetRandomValue(100,game.height), size, size, color);
-            //entities.at(i)[SPRITE_COMPONENT_INDEX]    = new ECS::SpriteComponent(textureFactory.textures[0], size);
+            entities.at(i)[SPRITE_COMPONENT_INDEX]    = new ECS::SpriteComponent(textureFactory->textures[0], size);
             //entities.at(i)[SPRITE_COMPONENT_INDEX]    = GetRandomValue(0,1) ? new ECS::SpriteComponent(textureFactory.textures[0], 100) : nullptr;
 
             // TODO Implement textureFactory functionality.
