@@ -3,4 +3,4 @@
 Game game = {};
 EntityArray entities = {};
 
-CT::Service::Container container = {};
+CT::Service::Container* container = new CT::Service::Container();

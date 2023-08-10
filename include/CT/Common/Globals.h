@@ -23,6 +23,6 @@ extern EntityMap   entityMap;
 /*============================================================
 // ServiceContainer
 ============================================================*/
-extern CT::Service::Container container;
+extern CT::Service::Container* container;
 
 #endif  // CT_GLOBALS_H
