@@ -12,7 +12,15 @@ namespace CT::Factory
 
         TextureFactory();
         ~TextureFactory();
+
+        /**
+        * Load all of the predefined texures into GPU memory.
+        */
         void loadTexturePointers();
+
+        /**
+        * Remove all of the textures that have been loaded onto the GPU.
+        */
         void destroyTexturePointers();
 
         Texture2D textures[10];

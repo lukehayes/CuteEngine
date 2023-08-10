@@ -4,15 +4,10 @@
 
 namespace CT::Factory
 {
-    TextureFactory::TextureFactory()
-    {
-        this->loadTexturePointers();
-        printf("Texture Factory Loaded");
-    }
+    TextureFactory::TextureFactory() {}
 
-    TextureFactory::~TextureFactory()
-    {
-    }
+    TextureFactory::~TextureFactory() {}
+
     void 
     TextureFactory::destroyTexturePointers()
     {
