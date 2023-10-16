@@ -20,7 +20,7 @@ namespace CT::ECS
 {
     EntityArray GenerateEntities(int count)
     {
-        textureFactory.loadToTexturePtr(textureFactory.testTexture, "../assets/bernie.png");
+        textureFactory.loadToTexturePtr(textureFactory.testTexture, "images/bernie.png");
 
         printf("Initializing %i Entities \n", count);
 

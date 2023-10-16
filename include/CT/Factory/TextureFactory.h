@@ -17,9 +17,9 @@ namespace CT::Factory
 
         void loadToTexturePtr(Texture2D* texture, const std::string& imagePath)
         {
-            std::string assets = CT::Asset::Asset::getAssetPath();
+            std::string imageAsset = CT::Asset::Asset::getImage(imagePath);
             printf("Loading texture to Texture2D*");
-            *texture = LoadTexture((assets + imagePath).c_str());
+            *texture = LoadTexture((imageAsset).c_str());
         }
 
         void unloadFromTexturePtr(Texture2D* texture)
@@ -33,9 +33,8 @@ namespace CT::Factory
          */
         void loadAssetsIntoGPUMemory()
         {
-            std::string assets = CT::Asset::Asset::getAssetPath();
-            printf("Assets: %s \n", assets.c_str());
-            this->bernie = LoadTexture((assets + "/bernie.png").c_str());
+            std::string imageAsset = CT::Asset::Asset::getImage("bernie.png");
+            this->bernie = LoadTexture((imageAsset).c_str());
         }
 
         /**
