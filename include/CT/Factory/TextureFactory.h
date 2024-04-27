@@ -12,14 +12,17 @@ namespace CT::Factory
 
         TextureFactory()
         {
-            this->loadAssetsIntoGPUMemory();
+            // FIXME Causes segfault!!!
+            //this->loadAssetsIntoGPUMemory();
         }
 
         void loadToTexturePtr(Texture2D* texture, const std::string& imagePath)
         {
-            std::string imageAsset = CT::Asset::Asset::getImage(imagePath);
-            printf("Loading texture to Texture2D*");
-            *texture = LoadTexture((imageAsset).c_str());
+            // FIXME Causes segfault!!!
+            // 
+            //std::string imageAsset = CT::Asset::Asset::getImage(imagePath);
+            //printf("Loading texture to Texture2D*");
+            //*texture = LoadTexture((imageAsset).c_str());
         }
 
         void unloadFromTexturePtr(Texture2D* texture)
@@ -33,6 +36,8 @@ namespace CT::Factory
          */
         void loadAssetsIntoGPUMemory()
         {
+            // FIXME Causes segfault!!!
+            //
             std::string imageAsset = CT::Asset::Asset::getImage("bernie.png");
             this->bernie = LoadTexture((imageAsset).c_str());
         }
