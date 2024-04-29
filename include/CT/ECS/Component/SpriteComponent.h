@@ -3,18 +3,19 @@
 
 #include "CT/ECS/Component/Component.h"
 #include "raylib.h"
+#include <memory>
 
 namespace CT::ECS
 {
   class SpriteComponent : public Component
   {
     public:
-      SpriteComponent(Texture2D* texture, float scale);
+      SpriteComponent(std::shared_ptr<Texture2D> texture, float scale);
       ~SpriteComponent();
 
       void update(double dt) override {}
 
-      Texture2D* texture;
+      std::shared_ptr<Texture2D> texture;
       float scale;
       float tileSize = 16;
   };

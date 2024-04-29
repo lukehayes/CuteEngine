@@ -3,7 +3,7 @@
 
 namespace CT::ECS
 {
-  SpriteComponent::SpriteComponent(Texture2D* texture, float scale)
+  SpriteComponent::SpriteComponent(std::shared_ptr<Texture2D> texture, float scale)
     : texture(texture),
       scale(scale) {}
 

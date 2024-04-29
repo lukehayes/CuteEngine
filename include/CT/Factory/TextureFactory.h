@@ -3,6 +3,7 @@
 
 #include "raylib.h"
 #include "CT/Asset/Asset.h"
+#include <memory>
 
 namespace CT::Factory
 {
@@ -10,49 +11,19 @@ namespace CT::Factory
     {
     public:
 
-        TextureFactory()
+        TextureFactory() {}
+
+        static std::shared_ptr<Texture2D>
+        loadToTexturePtr(const std::string& imagePath)
         {
-            // FIXME Causes segfault!!!
-            //this->loadAssetsIntoGPUMemory();
+            std::string imageAsset = CT::Asset::Asset::getImage(imagePath);
+            const char* img_asset_path = imageAsset.c_str();
+
+            std::shared_ptr<Texture2D> texture_ptr = std::make_shared<Texture2D>(LoadTexture(img_asset_path));
+
+            return texture_ptr;
         }
 
-        void loadToTexturePtr(Texture2D* texture, const std::string& imagePath)
-        {
-            // FIXME Causes segfault!!!
-            // 
-            //std::string imageAsset = CT::Asset::Asset::getImage(imagePath);
-            //printf("Loading texture to Texture2D*");
-            //*texture = LoadTexture((imageAsset).c_str());
-        }
-
-        void unloadFromTexturePtr(Texture2D* texture)
-        {
-            printf("Unloading Texture Pointer \n");
-            UnloadTexture(*texture);
-        }
-        
-        /**
-         * Load all of the default textures into the GPU.
-         */
-        void loadAssetsIntoGPUMemory()
-        {
-            // FIXME Causes segfault!!!
-            //
-            std::string imageAsset = CT::Asset::Asset::getImage("bernie.png");
-            this->bernie = LoadTexture((imageAsset).c_str());
-        }
-
-        /**
-         * Load all of the default textures into the GPU.
-         */
-        void unloadAssetsIntoGPUMemory()
-        {
-            UnloadTexture(this->bernie);
-            printf("Unloaded bernie.png texture \n");
-        }
-
-        Texture2D bernie;
-        Texture2D* testTexture;
     };
 }
 
