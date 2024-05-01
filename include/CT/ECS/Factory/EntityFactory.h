@@ -4,7 +4,6 @@
 #include <raylib.h>
 #include <stdio.h>
 
-#include "CT/ECS/Component/Component.h"
 #include "CT/ECS/Component/TransformComponent.h"
 #include "CT/ECS/Component/SoundComponent.h"
 #include "CT/ECS/Component/CollisionComponent.h"
@@ -14,14 +13,13 @@
 #include "CT/Common/Constants.h"
 #include "CT/Common/Globals.h"
 
-#include "CT/Factory/TextureFactory.h"
 #include <memory>
 
 namespace CT::ECS
 {
     EntityArray GenerateEntities(int count)
     {
-        std::shared_ptr<Texture2D> texture = CT::Factory::TextureFactory::loadToTexturePtr("images/bernie");
+        std::shared_ptr<Texture2D> texture = CT::Factory::TextureFactory::loadToTexturePtr("bernie");
 
         printf("Initializing %i Entities \n", count);
 
@@ -65,7 +63,7 @@ namespace CT::ECS
 
 
             entities.at(i)[TRANSFORM_COMPONENT_INDEX] = new ECS::TransformComponent(GetRandomValue(100,game.width), GetRandomValue(100,game.height), size, size, color);
-            entities.at(i)[SPRITE_COMPONENT_INDEX]    = chance ? new ECS::SpriteComponent(texture, 1) : nullptr;
+            entities.at(i)[SPRITE_COMPONENT_INDEX]    = chance ? new ECS::SpriteComponent(texture, 100) : nullptr;
 
             // TODO Implement textureFactory functionality.
             //entities.at(i)[SPRITE_COMPONENT_INDEX]    = GetRandomValue(0,1) ? new ECS::SpriteComponent(CT::Asset::Asset::getImage("bernie.png").c_str(), 2) : nullptr;
