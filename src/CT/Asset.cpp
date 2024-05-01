@@ -4,12 +4,12 @@ namespace CT::Asset
 {
     std::string Asset::getAssetPath()
     {
-        return "../assets";
+        return "assets";
     }
 
     std::string Asset::getImage(const std::string& image)
     {
-        return "../assets/images/" + image;
+        return Asset::getAssetPath() +  "/images/" + image + ".png";
     }
 
     std::string Asset::getFontPath() {
