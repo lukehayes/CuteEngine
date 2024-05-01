@@ -23,4 +23,5 @@ add_library(CuteEngineLib SHARED
 
   # Factory
   TextureFactory.cpp
+  EntityFactory.cpp
 )
