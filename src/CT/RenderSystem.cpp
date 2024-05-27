@@ -2,9 +2,6 @@
 #include "CT/ECS/Component/TransformComponent.h"
 #include "CT/ECS/Component/SpriteComponent.h"
 
-#include "Game/Game.h"
-#include <cstdio>
-
 namespace CT::ECS
 {
   void
@@ -23,7 +20,6 @@ namespace CT::ECS
 
         if(sc)
         {
-          printf("Drawing Texture PRO\n");
           DrawTexturePro(
               *sc->texture,
               {0,0, 100,100},

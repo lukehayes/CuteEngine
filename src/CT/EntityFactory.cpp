@@ -55,11 +55,9 @@ namespace CT::ECS
 
             int chance = GetRandomValue(0,1);
 
-            printf("Chance of sprite component? %i \n", chance);
-
-
             entities.at(i)[TRANSFORM_COMPONENT_INDEX] = new ECS::TransformComponent(GetRandomValue(100,game.width), GetRandomValue(100,game.height), size, size, color);
             entities.at(i)[SPRITE_COMPONENT_INDEX]    = chance ? new ECS::SpriteComponent(texture, 100) : nullptr;
+
 
             // TODO Implement textureFactory functionality.
             //entities.at(i)[SPRITE_COMPONENT_INDEX]    = GetRandomValue(0,1) ? new ECS::SpriteComponent(CT::Asset::Asset::getImage("bernie.png").c_str(), 2) : nullptr;

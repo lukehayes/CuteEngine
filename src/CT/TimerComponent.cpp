@@ -1,7 +1,5 @@
 #include "CT/ECS/Component/TimerComponent.h"
 
-#include <stdio.h>
-
 namespace CT::ECS
 {
   TimerComponent::TimerComponent()
